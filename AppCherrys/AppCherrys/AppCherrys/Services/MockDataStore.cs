@@ -3,64 +3,63 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AppCherrys.Models;
+using AppCherrys.Models.Tablon;
 
 namespace AppCherrys.Services
 {
-    public class MockDataStore : IDataStore<Item>
+    public class MockDataStore : IDataStore<Anuncio>
     {
-        List<Item> items;
+        List<Anuncio> Anuncios;
 
         public MockDataStore()
         {
-            items = new List<Item>();
-            var mockItems = new List<Item>
+            Anuncios = new List<Anuncio>();
+            var mockItems = new List<Anuncio>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
+                new Anuncio { Id = 1, Titulo = "Visita a Kikiricoop", Descripcion="This is an item description." },
+                new Anuncio { Id = 2, Titulo = "Local de Noreña concedido", Descripcion="This is an item description." },
+                new Anuncio { Id = 3, Titulo = "Fran ya tiene una FPGA para pruebas",Descripcion="This is an item description." },
+               
             };
 
-            foreach (var item in mockItems)
+            foreach (var Anuncio in mockItems)
             {
-                items.Add(item);
+                Anuncios.Add(Anuncio);
             }
         }
 
         public async Task<bool> AddItemAsync(Item item)
         {
-            items.Add(item);
+            Anuncios.Add(item);
 
             return await Task.FromResult(true);
         }
 
         public async Task<bool> UpdateItemAsync(Item item)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(oldItem);
-            items.Add(item);
+            var oldItem = Anuncios.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            Anuncios.Remove(oldItem);
+            Anuncios.Add(item);
 
             return await Task.FromResult(true);
         }
 
         public async Task<bool> DeleteItemAsync(string id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
+            var oldItem = Anuncios.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            Anuncios.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
         public async Task<Item> GetItemAsync(string id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(Anuncios.FirstOrDefault(s => s.Id == id));
         }
 
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(Anuncios);
         }
     }
 }
