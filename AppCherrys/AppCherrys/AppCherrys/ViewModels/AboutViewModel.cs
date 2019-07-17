@@ -11,7 +11,7 @@ namespace AppCherrys.ViewModels
         {
             Title = "About";
 
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
+            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://coralesdesign.es")));
         }
 
         public ICommand OpenWebCommand { get; }
