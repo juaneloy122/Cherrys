@@ -18,7 +18,7 @@ namespace AppCherrys.Services
             {
                 new Anuncio { Id = 1, Titulo = "Visita a Kikiricoop", Descripcion="This is an item description." },
                 new Anuncio { Id = 2, Titulo = "Local de Noreña concedido", Descripcion="This is an item description." },
-                new Anuncio { Id = 3, Titulo = "Fran ya tiene una FPGA para pruebas",Descripcion="This is an item description." },
+                new Anuncio { Id = 3, Titulo = "Fran ya tiene una FPGA para pruebas",Descripcion="This is an item description." }
                
             };
 
@@ -28,36 +28,36 @@ namespace AppCherrys.Services
             }
         }
 
-        public async Task<bool> AddItemAsync(Item item)
+        public async Task<bool> AddItemAsync(Anuncio anuncio)
         {
-            Anuncios.Add(item);
+            Anuncios.Add(anuncio);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Item item)
+        public async Task<bool> UpdateItemAsync(Anuncio anuncio)
         {
-            var oldItem = Anuncios.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            var oldItem = Anuncios.Where((Anuncio arg) => arg.Id == anuncio.Id).FirstOrDefault();
             Anuncios.Remove(oldItem);
-            Anuncios.Add(item);
+            Anuncios.Add(anuncio);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        public async Task<bool> DeleteItemAsync(int id)
         {
-            var oldItem = Anuncios.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            var oldItem = Anuncios.Where((Anuncio arg) => arg.Id == id).FirstOrDefault();
             Anuncios.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        public async Task<Anuncio> GetItemAsync(int id)
         {
             return await Task.FromResult(Anuncios.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<Anuncio>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(Anuncios);
         }

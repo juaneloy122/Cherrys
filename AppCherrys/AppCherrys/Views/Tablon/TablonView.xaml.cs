@@ -10,21 +10,21 @@ using Xamarin.Forms.Xaml;
 using AppCherrys.Models;
 using AppCherrys.Views;
 using AppCherrys.ViewModels;
+using AppCherrys.ViewModels.Tablon;
 
-namespace AppCherrys.Views
+namespace AppCherrys.Views.Tablon
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
+    
     [DesignTimeVisible(false)]
-    public partial class ItemsPage : ContentPage
+    public partial class TablonView : ContentPage
     {
-        ItemsViewModel viewModel;
+        TablonViewModel viewModel;
 
-        public ItemsPage()
+        public TablonView()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            BindingContext = viewModel = new TablonViewModel();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -33,7 +33,7 @@ namespace AppCherrys.Views
             if (item == null)
                 return;
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+            await Navigation.PushAsync(new AnuncioDetalleView(new AnuncioDetalleViewModel(item)));
 
             // Manually deselect item.
             ItemsListView.SelectedItem = null;

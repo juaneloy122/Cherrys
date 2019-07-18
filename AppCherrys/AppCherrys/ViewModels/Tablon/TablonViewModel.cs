@@ -7,23 +7,24 @@ using Xamarin.Forms;
 
 using AppCherrys.Models;
 using AppCherrys.Views;
+using AppCherrys.Models.Tablon;
 
-namespace AppCherrys.ViewModels
+namespace AppCherrys.ViewModels.Tablon
 {
-    public class ItemsViewModel : BaseViewModel
+    public class TablonViewModel : BaseViewModel
     {
-        public ObservableCollection<Item> Items { get; set; }
+        public ObservableCollection<Anuncio> Items { get; set; }
         public Command LoadItemsCommand { get; set; }
 
-        public ItemsViewModel()
+        public TablonViewModel()
         {
             Title = "Browse";
-            Items = new ObservableCollection<Item>();
+            Items = new ObservableCollection<Anuncio>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NewItemPage, Anuncio>(this, "AddItem", async (obj, item) =>
             {
-                var newItem = item as Item;
+                var newItem = item as Anuncio;
                 Items.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
             });

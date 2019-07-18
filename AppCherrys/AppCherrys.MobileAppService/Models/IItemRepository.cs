@@ -5,10 +5,10 @@ namespace AppCherrys.Models
 {
     public interface IItemRepository
     {
-        void Add(Item item);
-        void Update(Item item);
-        Item Remove(string key);
-        Item Get(string id);
-        IEnumerable<Item> GetAll();
+        void Add(Anuncio item);
+        void Update(Anuncio item);
+        Anuncio Remove(int key);
+        Anuncio Get(int id);
+        IEnumerable<Anuncio> GetAll();
     }
 }

@@ -6,44 +6,46 @@ namespace AppCherrys.Models
 {
     public class ItemRepository : IItemRepository
     {
-        private static ConcurrentDictionary<string, Item> items =
-            new ConcurrentDictionary<string, Item>();
+        private static ConcurrentDictionary<int, Anuncio> items =
+            new ConcurrentDictionary<int, Anuncio>();
 
         public ItemRepository()
         {
-            Add(new Item { Id = Guid.NewGuid().ToString(), Text = "Item 1", Description = "This is an item description." });
-            Add(new Item { Id = Guid.NewGuid().ToString(), Text = "Item 2", Description = "This is an item description." });
-            Add(new Item { Id = Guid.NewGuid().ToString(), Text = "Item 3", Description = "This is an item description." });
+            Add(new Anuncio { Id = 1, Titulo = "Visita a Kikiricoop", Descripcion = "This is an item description." });
+            Add(new Anuncio { Id = 2, Titulo = "Local de Noreña concedido", Descripcion = "This is an item description." });
+            Add(new Anuncio { Id = 3, Titulo = "Fran ya tiene una FPGA para pruebas", Descripcion = "This is an item description." });
+                      
         }
 
-        public IEnumerable<Item> GetAll()
+        public IEnumerable<Anuncio> GetAll()
         {
             return items.Values;
         }
 
-        public void Add(Item item)
+        public void Add(Anuncio item)
         {
-            item.Id = Guid.NewGuid().ToString();
+            //esto hay que cambiarlo para que sume siempre uno
+            item.Id = 4;
             items[item.Id] = item;
         }
 
-        public Item Get(string id)
+        public Anuncio Get(int id)
         {
-            Item item;
+            Anuncio item;
             items.TryGetValue(id, out item);
 
             return item;
         }
 
-        public Item Remove(string id)
+        public Anuncio Remove(int id)
         {
-            Item item;
+            Anuncio item;
             items.TryRemove(id, out item);
 
             return item;
         }
 
-        public void Update(Item item)
+        public void Update(Anuncio item)
         {
             items[item.Id] = item;
         }

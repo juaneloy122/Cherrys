@@ -4,7 +4,8 @@
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             mc:Ignorable="d"
-            xmlns:views="clr-namespace:AppCherrys.Views"
+            xmlns:views="clr-namespace:AppCherrys.Views.Tablon"
+            xmlns:views1="clr-namespace:AppCherrys.Views"
             x:Class="AppCherrys.Views.MainPage">
 
     <TabbedPage.Children>
@@ -15,7 +16,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:ItemsPage />
+                <views:TablonView />
             </x:Arguments>
         </NavigationPage>
         
@@ -26,7 +27,7 @@
                 </OnPlatform>
             </NavigationPage.Icon>
             <x:Arguments>
-                <views:AboutPage />
+                <views1:AboutPage />
             </x:Arguments>
         </NavigationPage>
     </TabbedPage.Children>

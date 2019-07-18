@@ -20,7 +20,7 @@ namespace AppCherrys.Controllers
 
         [HttpGet]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public ActionResult<IEnumerable<Item>> List()
+        public ActionResult<IEnumerable<Anuncio>> List()
         {
             return ItemRepository.GetAll().ToList();
         }
@@ -28,9 +28,9 @@ namespace AppCherrys.Controllers
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult<Item> GetItem(string id)
+        public ActionResult<Anuncio> GetItem(int id)
         {
-            Item item = ItemRepository.Get(id);
+            Anuncio item = ItemRepository.Get(id);
 
             if (item == null)
                 return NotFound();
@@ -41,7 +41,7 @@ namespace AppCherrys.Controllers
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult<Item> Create([FromBody]Item item)
+        public ActionResult<Anuncio> Create([FromBody]Anuncio item)
         {
             ItemRepository.Add(item);
             return CreatedAtAction(nameof(GetItem), new { item.Id }, item);
@@ -50,7 +50,7 @@ namespace AppCherrys.Controllers
         [HttpPut]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        public ActionResult Edit([FromBody] Item item)
+        public ActionResult Edit([FromBody] Anuncio item)
         {
             try
             {
@@ -66,9 +66,9 @@ namespace AppCherrys.Controllers
         [HttpDelete("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public ActionResult Delete(string id)
+        public ActionResult Delete(int id)
         {
-            Item item = ItemRepository.Remove(id);
+            Anuncio item = ItemRepository.Remove(id);
 
             if (item == null)
                 return NotFound();
