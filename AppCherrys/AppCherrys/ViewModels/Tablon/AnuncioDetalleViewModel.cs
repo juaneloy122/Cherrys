@@ -2,12 +2,12 @@
 
 using AppCherrys.Models;
 
-namespace AppCherrys.ViewModels
+namespace AppCherrys.ViewModels.Tablon
 {
-    public class ItemDetailViewModel : BaseViewModel
+    public class AnuncioDetalleViewModel : BaseViewModel
     {
         public Item Item { get; set; }
-        public ItemDetailViewModel(Item item = null)
+        public AnuncioDetalleViewModel(Item item = null)
         {
             Title = item?.Text;
             Item = item;

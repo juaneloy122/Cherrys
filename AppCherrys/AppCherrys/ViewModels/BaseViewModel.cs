@@ -7,12 +7,13 @@ using Xamarin.Forms;
 
 using AppCherrys.Models;
 using AppCherrys.Services;
+using AppCherrys.Models.Tablon;
 
 namespace AppCherrys.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
     {
-        public IDataStore<Item> DataStore => DependencyService.Get<IDataStore<Item>>() ?? new MockDataStore();
+        public IDataStore<Anuncio> DataStore => DependencyService.Get<IDataStore<Anuncio>>() ?? new MockDataStore();
 
         bool isBusy = false;
         public bool IsBusy
