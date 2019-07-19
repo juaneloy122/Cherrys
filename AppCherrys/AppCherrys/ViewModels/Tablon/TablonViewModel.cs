@@ -8,24 +8,25 @@ using Xamarin.Forms;
 using AppCherrys.Models;
 using AppCherrys.Views;
 using AppCherrys.Models.Tablon;
+using AppCherrys.Views.Tablon;
 
 namespace AppCherrys.ViewModels.Tablon
 {
     public class TablonViewModel : BaseViewModel
     {
-        public ObservableCollection<Anuncio> Items { get; set; }
+        public ObservableCollection<Anuncio> Anuncios { get; set; }
         public Command LoadItemsCommand { get; set; }
 
         public TablonViewModel()
         {
             Title = "Tablón";
-            Items = new ObservableCollection<Anuncio>();
+            Anuncios = new ObservableCollection<Anuncio>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NewItemPage, Anuncio>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NuevoAnuncioView, Anuncio>(this, "AddItem", async (obj, item) =>
             {
                 var newItem = item as Anuncio;
-                Items.Add(newItem);
+                Anuncios.Add(newItem);
                 await DataStore.AddItemAsync(newItem);
             });
         }
@@ -39,11 +40,11 @@ namespace AppCherrys.ViewModels.Tablon
 
             try
             {
-                Items.Clear();
+                Anuncios.Clear();
                 var items = await DataStore.GetItemsAsync(true);
                 foreach (var item in items)
                 {
-                    Items.Add(item);
+                    Anuncios.Add(item);
                 }
             }
             catch (Exception ex)

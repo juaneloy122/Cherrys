@@ -26,6 +26,9 @@
     <Compile Update="Views\Tablon\AnuncioDetalleView.xaml.cs">
       <DependentUpon>AnuncioDetalleView.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\Tablon\NuevoAnuncioView.xaml.cs">
+      <DependentUpon>NuevoAnuncioView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\Tablon\TablonView.xaml.cs">
       <DependentUpon>TablonView.xaml</DependentUpon>
     </Compile>

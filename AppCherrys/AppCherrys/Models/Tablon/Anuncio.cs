@@ -10,6 +10,8 @@ namespace AppCherrys.Models.Tablon
     public class Anuncio
     {
         public int Id { get; set; }
+        public string Cabecera => FechaPublicacion.ToShortDateString() + " (" + IdUsuarioPublicacion + ") " + Titulo;
+
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
 
