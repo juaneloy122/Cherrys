@@ -18,7 +18,7 @@ namespace AppCherrys.ViewModels.Tablon
 
         public TablonViewModel()
         {
-            Title = "Browse";
+            Title = "Tablón";
             Items = new ObservableCollection<Anuncio>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 

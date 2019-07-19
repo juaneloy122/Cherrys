@@ -6,10 +6,10 @@
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.Tablon.TablonView"
              Title="{Binding Title}"
-             x:Name="BrowseItemsPage">
+             >
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+        <ToolbarItem Text="Añadir" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <StackLayout>
@@ -34,7 +34,7 @@
             </d:ListView.ItemsSource>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <ViewCell>
+                    <ViewCell>                        
                         <StackLayout Padding="10">
                             <Label Text="{Binding Text}" 
                                 d:Text="{Binding .}"

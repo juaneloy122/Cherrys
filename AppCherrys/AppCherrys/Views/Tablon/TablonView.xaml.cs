@@ -11,6 +11,7 @@ using AppCherrys.Models;
 using AppCherrys.Views;
 using AppCherrys.ViewModels;
 using AppCherrys.ViewModels.Tablon;
+using AppCherrys.Models.Tablon;
 
 namespace AppCherrys.Views.Tablon
 {
@@ -29,7 +30,7 @@ namespace AppCherrys.Views.Tablon
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
         {
-            var item = args.SelectedItem as Item;
+            var item = args.SelectedItem as Anuncio;
             if (item == null)
                 return;
 

@@ -1,15 +1,16 @@
 ﻿using System;
 
 using AppCherrys.Models;
+using AppCherrys.Models.Tablon;
 
 namespace AppCherrys.ViewModels.Tablon
 {
     public class AnuncioDetalleViewModel : BaseViewModel
     {
-        public Item Item { get; set; }
-        public AnuncioDetalleViewModel(Item item = null)
+        public Anuncio Item { get; set; }
+        public AnuncioDetalleViewModel(Anuncio item = null)
         {
-            Title = item?.Text;
+            Title = item?.Titulo;
             Item = item;
         }
     }
