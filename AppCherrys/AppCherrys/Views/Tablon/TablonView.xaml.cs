@@ -42,14 +42,14 @@ namespace AppCherrys.Views.Tablon
 
         async void AddItem_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+            await Navigation.PushModalAsync(new NavigationPage(new NuevoAnuncioView()));
         }
 
         protected override void OnAppearing()
         {
             base.OnAppearing();
 
-            if (viewModel.Items.Count == 0)
+            if (viewModel.Anuncios.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
     }
