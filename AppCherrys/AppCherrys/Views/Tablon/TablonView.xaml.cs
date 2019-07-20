@@ -1,21 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using AppCherrys.Models;
-using AppCherrys.Views;
-using AppCherrys.ViewModels;
+﻿using AppCherrys.Models.Tablon;
 using AppCherrys.ViewModels.Tablon;
-using AppCherrys.Models.Tablon;
+using System;
+using System.ComponentModel;
+using Xamarin.Forms;
 
 namespace AppCherrys.Views.Tablon
 {
-    
+
     [DesignTimeVisible(false)]
     public partial class TablonView : ContentPage
     {

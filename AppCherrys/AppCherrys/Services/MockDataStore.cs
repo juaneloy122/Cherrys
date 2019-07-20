@@ -4,62 +4,51 @@ using System.Linq;
 using System.Threading.Tasks;
 using AppCherrys.Models;
 using AppCherrys.Models.Tablon;
+using CommonLib.Interfaces;
 
 namespace AppCherrys.Services
 {
-    public class MockDataStore : IDataStore<Anuncio>
+    public class MockDataStore <T>: IDataStore<T> where T: IItem
     {
-        List<Anuncio> Anuncios;
+        protected  List<T> Items;
 
         public MockDataStore()
         {
-            Anuncios = new List<Anuncio>();
-            var mockItems = new List<Anuncio>
-            {
-                new Anuncio { Id = 1, Titulo = "Visita a Kikiricoop", Descripcion="Los chic@s de esta cooperativa asturiana nos muestran su proceso industrial y estudiamos las posibilidades de mejora.", IdUsuarioPublicacion = "Jose", FechaPublicacion = DateTime.Now.AddDays (-3) },
-                new Anuncio { Id = 2, Titulo = "Local de Noreña concedido", Descripcion="A la cuarta, por fín Juan consiguió poner el papel en su lugar ;)." , IdUsuarioPublicacion = "Toño", FechaPublicacion = DateTime.Now.AddMonths (-1) },
-                new Anuncio { Id = 3, Titulo = "Fran ya tiene una FPGA para pruebas",Descripcion="Fran libera Trello y hace focus en FPGA + Microchip with Wifi." , IdUsuarioPublicacion = "Javi", FechaPublicacion = DateTime.Now.AddDays (-7) }
-
-            };
-
-            foreach (var Anuncio in mockItems)
-            {
-                Anuncios.Add(Anuncio);
-            }
+           
         }
 
-        public async Task<bool> AddItemAsync(Anuncio anuncio)
+        public async Task<bool> AddItemAsync(T anuncio)
         {
-            Anuncios.Add(anuncio);
+            Items.Add(anuncio);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> UpdateItemAsync(Anuncio anuncio)
+        public async Task<bool> UpdateItemAsync(T anuncio)
         {
-            var oldItem = Anuncios.Where((Anuncio arg) => arg.Id == anuncio.Id).FirstOrDefault();
-            Anuncios.Remove(oldItem);
-            Anuncios.Add(anuncio);
+            var oldItem = Items.Where((T arg) => arg.Id == anuncio.Id).FirstOrDefault();
+            Items.Remove(oldItem);
+            Items.Add(anuncio);
 
             return await Task.FromResult(true);
         }
 
         public async Task<bool> DeleteItemAsync(int id)
         {
-            var oldItem = Anuncios.Where((Anuncio arg) => arg.Id == id).FirstOrDefault();
-            Anuncios.Remove(oldItem);
+            var oldItem = Items.Where((T arg) => arg.Id == id).FirstOrDefault();
+            Items.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Anuncio> GetItemAsync(int id)
+        public async Task<T> GetItemAsync(int id)
         {
-            return await Task.FromResult(Anuncios.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(Items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Anuncio>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false)
         {
-            return await Task.FromResult(Anuncios);
+            return await Task.FromResult(Items);
         }
     }
 }

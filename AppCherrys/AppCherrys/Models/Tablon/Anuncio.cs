@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonLib.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -7,7 +8,7 @@ namespace AppCherrys.Models.Tablon
     /// <summary>
     /// Anuncios publicados en el tablón de inicio
     /// </summary>
-    public class Anuncio
+    public class Anuncio:IItem
     {
         public int Id { get; set; }
         public string Cabecera => FechaPublicacion.ToShortDateString() + " (" + IdUsuarioPublicacion + ") " + Titulo;

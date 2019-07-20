@@ -9,11 +9,14 @@ using AppCherrys.Models;
 using AppCherrys.Views;
 using AppCherrys.Models.Tablon;
 using AppCherrys.Views.Tablon;
+using AppCherrys.Services;
 
 namespace AppCherrys.ViewModels.Tablon
 {
     public class TablonViewModel : BaseViewModel
     {
+        public IDataStore<Anuncio> DataStore => DependencyService.Get<IDataStore<Anuncio>>() ?? new MockDataAnuncios();
+
         public ObservableCollection<Anuncio> Anuncios { get; set; }
         public Command LoadItemsCommand { get; set; }
 

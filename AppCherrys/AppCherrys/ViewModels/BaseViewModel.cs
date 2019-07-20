@@ -12,9 +12,7 @@ using AppCherrys.Models.Tablon;
 namespace AppCherrys.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
-    {
-        public IDataStore<Anuncio> DataStore => DependencyService.Get<IDataStore<Anuncio>>() ?? new MockDataStore();
-
+    {        
         bool isBusy = false;
         public bool IsBusy
         {

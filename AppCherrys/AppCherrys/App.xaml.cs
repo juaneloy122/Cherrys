@@ -21,7 +21,7 @@ namespace AppCherrys
             InitializeComponent();
 
             if (UseMockDataStore)
-                DependencyService.Register<MockDataStore>();
+                DependencyService.Register<MockDataAnuncios>();
             else
                 DependencyService.Register<AzureDataStore>();
             MainPage = new MainPage();
