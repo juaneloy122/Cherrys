@@ -9,6 +9,11 @@ namespace CommonLib.Interfaces
         string Titulo { get; set; }
 
         string Descripcion { get; set; }
+
+        /// <summary>
+        /// Quien crea el item
+        /// </summary>
+        string IdUsuario { get; set; }
     }
 }
 

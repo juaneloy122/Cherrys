@@ -18,5 +18,10 @@ namespace AppCherrys.Models.Acta
         public string RutaDocumento { get; set; }
 
         public List <string> RutaAdjuntos { get; set; }
+
+        /// <summary>
+        /// Quien sube el acta
+        /// </summary>
+        public string IdUsuario { get; set; }
     }
 }

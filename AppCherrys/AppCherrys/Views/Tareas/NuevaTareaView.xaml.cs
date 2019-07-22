@@ -1,25 +1,27 @@
-﻿using System;
+﻿using AppCherrys.Constantes;
+using AppCherrys.Models.Tarea;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-using AppCherrys.Models;
-using AppCherrys.Models.Tablon;
-using AppCherrys.Constantes;
-
-namespace AppCherrys.Views.Tablon
+namespace AppCherrys.Views.Tareas
 {
     [DesignTimeVisible(false)]
-    public partial class NuevoAnuncioView : ContentPage
+    public partial class NuevaTareaView : ContentPage
     {
-        public Anuncio Item { get; set; }
+        public Tarea Item { get; set; }
 
-        public NuevoAnuncioView()
+        public NuevaTareaView()
         {
             InitializeComponent();
 
-            Item = new Anuncio
+            Item = new Tarea
             {
                 Titulo = "Nombre",
                 Descripcion = "Descripcion."
@@ -30,9 +32,9 @@ namespace AppCherrys.Views.Tablon
 
         async void Guardar_Clicked(object sender, EventArgs e)
         {
-            Item.FechaPublicacion = DateTime.Now;
+            Item.FechaInicio = DateTime.Now;
             Item.IdUsuario = "Toño"; //Cambiar esto por el usuario logeado
-            MessagingCenter.Send(this, EnumEventos.AddAnuncio.ToString (), Item);
+            MessagingCenter.Send(this, EnumEventos.AddTarea.ToString (), Item);
             await Navigation.PopModalAsync();
         }
 

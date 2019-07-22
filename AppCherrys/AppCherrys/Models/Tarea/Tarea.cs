@@ -13,6 +13,14 @@ namespace AppCherrys.Models.Tarea
     {
         public int Id { get; set; }
         public string Titulo { get; set; }
+
+        /// <summary>
+        /// Quién crea la tarea
+        /// </summary>
+        public string IdUsuario { get; set; }
+        /// <summary>
+        /// Usuarios asignados para hacer la tarea
+        /// </summary>
         public List<string> IdUsuariosAsignado { get; set; }
         public string Descripcion { get; set; }
 

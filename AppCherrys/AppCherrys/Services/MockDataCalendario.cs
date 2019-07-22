@@ -1,4 +1,5 @@
 ﻿using AppCherrys.Models.Calendario;
+using System;
 using System.Collections.Generic;
 
 namespace AppCherrys.Services
@@ -11,9 +12,9 @@ namespace AppCherrys.Services
             Items = new List<Evento>();
             var mockItems = new List<Evento>
             {
-                //new Acta { Id = 1, Titulo = "Visita a Kikiricoop", Descripcion="Los chic@s de esta cooperativa asturiana nos muestran su proceso industrial y estudiamos las posibilidades de mejora.", IdUsuarioPublicacion = "Jose", FechaPublicacion = DateTime.Now.AddDays (-3) },
-                //new Acta { Id = 2, Titulo = "Local de Noreña concedido", Descripcion="A la cuarta, por fín Juan consiguió poner el papel en su lugar ;)." , IdUsuarioPublicacion = "Toño", FechaPublicacion = DateTime.Now.AddMonths (-1) },
-                //new Acta { Id = 3, Titulo = "Fran ya tiene una FPGA para pruebas",Descripcion="Fran libera Trello y hace focus en FPGA + Microchip with Wifi." , IdUsuarioPublicacion = "Javi", FechaPublicacion = DateTime.Now.AddDays (-7) }
+                new Evento { Id = 1, Titulo = "Reunión de Cherrys", Descripcion="Reunión rutinaria", IdUsuario = "Toño",FechaInicio = DateTime.Now.AddDays (-3), FechaFin = DateTime.Now.AddDays (5) },
+                new Evento { Id = 2, Titulo = "Visita Cabranes", Descripcion="Visita a Kikiricoop para que nos cuenten como hacen lo que hacen" , IdUsuario = "Juan", FechaInicio = DateTime.Now.AddMonths (-1), FechaFin = DateTime.Now.AddDays (5) },
+                new Evento { Id = 3, Titulo = "Inaguración local",Descripcion="Pantalla sencillina de login para logearse al entrar en la aplicación" , IdUsuario = "Josu", FechaInicio = DateTime.Now.AddDays (-7), FechaFin = DateTime.Now.AddDays (5) }
 
             };
 

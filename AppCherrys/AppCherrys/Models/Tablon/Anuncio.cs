@@ -11,12 +11,12 @@ namespace AppCherrys.Models.Tablon
     public class Anuncio:IItem
     {
         public int Id { get; set; }
-        public string Cabecera => FechaPublicacion.ToShortDateString() + " (" + IdUsuarioPublicacion + ") " + Titulo;
+        public string Cabecera => FechaPublicacion.ToShortDateString() + " (" + IdUsuario + ") " + Titulo;
 
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
 
         public DateTime FechaPublicacion { get; set; }
-        public string IdUsuarioPublicacion { get; set; }
+        public string IdUsuario { get; set; }
     }
 }

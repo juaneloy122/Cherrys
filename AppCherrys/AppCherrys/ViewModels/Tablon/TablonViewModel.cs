@@ -10,6 +10,7 @@ using AppCherrys.Views;
 using AppCherrys.Models.Tablon;
 using AppCherrys.Views.Tablon;
 using AppCherrys.Services;
+using AppCherrys.Constantes;
 
 namespace AppCherrys.ViewModels.Tablon
 {
@@ -26,7 +27,7 @@ namespace AppCherrys.ViewModels.Tablon
             Anuncios = new ObservableCollection<Anuncio>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NuevoAnuncioView, Anuncio>(this, "AddItem", async (obj, item) =>
+            MessagingCenter.Subscribe<NuevoAnuncioView, Anuncio>(this, EnumEventos.AddAnuncio.ToString (), async (obj, item) =>
             {
                 var newItem = item as Anuncio;
                 Anuncios.Add(newItem);
