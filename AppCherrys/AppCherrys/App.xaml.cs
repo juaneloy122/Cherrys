@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AppCherrys.Services;
 using AppCherrys.Views;
+using System.Threading.Tasks;
 
 namespace AppCherrys
 {
@@ -24,7 +25,7 @@ namespace AppCherrys
                 DependencyService.Register<MockDataAnuncios>();
             else
                 DependencyService.Register<AzureDataStore>();
-            MainPage = new MainPage();
+            MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
         }
 
         protected override void OnStart()
