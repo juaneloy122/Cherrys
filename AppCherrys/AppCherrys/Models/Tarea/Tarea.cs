@@ -11,6 +11,7 @@ namespace AppCherrys.Models.Tarea
     /// </summary>
     public class Tarea : IItem
     {
+        public string Cabecera => FechaInicio.ToShortDateString() + " (" + IdUsuario + ") " + Titulo;
         public int Id { get; set; }
         public string Titulo { get; set; }
 

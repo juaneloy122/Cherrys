@@ -10,6 +10,7 @@ namespace AppCherrys.Models.Calendario
     /// </summary>
     public class Evento : IItem
     {
+        public string Cabecera => FechaInicio.ToShortDateString() + " (" + IdUsuario + ") " + Titulo;
         public int Id { get; set; }
         public string Titulo { get; set; }
         public string Descripcion { get; set; }
