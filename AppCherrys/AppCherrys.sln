@@ -3,15 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCherrys.UWP", "AppCherrys\AppCherrys.UWP\AppCherrys.UWP.csproj", "{20C5FA89-D5BF-4131-BD8A-F9E966840E84}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCherrys.UWP", "AppCherrys.UWP\AppCherrys.UWP.csproj", "{20C5FA89-D5BF-4131-BD8A-F9E966840E84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCherrys.Android", "AppCherrys\AppCherrys.Android\AppCherrys.Android.csproj", "{0016462F-6C03-4E82-881D-1912A6D485CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCherrys.Android", "AppCherrys.Android\AppCherrys.Android.csproj", "{0016462F-6C03-4E82-881D-1912A6D485CE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCherrys.iOS", "AppCherrys\AppCherrys.iOS\AppCherrys.iOS.csproj", "{943991D7-394A-4A25-9B70-394B05C75F6B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCherrys.iOS", "AppCherrys.iOS\AppCherrys.iOS.csproj", "{943991D7-394A-4A25-9B70-394B05C75F6B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCherrys.MobileAppService", "AppCherrys\AppCherrys.MobileAppService\AppCherrys.MobileAppService.csproj", "{C69F0E78-CB07-4B0E-8260-B5F0AD73F1AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppCherrys.MobileAppService", "AppCherrys.MobileAppService\AppCherrys.MobileAppService.csproj", "{C69F0E78-CB07-4B0E-8260-B5F0AD73F1AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AppCherrys", "AppCherrys\AppCherrys\AppCherrys.csproj", "{9C646390-3CC7-4C9A-8410-0999278D8142}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppCherrys", "AppCherrys\AppCherrys.csproj", "{9C646390-3CC7-4C9A-8410-0999278D8142}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Cliente", "Cliente", "{B3F3A2E4-C1FF-42CB-BC19-90964F0051AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servidor", "Servidor", "{CA7D5A65-F93C-4B1C-B618-B347FE0B0D77}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Comun", "Comun", "{2CC39932-C3C5-40A7-BF64-DF084511A46D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLib", "CommonLib\CommonLib.csproj", "{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -209,9 +217,41 @@ Global
 		{9C646390-3CC7-4C9A-8410-0999278D8142}.Release|x86.ActiveCfg = Release|Any CPU
 		{9C646390-3CC7-4C9A-8410-0999278D8142}.Release|x86.Build.0 = Release|Any CPU
 		{9C646390-3CC7-4C9A-8410-0999278D8142}.Release|x86.Deploy.0 = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|ARM.Build.0 = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|iPhone.Build.0 = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|x64.Build.0 = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Debug|x86.Build.0 = Debug|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|ARM.ActiveCfg = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|ARM.Build.0 = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|iPhone.Build.0 = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|x64.ActiveCfg = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|x64.Build.0 = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|x86.ActiveCfg = Release|Any CPU
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{20C5FA89-D5BF-4131-BD8A-F9E966840E84} = {B3F3A2E4-C1FF-42CB-BC19-90964F0051AC}
+		{0016462F-6C03-4E82-881D-1912A6D485CE} = {B3F3A2E4-C1FF-42CB-BC19-90964F0051AC}
+		{943991D7-394A-4A25-9B70-394B05C75F6B} = {B3F3A2E4-C1FF-42CB-BC19-90964F0051AC}
+		{C69F0E78-CB07-4B0E-8260-B5F0AD73F1AD} = {CA7D5A65-F93C-4B1C-B618-B347FE0B0D77}
+		{9C646390-3CC7-4C9A-8410-0999278D8142} = {B3F3A2E4-C1FF-42CB-BC19-90964F0051AC}
+		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60} = {2CC39932-C3C5-40A7-BF64-DF084511A46D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5E6F3FE-C58C-4FD0-8942-8F4A0FED487E}
