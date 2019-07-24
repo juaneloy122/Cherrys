@@ -1,95 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-            mc:Ignorable="d"
-            xmlns:views="clr-namespace:AppCherrys.Views.Tablon"
-            xmlns:views1="clr-namespace:AppCherrys.Views"
-            xmlns:views2="clr-namespace:AppCherrys.Views.Tareas"
-            xmlns:views3="clr-namespace:AppCherrys.Views.Chat"
-            xmlns:views4="clr-namespace:AppCherrys.Views.Doodle"
-            xmlns:views5="clr-namespace:AppCherrys.Views.Actas"
-            xmlns:views6="clr-namespace:AppCherrys.Views.Calendario"
+                  xmlns:views="clr-namespace:AppCherrys.Views"
+                  xmlns:views1="clr-namespace:AppCherrys.Views.Tablon"
+                  mc:Ignorable="d"            
             x:Class="AppCherrys.Views.MainPage">
 
-    <TabbedPage.Children>
-        <NavigationPage Title="Tablón">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views:TablonView />
-            </x:Arguments>
-        </NavigationPage>
-
-        <NavigationPage Title="Tareas">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views2:TareasView />
-            </x:Arguments>
-        </NavigationPage>
-
-        <NavigationPage Title="Calendario">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views6:CalendarioView />
-            </x:Arguments>
-        </NavigationPage>
-
-        <NavigationPage Title="Actas">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views5:ActasView />
-            </x:Arguments>
-        </NavigationPage>
-
-        <NavigationPage Title="Doodle">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views4:DoodleView />
-            </x:Arguments>
-        </NavigationPage>
-
-        <NavigationPage Title="Chat">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_feed.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views3:ChatView />
-            </x:Arguments>
-        </NavigationPage>
-
-        <NavigationPage Title="Quienes somos">
-            <NavigationPage.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="iOS" Value="tab_about.png"/>
-                </OnPlatform>
-            </NavigationPage.Icon>
-            <x:Arguments>
-                <views1:AboutPage />
-            </x:Arguments>
-        </NavigationPage>
-    </TabbedPage.Children>
+    <MasterDetailPage.Master>
+        <views:MasterPage x:Name="masterPage" />
+    </MasterDetailPage.Master>
     
-</TabbedPage>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+            <x:Arguments>
+                <views1:TablonView />
+            </x:Arguments>
+        </NavigationPage>        
+       
+    </MasterDetailPage.Detail>
+    
+</MasterDetailPage>
