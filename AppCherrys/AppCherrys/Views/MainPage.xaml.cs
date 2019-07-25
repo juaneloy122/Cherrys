@@ -16,10 +16,13 @@ namespace AppCherrys.Views
 
             masterPage.listView.ItemSelected += OnItemSelected;
 
-            if (Device.RuntimePlatform == Device.UWP)
-            {
-                MasterBehavior = MasterBehavior.Popover;
-            }
+            //Este código es el que hace que en Universal Windows se oculte el menú izquierdo
+            //pero cuando selecciono una vista, deja de aparecer el menú, por eso lo deshabilité,
+            //porque con tal de que lo haga bien en IOS y Android suficiente.
+            //if (Device.RuntimePlatform == Device.UWP)
+            //{
+            //    MasterBehavior = MasterBehavior.Popover;
+            //}
         }
 
         void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
