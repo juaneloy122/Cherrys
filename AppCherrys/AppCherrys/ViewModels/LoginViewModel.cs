@@ -12,7 +12,7 @@ namespace AppCherrys.ViewModels
     {
         #region Atributos y propiedades
 
-       
+
         private string _username;
         private string _password;
         private bool _areCredentialsInvalid;
@@ -36,6 +36,18 @@ namespace AppCherrys.ViewModels
                 if (value == _password) return;
                 _password = value;
                 OnPropertyChanged(nameof(Password));
+            }
+        }
+
+        private IntPtr _passwordEncriptada;
+        public IntPtr PasswordEncriptada
+        {
+            get => _passwordEncriptada;
+            set
+            {
+                if (value == _passwordEncriptada) return;
+                _passwordEncriptada = value;
+                OnPropertyChanged(nameof(PasswordEncriptada));
             }
         }
 
@@ -78,25 +90,62 @@ namespace AppCherrys.ViewModels
         #region Metodos
         private bool UserAuthenticated(string username, string password)
         {
-
-            return true;
+            // variable que se retorna para comprobar si se ha validado correctamente o no.
+            //  en estos momentos se retorna siempre por defecto "True" y no la variable.
+            bool autenticadoCorrectamente = false;
 
 
             if (string.IsNullOrEmpty(username)
                 || string.IsNullOrEmpty(password))
             {
-                return false;
+                autenticadoCorrectamente = false;
             }
+            else
+            {
+                //A modo de prueba se realiza la encriptación de la contraseña insertada por el usuario, que se comprobará con la que
+                //  exista (también encriptada en la BBDD)
 
+                PasswordEncriptada = Encriptar(password);
+                Password = Desencriptar(PasswordEncriptada);
 
+                autenticadoCorrectamente = true;
+            }
 
             //Aquí cuando este listo habrá que meter la llamada al servicio para que autentique al usuario
             return true;
         }
 
+        private IntPtr Encriptar(string passSinEncriptar)
+		{
+			IntPtr unmanagedString = IntPtr.Zero;
+			try
+			{
+				unmanagedString = System.Runtime.InteropServices.Marshal.StringToHGlobalUni(passSinEncriptar);
+                return unmanagedString;
+			}
+            catch
+            {
+                throw new Exception("Error al encriptar");
+            }
+		}
+
+        private string Desencriptar(IntPtr passEncriptada)
+        {
+           string unmanagedString = string.Empty;
+            try
+            {
+                unmanagedString = System.Runtime.InteropServices.Marshal.PtrToStringUni(passEncriptada);
+                return unmanagedString;
+            }
+            catch
+            {
+                throw new Exception("Error al desencriptar");
+            }
+        }
+
         #endregion
 
-      
+
         protected virtual void OnPropertyChanged(string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
