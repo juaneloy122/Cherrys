@@ -14,11 +14,11 @@
     </MasterDetailPage.Master>
     
     <MasterDetailPage.Detail>
-        <NavigationPage>            
-            <x:Arguments>
+        <!--<NavigationPage>            
+            <x:Arguments>-->
                 <views1:TablonView />
-            </x:Arguments>
-        </NavigationPage>
+            <!--</x:Arguments>
+        </NavigationPage>-->
     </MasterDetailPage.Detail>
     
 </MasterDetailPage>

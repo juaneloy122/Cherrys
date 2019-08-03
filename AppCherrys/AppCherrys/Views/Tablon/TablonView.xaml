@@ -21,18 +21,28 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="10">
-                                <Label Text="{Binding Cabecera}" 
-                                d:Text="{Binding .}"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16"/>
-                                <Label Text="{Binding Descripcion}" 
+                            <Grid Padding="10">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60"/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Image Grid.Column="0" Source="logoCherrys.png" VerticalOptions="Start" HorizontalOptions="Start"/>
+                                <StackLayout Grid.Column="1">
+                                    <Grid Padding="0">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="6*"/>
+                                            <ColumnDefinition Width="85"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Text="{Binding Titulo}" VerticalTextAlignment="Start"/>
+                                        <Label Grid.Column="1" Text="{Binding FechaPublicacion, StringFormat='{0:dd/mm/yyyy}'}" VerticalTextAlignment="Start" HorizontalTextAlignment="Start"/>
+                                    </Grid>
+                                    <Label Grid.Column="1" Grid.Row="1" Text="{Binding IdUsuario}"/>
+                                    <Label Text="{Binding Descripcion}" 
                                 d:Text="Item description"
-                                LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-                            </StackLayout>
+                                </StackLayout>
+                            </Grid>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
@@ -43,7 +53,7 @@
             AbsoluteLayout.LayoutFlags="PositionProportional"
             Clicked="AddItem_Clicked"
             Text="+"
-            FontSize="Large"
+            FontSize="Medium"
             FontAttributes="Bold"
             CornerRadius="100"/>
     </AbsoluteLayout>
