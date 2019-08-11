@@ -28,7 +28,7 @@ namespace AppCherrys.MobileAppService
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
+                c.SwaggerDoc("v1", new Info { Title = "API de acceso a datos Kumquat", Version = "v1", Description = "Loggin de usuarios, servidor de anuncios, eventos, actas..." });
             });
         }
 
@@ -49,7 +49,8 @@ namespace AppCherrys.MobileAppService
             app.UseSwagger();
             app.UseSwaggerUI(c =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API de acceso a datos Kumquat");
+                c.RoutePrefix = string.Empty;
             });
         }
     }
