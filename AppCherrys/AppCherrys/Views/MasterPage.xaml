@@ -29,8 +29,7 @@
                         <views:MasterPageItem Title="Quienes somos" IconSource="reminders.png" TargetType="{x:Type views:AboutPage}" />
                     </x:Array>
                 </ListView.ItemsSource>
-
-
+ 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -45,7 +44,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
