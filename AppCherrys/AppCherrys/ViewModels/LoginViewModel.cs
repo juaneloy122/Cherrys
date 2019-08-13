@@ -78,7 +78,7 @@ namespace AppCherrys.ViewModels
 
                 if (AreCredentialsInvalid) return;
 
-                navigation.PushAsync(new NavigationPage(new MainPage()));
+                navigation.PushAsync(new MainPage());
 
             });
 
