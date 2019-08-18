@@ -5,6 +5,8 @@ using Xamarin.Forms.Xaml;
 using AppCherrys.Services;
 using AppCherrys.Views;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using AppCherrys.Constantes.Localization;
 
 namespace AppCherrys
 {
@@ -31,6 +33,12 @@ namespace AppCherrys
         protected override void OnStart()
         {
             // Handle when your app starts
+            Localization.Current.OnCultureChanged += (culture) =>
+            {
+                Messages.Culture = culture;
+            };
+
+            Localization.Current.EnsureDeviceOrDefaultCulture(defaultCultureName: "es", availableCultures: new[] { "es", "en", "as" });
         }
 
         protected override void OnSleep()

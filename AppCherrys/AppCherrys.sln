@@ -19,7 +19,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Servidor", "Servidor", "{CA
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Comun", "Comun", "{2CC39932-C3C5-40A7-BF64-DF084511A46D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommonLib", "CommonLib\CommonLib.csproj", "{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommonLib", "CommonLib\CommonLib.csproj", "{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -254,6 +254,7 @@ Global
 		{7FFE1076-D1E8-4A18-A0B0-F0FC3ECA4D60} = {2CC39932-C3C5-40A7-BF64-DF084511A46D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_NeutralResourcesLanguage = es-ES
 		SolutionGuid = {E5E6F3FE-C58C-4FD0-8942-8F4A0FED487E}
 	EndGlobalSection
 EndGlobal
