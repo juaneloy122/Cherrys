@@ -1,11 +1,10 @@
-﻿using AppCherrys.Models.Tablon;
+﻿using CommonLib.Models.Tablon;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace AppCherrys.Services
 {
-    public class MockDataAnuncios:MockDataStore<Anuncio>
+    public class MockDataAnuncios : MockDataStore<Anuncio>
     {
         public MockDataAnuncios()
         {

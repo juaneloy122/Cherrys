@@ -1,26 +1,27 @@
-﻿using System;
+﻿using CommonLib.Models.Tablon;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-using Newtonsoft.Json;
 using Xamarin.Essentials;
-using AppCherrys.Models;
-using AppCherrys.Models.Tablon;
 
 namespace AppCherrys.Services
 {
     public class AzureDataStore : IDataStore<Anuncio>
     {
-        HttpClient client;
-        IEnumerable<Anuncio> items;
+        readonly HttpClient Cliente;
+        IEnumerable<Anuncio> Items;
 
         public AzureDataStore()
         {
-            client = new HttpClient();
-            client.BaseAddress = new Uri($"{App.AzureBackendUrl}/");
+            Cliente = new HttpClient
+            {
+                BaseAddress = new Uri($"{App.AzureBackendUrl}/")
+            };
 
-            items = new List<Anuncio>();
+            Items = new List<Anuncio>();
         }
 
         bool IsConnected => Connectivity.NetworkAccess == NetworkAccess.Internet;
@@ -28,18 +29,18 @@ namespace AppCherrys.Services
         {
             if (forceRefresh && IsConnected)
             {
-                var json = await client.GetStringAsync($"api/item");
-                items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Anuncio>>(json));
+                var json = await Cliente.GetStringAsync($"api/item");
+                Items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Anuncio>>(json));
             }
 
-            return items;
+            return Items;
         }
 
         public async Task<Anuncio> GetItemAsync(int id)
         {
             if (id >= 0 && IsConnected)
             {
-                var json = await client.GetStringAsync($"api/item/{id}");
+                var json = await Cliente.GetStringAsync($"api/item/{id}");
                 return await Task.Run(() => JsonConvert.DeserializeObject<Anuncio>(json));
             }
 
@@ -53,7 +54,7 @@ namespace AppCherrys.Services
 
             var serializedItem = JsonConvert.SerializeObject(item);
 
-            var response = await client.PostAsync($"api/item", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
+            var response = await Cliente.PostAsync($"api/item", new StringContent(serializedItem, Encoding.UTF8, "application/json"));
 
             return response.IsSuccessStatusCode;
         }
@@ -67,17 +68,17 @@ namespace AppCherrys.Services
             var buffer = Encoding.UTF8.GetBytes(serializedItem);
             var byteContent = new ByteArrayContent(buffer);
 
-            var response = await client.PutAsync(new Uri($"api/item/{item.Id}"), byteContent);
+            var response = await Cliente.PutAsync(new Uri($"api/item/{item.Id}"), byteContent);
 
             return response.IsSuccessStatusCode;
         }
 
         public async Task<bool> DeleteItemAsync(int id)
         {
-            if (id<0 || !IsConnected)
+            if (id < 0 || !IsConnected)
                 return false;
 
-            var response = await client.DeleteAsync($"api/item/{id}");
+            var response = await Cliente.DeleteAsync($"api/item/{id}");
 
             return response.IsSuccessStatusCode;
         }

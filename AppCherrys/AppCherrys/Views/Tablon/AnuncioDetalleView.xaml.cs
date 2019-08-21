@@ -7,6 +7,7 @@ using AppCherrys.Models;
 using AppCherrys.ViewModels;
 using AppCherrys.ViewModels.Tablon;
 using AppCherrys.Models.Tablon;
+using CommonLib.Models.Tablon;
 
 namespace AppCherrys.Views.Tablon
 {
