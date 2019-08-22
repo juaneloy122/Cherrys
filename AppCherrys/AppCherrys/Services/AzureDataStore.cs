@@ -29,7 +29,8 @@ namespace AppCherrys.Services
         {
             if (forceRefresh && IsConnected)
             {
-                var json = await Cliente.GetStringAsync($"api/item");
+                //var json = await Cliente.GetStringAsync($"api/item");
+                var json = await Cliente.GetStringAsync("https://localhost:44300/");
                 Items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Anuncio>>(json));
             }
 
