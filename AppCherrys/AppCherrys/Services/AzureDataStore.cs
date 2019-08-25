@@ -27,6 +27,15 @@ namespace AppCherrys.Services
         bool IsConnected => Connectivity.NetworkAccess == NetworkAccess.Internet;
         public async Task<IEnumerable<Anuncio>> GetItemsAsync(bool forceRefresh = false)
         {
+            /*pruebas*/
+            IAppCherrysClient cliente = new AppCherrysClient();
+
+            IList<AppCherrys.Models.Anuncio> anuncios = AppCherrysClientExtensions.List (cliente);
+
+
+
+            /************************/
+
             if (forceRefresh && IsConnected)
             {
                 //var json = await Cliente.GetStringAsync($"api/item");

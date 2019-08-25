@@ -51,7 +51,7 @@ namespace AppCherrys
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        protected AppCherrysClient(params DelegatingHandler[] handlers) : base(handlers)
+        public AppCherrysClient(params DelegatingHandler[] handlers) : base(handlers)
         {
             this.Initialize();
         }
@@ -228,7 +228,7 @@ namespace AppCherrys
         /// </summary>
         private void Initialize()
         {
-            this.BaseUri = new Uri("http://localhost");
+            this.BaseUri = new Uri($"{App.AzureBackendUrl}/");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented,
