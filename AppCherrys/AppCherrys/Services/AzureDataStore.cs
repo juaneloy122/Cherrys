@@ -1,4 +1,5 @@
 ﻿using CommonLib.Models.Tablon;
+using Microsoft.Rest;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,7 @@ namespace AppCherrys.Services
         public async Task<IEnumerable<Anuncio>> GetItemsAsync(bool forceRefresh = false)
         {
             /*pruebas*/
+           // ServiceClientCredentials serviceClientCredentials = new
             IAppCherrysClient cliente = new AppCherrysClient();
 
             IList<AppCherrys.Models.Anuncio> anuncios = AppCherrysClientExtensions.List (cliente);

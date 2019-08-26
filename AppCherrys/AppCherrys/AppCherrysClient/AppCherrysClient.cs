@@ -228,7 +228,7 @@ namespace AppCherrys
         /// </summary>
         private void Initialize()
         {
-            this.BaseUri = new Uri($"{App.AzureBackendUrl}/");
+            this.BaseUri = new Uri($"{App.AzureBackendUrl}/api/item");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented,
