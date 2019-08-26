@@ -51,7 +51,11 @@ namespace AppCherrys
         /// <param name='handlers'>
         /// Optional. The delegating handlers to add to the http client pipeline.
         /// </param>
-        public AppCherrysClient(params DelegatingHandler[] handlers) : base(handlers)
+        protected AppCherrysClient(params DelegatingHandler[] handlers) : base(handlers)
+        {
+            this.Initialize();
+        }
+        public AppCherrysClient() : base()
         {
             this.Initialize();
         }
@@ -228,7 +232,7 @@ namespace AppCherrys
         /// </summary>
         private void Initialize()
         {
-            this.BaseUri = new Uri($"{App.AzureBackendUrl}/api/item");
+            this.BaseUri = new Uri($"{App.AzureBackendUrl}");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented,
@@ -312,7 +316,16 @@ namespace AppCherrys
                 ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
             }
             cancellationToken.ThrowIfCancellationRequested();
-            _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            try
+            {
+                _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw;
+            }
+           
             if (_shouldTrace)
             {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
