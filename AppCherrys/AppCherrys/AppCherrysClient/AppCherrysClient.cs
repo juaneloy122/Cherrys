@@ -228,7 +228,7 @@ namespace AppCherrys
         /// </summary>
         private void Initialize()
         {
-            this.BaseUri = new Uri($"{App.AzureBackendUrl}/api/item");
+            this.BaseUri = new Uri($"{App.AzureBackendUrl}");
             SerializationSettings = new JsonSerializerSettings
             {
                 Formatting = Formatting.Indented,
@@ -312,7 +312,17 @@ namespace AppCherrys
                 ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
             }
             cancellationToken.ThrowIfCancellationRequested();
-            _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            try
+            {
+                ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
+                _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+            
             if (_shouldTrace)
             {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
@@ -364,6 +374,11 @@ namespace AppCherrys
                 ServiceClientTracing.Exit(_invocationId, _result);
             }
             return _result;
+        }
+
+        public static bool AcceptAllCertifications(object sender, System.Security.Cryptography.X509Certificates.X509Certificate certification, System.Security.Cryptography.X509Certificates.X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
+        {
+            return true;
         }
 
         /// <param name='item'>
