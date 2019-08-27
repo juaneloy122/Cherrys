@@ -25,14 +25,20 @@ namespace AppCherrys.Views
             //}
         }
 
-        void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as MasterPageItem;
             if (item != null)
             {
-                Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
-                masterPage.listView.SelectedItem = null;
+                var root = Detail.Navigation.NavigationStack[0];
+                Detail.Navigation.InsertPageBefore((Page)Activator.CreateInstance(item.TargetType), root);
+                await Detail.Navigation.PopToRootAsync();
+
                 IsPresented = false;
+
+                //Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
+                //masterPage.listView.SelectedItem = null;
+                //IsPresented = false;
             }
         }
     }
