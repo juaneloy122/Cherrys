@@ -46,7 +46,7 @@ namespace AppCherrys.Services
             return await Task.FromResult(Items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IList<T>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(Items);
         }

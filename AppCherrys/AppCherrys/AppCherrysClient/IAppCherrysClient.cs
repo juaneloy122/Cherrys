@@ -12,6 +12,7 @@ namespace AppCherrys
     using Newtonsoft.Json;
     using Microsoft.Rest;
     using Models;
+    using CommonLib.Models.Tablon;
 
     /// <summary>
     /// Loggin de usuarios, servidor de anuncios, eventos, actas...

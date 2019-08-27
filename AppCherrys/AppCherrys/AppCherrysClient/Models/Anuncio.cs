@@ -11,67 +11,67 @@ namespace AppCherrys.Models
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
 
-    public partial class Anuncio
-    {
-        /// <summary>
-        /// Initializes a new instance of the Anuncio class.
-        /// </summary>
-        public Anuncio() { }
+    //public partial class Anuncio
+    //{
+        ///// <summary>
+        ///// Initializes a new instance of the Anuncio class.
+        ///// </summary>
+        //public Anuncio() { }
 
-        /// <summary>
-        /// Initializes a new instance of the Anuncio class.
-        /// </summary>
-        public Anuncio(string titulo, string descripcion, DateTime fechaPublicacion, string idUsuarioPublicacion, int? id = default(int?))
-        {
-            Id = id;
-            Titulo = titulo;
-            Descripcion = descripcion;
-            FechaPublicacion = fechaPublicacion;
-            IdUsuarioPublicacion = idUsuarioPublicacion;
-        }
+        ///// <summary>
+        ///// Initializes a new instance of the Anuncio class.
+        ///// </summary>
+        //public Anuncio(string titulo, string descripcion, DateTime fechaPublicacion, string idUsuarioPublicacion, int? id = default(int?))
+        //{
+        //    Id = id;
+        //    Titulo = titulo;
+        //    Descripcion = descripcion;
+        //    FechaPublicacion = fechaPublicacion;
+        //    IdUsuarioPublicacion = idUsuarioPublicacion;
+        //}
 
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "id")]
-        public int? Id { get; set; }
+        ///// <summary>
+        ///// </summary>
+        //[JsonProperty(PropertyName = "id")]
+        //public int? Id { get; set; }
 
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "titulo")]
-        public string Titulo { get; set; }
+        ///// <summary>
+        ///// </summary>
+        //[JsonProperty(PropertyName = "titulo")]
+        //public string Titulo { get; set; }
 
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "descripcion")]
-        public string Descripcion { get; set; }
+        ///// <summary>
+        ///// </summary>
+        //[JsonProperty(PropertyName = "descripcion")]
+        //public string Descripcion { get; set; }
 
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "fechaPublicacion")]
-        public DateTime FechaPublicacion { get; set; }
+        ///// <summary>
+        ///// </summary>
+        //[JsonProperty(PropertyName = "fechaPublicacion")]
+        //public DateTime FechaPublicacion { get; set; }
 
-        /// <summary>
-        /// </summary>
-        [JsonProperty(PropertyName = "idUsuarioPublicacion")]
-        public string IdUsuarioPublicacion { get; set; }
+        ///// <summary>
+        ///// </summary>
+        //[JsonProperty(PropertyName = "idUsuarioPublicacion")]
+        //public string IdUsuarioPublicacion { get; set; }
 
-        /// <summary>
-        /// Validate the object. Throws ValidationException if validation fails.
-        /// </summary>
-        public virtual void Validate()
-        {
-            if (Titulo == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "Titulo");
-            }
-            if (Descripcion == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "Descripcion");
-            }
-            if (IdUsuarioPublicacion == null)
-            {
-                throw new ValidationException(ValidationRules.CannotBeNull, "IdUsuarioPublicacion");
-            }
-        }
-    }
+        ///// <summary>
+        ///// Validate the object. Throws ValidationException if validation fails.
+        ///// </summary>
+        //public virtual void Validate()
+        //{
+        //    if (Titulo == null)
+        //    {
+        //        throw new ValidationException(ValidationRules.CannotBeNull, "Titulo");
+        //    }
+        //    if (Descripcion == null)
+        //    {
+        //        throw new ValidationException(ValidationRules.CannotBeNull, "Descripcion");
+        //    }
+        //    if (IdUsuarioPublicacion == null)
+        //    {
+        //        throw new ValidationException(ValidationRules.CannotBeNull, "IdUsuarioPublicacion");
+        //    }
+        //}
+    //}
 }

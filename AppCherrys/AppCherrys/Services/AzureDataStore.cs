@@ -26,26 +26,17 @@ namespace AppCherrys.Services
         }
 
         bool IsConnected => Connectivity.NetworkAccess == NetworkAccess.Internet;
-        public async Task<IEnumerable<Anuncio>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IList<Anuncio>> GetItemsAsync(bool forceRefresh = false)
         {
             /*pruebas*/
            // ServiceClientCredentials serviceClientCredentials = new
             IAppCherrysClient cliente = new AppCherrysClient();
 
-            IList<AppCherrys.Models.Anuncio> anuncios = AppCherrysClientExtensions.List (cliente);
+            IList<Anuncio> anuncios = AppCherrysClientExtensions.List (cliente);
 
+            return anuncios;
 
-
-            /************************/
-
-            if (forceRefresh && IsConnected)
-            {
-                //var json = await Cliente.GetStringAsync($"api/item");
-                var json = await Cliente.GetStringAsync("https://localhost:44301/");
-                Items = await Task.Run(() => JsonConvert.DeserializeObject<IEnumerable<Anuncio>>(json));
-            }
-
-            return Items;
+          
         }
 
         public async Task<Anuncio> GetItemAsync(int id)

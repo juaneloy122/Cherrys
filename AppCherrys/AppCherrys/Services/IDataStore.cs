@@ -10,6 +10,6 @@ namespace AppCherrys.Services
         Task<bool> UpdateItemAsync(T item);
         Task<bool> DeleteItemAsync(int id);
         Task<T> GetItemAsync(int id);
-        Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
+        Task<IList<T>> GetItemsAsync(bool forceRefresh = false);
     }
 }

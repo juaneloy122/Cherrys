@@ -19,6 +19,7 @@ namespace AppCherrys
     using Microsoft.Rest.Serialization;
     using Newtonsoft.Json;
     using Models;
+    using CommonLib.Models.Tablon;
 
     /// <summary>
     /// Loggin de usuarios, servidor de anuncios, eventos, actas...
@@ -57,7 +58,9 @@ namespace AppCherrys
         }
         public AppCherrysClient() : base()
         {
-            this.Initialize();
+            this.BaseUri = new Uri($"{App.AzureBackendUrl}");
+
+            //this.Initialize();
         }
 
         /// <summary>
@@ -310,33 +313,22 @@ namespace AppCherrys
                 cancellationToken.ThrowIfCancellationRequested();
                 await this.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
             }
-            // Send Request
-            if (_shouldTrace)
-            {
-                ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
-            }
+          
             cancellationToken.ThrowIfCancellationRequested();
             try
             {
-<<<<<<< HEAD
-=======
+
                 ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
->>>>>>> CreacionEstructura
+
                 _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
-<<<<<<< HEAD
-                Console.WriteLine(ex.Message);
+
+                Console.WriteLine(ex.InnerException.Message);
                 throw;
             }
-           
-=======
 
-                Console.WriteLine(ex.Message);
-            }
-            
->>>>>>> CreacionEstructura
             if (_shouldTrace)
             {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
