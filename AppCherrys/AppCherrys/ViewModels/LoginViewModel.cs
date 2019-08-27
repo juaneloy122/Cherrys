@@ -65,7 +65,7 @@ namespace AppCherrys.ViewModels
                 AreCredentialsInvalid = !UserAuthenticated(Username, Password);
 
                 if (AreCredentialsInvalid) return;
-                App.Current.MainPage = new MainPage();
+
                 navigation.PushAsync(new MainPage());
 
             });
