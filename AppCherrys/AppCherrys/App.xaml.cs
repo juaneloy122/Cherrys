@@ -5,6 +5,8 @@ using Xamarin.Forms.Xaml;
 using AppCherrys.Services;
 using AppCherrys.Views;
 using System.Threading.Tasks;
+using System.Diagnostics;
+using AppCherrys.Constantes.Localization;
 
 namespace AppCherrys
 {
@@ -21,16 +23,25 @@ namespace AppCherrys
         {
             InitializeComponent();
 
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataAnuncios>();
-            else
-                DependencyService.Register<AzureDataStore>();
-            MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
+          
         }
 
         protected override void OnStart()
         {
             // Handle when your app starts
+            Localization.Current.OnCultureChanged += (culture) =>
+            {
+                Messages.Culture = culture;
+            };
+
+            Localization.Current.EnsureDeviceOrDefaultCulture(defaultCultureName: "es", availableCultures: new[] { "es", "en", "as" });
+
+            if (UseMockDataStore)
+                DependencyService.Register<MockDataAnuncios>();
+            else
+                DependencyService.Register<AzureDataStore>();
+
+            MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
         }
 
         protected override void OnSleep()

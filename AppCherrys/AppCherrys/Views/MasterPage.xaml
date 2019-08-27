@@ -12,6 +12,8 @@
              xmlns:views4="clr-namespace:AppCherrys.Views.Calendario"
              xmlns:views5="clr-namespace:AppCherrys.Views.Chat"
              xmlns:views6="clr-namespace:AppCherrys.Views.Doodle"
+             xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
+             
              Padding="0,40,0,0"
              Title="Menú">
     
@@ -20,17 +22,16 @@
             <ListView x:Name="listView" x:FieldModifier="public">
                 <ListView.ItemsSource>
                     <x:Array Type="{x:Type views:MasterPageItem}">
-                        <views:MasterPageItem Title="Tablón" IconSource="contacts.png" TargetType="{x:Type views1:TablonView}" />
-                        <views:MasterPageItem Title="Tareas" IconSource="todo.png" TargetType="{x:Type views2:TareasView}" />
-                        <views:MasterPageItem Title="Calendario" IconSource="reminders.png" TargetType="{x:Type views4:CalendarioView}" />
-                        <views:MasterPageItem Title="Actas" IconSource="contacts.png" TargetType="{x:Type views3:ActasView}" />
-                        <views:MasterPageItem Title="Doodle" IconSource="todo.png" TargetType="{x:Type views6:DoodleView}" />
-                        <views:MasterPageItem Title="Chat" IconSource="reminders.png" TargetType="{x:Type views5:ChatView}" />
-                        <views:MasterPageItem Title="Quienes somos" IconSource="reminders.png" TargetType="{x:Type views:AboutPage}" />
+                        <views:MasterPageItem Title="{x:Static local:Messages.Tablon}" IconSource="contacts.png" TargetType="{x:Type views1:TablonView}" />
+                        <views:MasterPageItem Title="{x:Static local:Messages.Tarea}" IconSource="todo.png" TargetType="{x:Type views2:TareasView}" />
+                        <views:MasterPageItem Title="{x:Static local:Messages.Calendario}" IconSource="reminders.png" TargetType="{x:Type views4:CalendarioView}" />
+                        <views:MasterPageItem Title="{x:Static local:Messages.Actas}" IconSource="contacts.png" TargetType="{x:Type views3:ActasView}" />
+                        <views:MasterPageItem Title="{x:Static local:Messages.Doodle}" IconSource="todo.png" TargetType="{x:Type views6:DoodleView}" />
+                        <views:MasterPageItem Title="{x:Static local:Messages.Chat}" IconSource="reminders.png" TargetType="{x:Type views5:ChatView}" />
+                        <views:MasterPageItem Title="{x:Static local:Messages.QuienesSomos}" IconSource="reminders.png" TargetType="{x:Type views:AboutPage}" />
                     </x:Array>
                 </ListView.ItemsSource>
-
-
+ 
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
@@ -45,7 +46,7 @@
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
-            </ListView>
+            </ListView>            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
