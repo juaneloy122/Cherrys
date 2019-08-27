@@ -318,14 +318,25 @@ namespace AppCherrys
             cancellationToken.ThrowIfCancellationRequested();
             try
             {
+<<<<<<< HEAD
+=======
+                ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
+>>>>>>> CreacionEstructura
                 _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
             }
             catch (Exception ex)
             {
+<<<<<<< HEAD
                 Console.WriteLine(ex.Message);
                 throw;
             }
            
+=======
+
+                Console.WriteLine(ex.Message);
+            }
+            
+>>>>>>> CreacionEstructura
             if (_shouldTrace)
             {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
@@ -377,6 +388,11 @@ namespace AppCherrys
                 ServiceClientTracing.Exit(_invocationId, _result);
             }
             return _result;
+        }
+
+        public static bool AcceptAllCertifications(object sender, System.Security.Cryptography.X509Certificates.X509Certificate certification, System.Security.Cryptography.X509Certificates.X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
+        {
+            return true;
         }
 
         /// <param name='item'>
