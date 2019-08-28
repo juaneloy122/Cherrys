@@ -1,4 +1,5 @@
-﻿using CommonLib.Models.Tablon;
+﻿using CommonLib.Interfaces;
+using CommonLib.Models.Tablon;
 using Microsoft.Rest;
 using Newtonsoft.Json;
 using System;
@@ -10,33 +11,23 @@ using Xamarin.Essentials;
 
 namespace AppCherrys.Services
 {
-    public class AzureDataStore : IDataStore<Anuncio>
+    public class AzureDataStore<T> : IDataStore<T> where T : IItem
     {
-        readonly HttpClient Cliente;
-        IEnumerable<Anuncio> Items;
+        readonly IAppCherrysClient Cliente = new AppCherrysClient();
+        protected List<T> Items;
 
         public AzureDataStore()
         {
-            Cliente = new HttpClient
-            {
-                BaseAddress = new Uri($"{App.AzureBackendUrl}/")
-            };
-
-            Items = new List<Anuncio>();
+            
         }
 
         bool IsConnected => Connectivity.NetworkAccess == NetworkAccess.Internet;
-        public async Task<IList<Anuncio>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IList<T>> GetItemsAsync(bool forceRefresh = false)
         {
-            /*pruebas*/
-           // ServiceClientCredentials serviceClientCredentials = new
-            IAppCherrysClient cliente = new AppCherrysClient();
+            IList<T> items = AppCherrysClientExtensions.List (Cliente);
 
-            IList<Anuncio> anuncios = AppCherrysClientExtensions.List (cliente);
-
-            return anuncios;
-
-          
+            return items;
+                        
         }
 
         public async Task<Anuncio> GetItemAsync(int id)
@@ -85,5 +76,36 @@ namespace AppCherrys.Services
 
             return response.IsSuccessStatusCode;
         }
+
+        public async Task<bool> AddItemAsync(T anuncio)
+        {
+            Items.Add(anuncio);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<bool> UpdateItemAsync(T anuncio)
+        {
+            var oldItem = Items.Where((T arg) => arg.Id == anuncio.Id).FirstOrDefault();
+            Items.Remove(oldItem);
+            Items.Add(anuncio);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<bool> DeleteItemAsync(int id)
+        {
+            var oldItem = Items.Where((T arg) => arg.Id == id).FirstOrDefault();
+            Items.Remove(oldItem);
+
+            return await Task.FromResult(true);
+        }
+
+        public async Task<T> GetItemAsync(int id)
+        {
+            return await Task.FromResult(Items.FirstOrDefault(s => s.Id == id));
+        }
+
+       
     }
 }
