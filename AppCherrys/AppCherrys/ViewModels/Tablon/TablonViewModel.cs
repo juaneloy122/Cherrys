@@ -12,7 +12,16 @@ namespace AppCherrys.ViewModels.Tablon
 {
     public class TablonViewModel : BaseViewModel
     {
-        public IDataStore<Anuncio> DataStore => DependencyService.Get<IDataStore<Anuncio>>() ?? new MockDataAnuncios();
+        public IDataStore<Anuncio> DataStore
+        {
+            get
+            {
+                if (App.UseMockDataStore)
+                    return new MockDataAnuncios();
+                else
+                    return new AzureDataStoreAnuncio();
+            }
+        }
 
         public ObservableCollection<Anuncio> Anuncios { get; set; }
         public Command LoadItemsCommand { get; set; }
@@ -25,9 +34,9 @@ namespace AppCherrys.ViewModels.Tablon
 
             MessagingCenter.Subscribe<NuevoAnuncioView, Anuncio>(this, EnumEventos.AddAnuncio.ToString(), async (obj, item) =>
            {
-               var newItem = item as Anuncio;
-               Anuncios.Add(newItem);
+               var newItem = item as Anuncio;               
                await DataStore.AddItemAsync(newItem);
+               await ExecuteLoadItemsCommand();
            });
         }
 

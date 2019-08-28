@@ -58,9 +58,9 @@ namespace AppCherrys
         }
         public AppCherrysClient() : base()
         {
-            this.BaseUri = new Uri($"{App.AzureBackendUrl}");
+            //this.BaseUri = new Uri($"{App.AzureBackendUrl}");
 
-            //this.Initialize();
+            this.Initialize();
         }
 
         /// <summary>

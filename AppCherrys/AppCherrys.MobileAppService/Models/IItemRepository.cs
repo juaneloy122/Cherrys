@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonLib.Models.Tablon;
+using System;
 using System.Collections.Generic;
 
 namespace AppCherrys.Models
