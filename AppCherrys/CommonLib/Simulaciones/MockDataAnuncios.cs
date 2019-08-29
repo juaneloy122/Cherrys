@@ -2,9 +2,9 @@
 using System;
 using System.Collections.Generic;
 
-namespace AppCherrys.Services
+namespace CommonLib.Simulaciones
 {
-    public class MockDataAnuncios : MockDataStore<Anuncio>
+    public class MockDataAnuncios:MockDataStore<Anuncio>
     {
         public MockDataAnuncios()
         {

@@ -1,7 +1,4 @@
-﻿using System;
-
-using AppCherrys.Models;
-using AppCherrys.Models.Tablon;
+﻿using CommonLib.Models.Tablon;
 
 namespace AppCherrys.ViewModels.Tablon
 {

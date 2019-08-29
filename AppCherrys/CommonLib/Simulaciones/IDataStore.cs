@@ -1,8 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AppCherrys.Services
+namespace CommonLib.Simulaciones
 {
     public interface IDataStore<T>
     {
@@ -10,6 +9,6 @@ namespace AppCherrys.Services
         Task<bool> UpdateItemAsync(T item);
         Task<bool> DeleteItemAsync(int id);
         Task<T> GetItemAsync(int id);
-        Task<IList<T>> GetItemsAsync(bool forceRefresh = false);
+        Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false);
     }
 }

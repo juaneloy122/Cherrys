@@ -1,5 +1,5 @@
-﻿using AppCherrys.Models.Tablon;
-using AppCherrys.ViewModels.Tablon;
+﻿using AppCherrys.ViewModels.Tablon;
+using CommonLib.Models.Tablon;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -10,7 +10,7 @@ namespace AppCherrys.Views.Tablon
     [DesignTimeVisible(false)]
     public partial class TablonView : ContentPage
     {
-        TablonViewModel viewModel;
+        readonly TablonViewModel viewModel;
 
         public TablonView()
         {

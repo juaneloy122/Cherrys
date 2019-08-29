@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using AppCherrys.Constantes;
+using CommonLib.Models.Tablon;
+using System;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using AppCherrys.Models;
-using AppCherrys.Models.Tablon;
-using AppCherrys.Constantes;
 
 namespace AppCherrys.Views.Tablon
 {
@@ -21,8 +17,8 @@ namespace AppCherrys.Views.Tablon
 
             Item = new Anuncio
             {
-                Titulo = "Nombre",
-                Descripcion = "Descripcion."
+                //Titulo = "Nombre",
+                //Descripcion = "Descripcion."
             };
 
             BindingContext = this;
@@ -32,7 +28,7 @@ namespace AppCherrys.Views.Tablon
         {
             Item.FechaPublicacion = DateTime.Now;
             Item.IdUsuario = "Toño"; //Cambiar esto por el usuario logeado
-            MessagingCenter.Send(this, EnumEventos.AddAnuncio.ToString (), Item);
+            MessagingCenter.Send(this, EnumEventos.AddAnuncio.ToString(), Item);
             await Navigation.PopModalAsync();
         }
 

@@ -1,12 +1,9 @@
-﻿using System;
+﻿using CommonLib.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AppCherrys.Models;
-using AppCherrys.Models.Tablon;
-using CommonLib.Interfaces;
 
-namespace AppCherrys.Services
+namespace CommonLib.Simulaciones
 {
     public class MockDataStore <T>: IDataStore<T> where T: IItem
     {
@@ -46,7 +43,7 @@ namespace AppCherrys.Services
             return await Task.FromResult(Items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IList<T>> GetItemsAsync(bool forceRefresh = false)
+        public async Task<IEnumerable<T>> GetItemsAsync(bool forceRefresh = false)
         {
             return await Task.FromResult(Items);
         }
