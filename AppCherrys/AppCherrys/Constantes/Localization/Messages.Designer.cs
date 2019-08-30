@@ -115,6 +115,15 @@ namespace AppCherrys.Constantes.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Configuración.
+        /// </summary>
+        internal static string Configuracion {
+            get {
+                return ResourceManager.GetString("Configuracion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Descripción:.
         /// </summary>
         internal static string Descripcion {

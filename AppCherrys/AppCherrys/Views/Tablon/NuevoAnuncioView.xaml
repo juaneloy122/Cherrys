@@ -11,7 +11,7 @@
         <ToolbarItem Text="Cancelar" Clicked="Cancelar_Clicked"/>
         <ToolbarItem Text="Guardar" Clicked="Guardar_Clicked" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>

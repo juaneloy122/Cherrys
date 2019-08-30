@@ -12,11 +12,11 @@
              xmlns:views4="clr-namespace:AppCherrys.Views.Calendario"
              xmlns:views5="clr-namespace:AppCherrys.Views.Chat"
              xmlns:views6="clr-namespace:AppCherrys.Views.Doodle"
-             xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
-             
+             xmlns:views7="clr-namespace:AppCherrys.Views.Configuration"
+             xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"           
              Padding="0,40,0,0"
-             Title="Menú">
-    
+             Title="Menú" >
+
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="listView" x:FieldModifier="public">
@@ -29,6 +29,7 @@
                         <views:MasterPageItem Title="{x:Static local:Messages.Doodle}" IconSource="todo.png" TargetType="{x:Type views6:DoodleView}" />
                         <views:MasterPageItem Title="{x:Static local:Messages.Chat}" IconSource="reminders.png" TargetType="{x:Type views5:ChatView}" />
                         <views:MasterPageItem Title="{x:Static local:Messages.QuienesSomos}" IconSource="reminders.png" TargetType="{x:Type views:AboutPage}" />
+                        <views:MasterPageItem Title="{x:Static local:Messages.Configuracion}" IconSource="reminders.png" TargetType="{x:Type views7:ConfigurationView}" />
                     </x:Array>
                 </ListView.ItemsSource>
  
