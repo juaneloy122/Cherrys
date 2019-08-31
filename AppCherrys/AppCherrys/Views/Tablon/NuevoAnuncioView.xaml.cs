@@ -21,8 +21,8 @@ namespace AppCherrys.Views.Tablon
 
             Item = new Anuncio
             {
-                Titulo = "Nombre",
-                Descripcion = "Descripcion."
+                //Titulo = "Nombre",
+                //Descripcion = "Descripcion."
             };
 
             BindingContext = this;

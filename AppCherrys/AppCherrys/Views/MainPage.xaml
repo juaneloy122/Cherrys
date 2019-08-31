@@ -12,13 +12,13 @@
     <MasterDetailPage.Master>
         <views:MasterPage x:Name="masterPage" />
     </MasterDetailPage.Master>
-    
+
     <MasterDetailPage.Detail>
-        <NavigationPage>            
+        <NavigationPage>
             <x:Arguments>
                 <views1:TablonView />
             </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>
-    
+
 </MasterDetailPage>

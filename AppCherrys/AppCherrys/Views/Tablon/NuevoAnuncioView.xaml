@@ -6,19 +6,28 @@
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.Tablon.NuevoAnuncioView"
              Title="Nuevo anuncio">
-    
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancelar" Clicked="Cancelar_Clicked" />
+        <ToolbarItem Text="Cancelar" Clicked="Cancelar_Clicked"/>
         <ToolbarItem Text="Guardar" Clicked="Guardar_Clicked" />
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="Titulo" FontSize="Medium" />
-            <Entry Text="{Binding Item.Titulo}" d:Text="Titulo" FontSize="Small" />
-            <Label Text="Descripción" FontSize="Medium" />
-            <Editor Text="{Binding Item.Descripcion}" d:Text="Descripción" FontSize="Small" Margin="0" />
-        </StackLayout>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+            <StackLayout Spacing="20" Padding="15" Grid.Row="0">
+                <Entry Text="{Binding Item.Titulo}"  FontSize="Small" Placeholder="Titulo"/>
+                <Editor Text="{Binding Item.Descripcion}"  FontSize="Small" Margin="0" AutoSize="TextChanges" Placeholder="Descripcion"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1" Orientation="Horizontal">
+                <Button Text="Adjuntar imagen"/>
+                <Button Text="Adjuntar Gif"/>
+                <Button Text="Adjuntar Encuesta"/>
+            </StackLayout>
+        </Grid>
     </ContentPage.Content>
     
 </ContentPage>
