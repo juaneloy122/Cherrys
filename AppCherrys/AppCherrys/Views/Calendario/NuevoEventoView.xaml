@@ -4,7 +4,8 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AppCherrys.Views.Calendario.NuevoEventoView">
+             x:Class="AppCherrys.Views.Calendario.NuevoEventoView"
+             Title="Nuevo evento">
     <ContentPage.ToolbarItems>
         <ToolbarItem Text="Cancelar" Clicked="Cancelar_Clicked" />
         <ToolbarItem Text="Guardar" Clicked="Guardar_Clicked" />
