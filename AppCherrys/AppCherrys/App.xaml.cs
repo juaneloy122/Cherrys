@@ -23,7 +23,11 @@ namespace AppCherrys
         {
             InitializeComponent();
 
-          
+            if (UseMockDataStore)
+                DependencyService.Register<MockDataAnuncios>();
+            else
+                DependencyService.Register<AzureDataStore>();
+            MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
         }
 
         protected override void OnStart()
@@ -35,13 +39,6 @@ namespace AppCherrys
             };
 
             Localization.Current.EnsureDeviceOrDefaultCulture(defaultCultureName: "es", availableCultures: new[] { "es", "en", "as" });
-
-            if (UseMockDataStore)
-                DependencyService.Register<MockDataAnuncios>();
-            else
-                DependencyService.Register<AzureDataStore>();
-
-            MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
         }
 
         protected override void OnSleep()

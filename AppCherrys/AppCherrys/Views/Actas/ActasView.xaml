@@ -5,12 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.Actas.ActasView"
-             xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
              Title="{Binding Title}"
              >
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="{x:Static local:Messages.Add}" Clicked="AddItem_Clicked" />
+        <ToolbarItem Text="Añadir" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>
 
     <StackLayout>

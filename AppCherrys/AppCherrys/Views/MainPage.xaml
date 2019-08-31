@@ -7,7 +7,9 @@
                   xmlns:views1="clr-namespace:AppCherrys.Views.Tablon"
                   xmlns:views11="clr-namespace:AppCherrys.Views.Tareas"
                   mc:Ignorable="d"            
-            x:Class="AppCherrys.Views.MainPage">
+            x:Class="AppCherrys.Views.MainPage"
+                  NavigationPage.HasNavigationBar="False" 
+             NavigationPage.HasBackButton="False">
 
     <MasterDetailPage.Master>
         <views:MasterPage x:Name="masterPage" />

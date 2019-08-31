@@ -5,13 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.Actas.DetalleActaView"
-             xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="{x:Static local:Messages.Add}" FontSize="Medium" />
+        <Label Text="Titulo:" FontSize="Medium" />
         <Label Text="{Binding Item.Titulo}" d:Text="Título" FontSize="Small"/>
-        <Label Text="{x:Static local:Messages.Add}" FontSize="Medium" />
+        <Label Text="Descripción:" FontSize="Medium" />
         <Label Text="{Binding Item.Descripcion}" d:Text="Descripción" FontSize="Small"/>
     </StackLayout>
 </ContentPage>
