@@ -133,6 +133,15 @@ namespace AppCherrys.Constantes.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Fichajes.
+        /// </summary>
+        internal static string Fichajes {
+            get {
+                return ResourceManager.GetString("Fichajes", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Guardar.
         /// </summary>
         internal static string Guardar {

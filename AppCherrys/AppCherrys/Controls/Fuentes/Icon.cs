@@ -25,5 +25,7 @@ namespace AppCherrys.Controls.Fuentes
         public static readonly string Chat = "\uf4ad";
         public static readonly string Settings = "\uf013";
         public static readonly string SobreNosotros = "\uf0c0";
+        public static readonly string PulgarArriba = "\uf164";
+        public static readonly string PulgarAbajo = "\uf165";
     }
 }

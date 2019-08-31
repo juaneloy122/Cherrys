@@ -19,6 +19,16 @@ namespace AppCherrys
             DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:5000";
         public static bool UseMockDataStore = true;
 
+        //Puesto para fichajes maqueta
+
+        public static bool EntradaSalida = false;
+
+        public static string Usuario = string.Empty;
+
+        public static DateTime Fecha = DateTime.MinValue;
+
+        public static string TextoBoton = "Acceder";
+
         public App()
         {
             InitializeComponent();

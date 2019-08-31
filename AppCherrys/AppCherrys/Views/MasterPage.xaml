@@ -12,6 +12,7 @@
              xmlns:views4="clr-namespace:AppCherrys.Views.Calendario"
              xmlns:views5="clr-namespace:AppCherrys.Views.Chat"
              xmlns:views6="clr-namespace:AppCherrys.Views.Doodle"
+             xmlns:views7="clr-namespace:AppCherrys.Views.ControlDeAcceso"
              xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
              xmlns:fonts="clr-namespace:AppCherrys.Controls.Fuentes"
              
@@ -33,6 +34,7 @@
                 <Frame HasShadow="False" CornerRadius="40" Padding="5" IsClippedToBounds="True">
                     <Image Source="FotoPerfil.png"/>
                 </Frame>
+                <Label Grid.Column="1" x:Name="nombreUsuario" x:FieldModifier="public" TextColor="#FF8500" FontAttributes="Bold" FontFamily="HelveticaNeue-Light" VerticalOptions="Center" Text="Marina Gutierrez Sacramento"/>
             </Grid>
 
             <StackLayout Grid.Row="1">
@@ -42,10 +44,11 @@
                             <views:MasterPageItem Title="{x:Static local:Messages.Tablon}" Icon="{x:Static fonts:Icon.Libro_Abierto}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views1:TablonView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Tarea}" Icon="{x:Static fonts:Icon.Tareas}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views2:TareasView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Calendario}" Icon="{x:Static fonts:Icon.Calendario}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views4:CalendarioView}" />
-                            <views:MasterPageItem Title="{x:Static local:Messages.Actas}" Icon="{x:Static fonts:Icon.Actas}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views3:ActasView}" />
+                            <!--<views:MasterPageItem Title="{x:Static local:Messages.Actas}" Icon="{x:Static fonts:Icon.Actas}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views3:ActasView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Doodle}" Icon="{x:Static fonts:Icon.Doodle}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views6:DoodleView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Chat}" Icon="{x:Static fonts:Icon.Chat}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views5:ChatView}" />
-                            <views:MasterPageItem Title="{x:Static local:Messages.QuienesSomos}" Icon="{x:Static fonts:Icon.SobreNosotros}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views:AboutPage}" />
+                            <views:MasterPageItem Title="{x:Static local:Messages.QuienesSomos}" Icon="{x:Static fonts:Icon.SobreNosotros}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views:AboutPage}" />-->
+                            <views:MasterPageItem Title="{x:Static local:Messages.Fichajes}" Icon="{x:Static fonts:Icon.Fichajes}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views7:ControlDeAccesoView}" />
                         </x:Array>
                     </ListView.ItemsSource>
 

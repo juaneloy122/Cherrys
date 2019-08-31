@@ -142,4 +142,7 @@
   <data name="Cancelar" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="Fichajes" xml:space="preserve">
+    <value>Fichajes</value>
+  </data>
 </root>
