@@ -2,6 +2,8 @@
 <resources>
 
   <style name="MainTheme" parent="MainTheme.Base">
+    
+    
   </style>
   <!-- Base theme applied no matter what API -->
   <style name="MainTheme.Base" parent="Theme.AppCompat.Light.DarkActionBar">
@@ -28,6 +30,11 @@
     <item name="drawerArrowStyle">@style/DrawerIcon</item>
 
     <item name="android:actionMenuTextColor">#E89241</item>
+
+    <item name="android:colorPressedHighlight">#00ff0000</item>
+    <item name="android:colorLongPressedHighlight">#00ff0000</item>
+    <item name="android:colorFocusedHighlight">#00ff0000</item>
+    <item name="android:colorActivatedHighlight">#00ff0000</item>
     
   </style>
 
@@ -43,5 +50,10 @@
   <style name="AppToolbarTheme" parent="Theme.AppCompat.NoActionBar">
     <item name="android:textColor">#E89241</item>
   </style>
+
+
+  
+  
+  
   
 </resources>
