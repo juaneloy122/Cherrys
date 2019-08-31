@@ -100,4 +100,46 @@
   <data name="Tablon" xml:space="preserve">
     <value>Tablón</value>
   </data>
+  <data name="Autenticate" xml:space="preserve">
+    <value>Iniciar Sesión</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="Usuario" xml:space="preserve">
+    <value>Nombre Usuario</value>
+  </data>
+  <data name="Tarea" xml:space="preserve">
+    <value>Tareas</value>
+  </data>
+  <data name="Calendario" xml:space="preserve">
+    <value>Calendario</value>
+  </data>
+  <data name="Actas" xml:space="preserve">
+    <value>Actas</value>
+  </data>
+  <data name="Doodle" xml:space="preserve">
+    <value>Doodle</value>
+  </data>
+  <data name="Chat" xml:space="preserve">
+    <value>Chat</value>
+  </data>
+  <data name="QuienesSomos" xml:space="preserve">
+    <value>Quiénes somos</value>
+  </data>
+  <data name="Add" xml:space="preserve">
+    <value>Añadir</value>
+  </data>
+  <data name="Titulo" xml:space="preserve">
+    <value>Título:</value>
+  </data>
+  <data name="Descripcion" xml:space="preserve">
+    <value>Descripción:</value>
+  </data>
+  <data name="Guardar" xml:space="preserve">
+    <value>Guardar</value>
+  </data>
+  <data name="Cancelar" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
 </root>

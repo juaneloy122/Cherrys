@@ -5,40 +5,59 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.Calendario.CalendarioView"
-             Title="{Binding Title}"
-             >
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Añadir" Clicked="AddItem_Clicked" />
-    </ContentPage.ToolbarItems>
+             Title="{Binding Title}">
 
-    <StackLayout>
-        <ListView x:Name="ItemsListView"
+
+    <ContentPage.Content>
+        <AbsoluteLayout>
+            <StackLayout>
+                <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Eventos}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
                 RefreshCommand="{Binding LoadItemsCommand}"
                 IsPullToRefreshEnabled="true"
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RecycleElement"
+                CachingStrategy="RecycleElement"               
                 ItemSelected="OnItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Cabecera}" 
-                                d:Text="{Binding .}"
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16"/>
-                            <Label Text="{Binding Descripcion}" 
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid Padding="10">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="60"/>
+                                        <ColumnDefinition/>
+                                    </Grid.ColumnDefinitions>
+                                    <Image Grid.Column="0" Source="logoCherrys.png" VerticalOptions="Start" HorizontalOptions="Start"/>
+                                    <StackLayout Grid.Column="1">
+                                        <Grid Padding="0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="6*"/>
+                                                <ColumnDefinition Width="160"/>
+                                            </Grid.ColumnDefinitions>
+                                            <Label Grid.Column="0" Text="{Binding Titulo}" VerticalTextAlignment="Start"/>
+                                            <Label Grid.Column="1" Text="{Binding FechaInicioFechaFIn} " VerticalTextAlignment="Start" HorizontalTextAlignment="Start"/>
+                                        </Grid>
+                                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding IdUsuario}"/>
+                                        <Label Text="{Binding Descripcion}" 
                                 d:Text="Item description"
-                                LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                                    </StackLayout>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackLayout>
+            <Button 
+                AbsoluteLayout.LayoutBounds=".95,.95,80,80"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="AddItem_Clicked"
+                Text="+"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                CornerRadius="100"/>
+        </AbsoluteLayout>
+    </ContentPage.Content>
 </ContentPage>
