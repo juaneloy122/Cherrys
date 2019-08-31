@@ -5,11 +5,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.Calendario.DetalleEventoView"
-             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              Title="{Binding Title}">
 
     <StackLayout Spacing="20" Padding="15">
-        <Label Text="{Binding Item.Cabecera}" d:Text="Título" FontSize="Large" FontAttributes="Bold"/>
+        <Label Text="Titulo:" FontSize="Medium" />
+        <Label Text="{Binding Item.Titulo}" d:Text="Título" FontSize="Small"/>
+        <Label Text="Descripción:" FontSize="Medium" />
         <Label Text="{Binding Item.Descripcion}" d:Text="Descripción" FontSize="Small"/>
     </StackLayout>
 </ContentPage>

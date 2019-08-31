@@ -24,9 +24,7 @@ namespace AppCherrys.Views.Calendario
             Item = new Evento
             {
                 Titulo = "Nombre",
-                Descripcion = "Descripcion.",
-                FechaInicio = DateTime.Now,
-                FechaFin = DateTime.Now
+                Descripcion = "Descripcion."
             };
 
             BindingContext = this;
@@ -34,7 +32,7 @@ namespace AppCherrys.Views.Calendario
 
         async void Guardar_Clicked(object sender, EventArgs e)
         {
-            //Item.FechaInicio = DateTime.Now;
+            Item.FechaInicio = DateTime.Now;
             Item.IdUsuario = "Toño"; //Cambiar esto por el usuario logeado
             MessagingCenter.Send(this, EnumEventos.AddEvento.ToString(), Item);
             await Navigation.PopModalAsync();

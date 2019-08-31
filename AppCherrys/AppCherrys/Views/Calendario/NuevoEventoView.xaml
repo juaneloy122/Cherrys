@@ -16,10 +16,6 @@
             <Entry Text="{Binding Item.Titulo}" d:Text="Titulo" FontSize="Small" />
             <Label Text="Descripción" FontSize="Medium" />
             <Editor Text="{Binding Item.Descripcion}" d:Text="Descripción" FontSize="Small" Margin="0" />
-            <Label Text="Fecha inicio:" FontSize="Medium" />
-            <DatePicker Date="{Binding Item.FechaInicio}"></DatePicker>
-            <Label Text="Fecha fin:" FontSize="Medium" />
-            <DatePicker Date="{Binding Item.FechaFin}"></DatePicker>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

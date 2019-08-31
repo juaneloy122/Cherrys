@@ -3,7 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.LoginView">
     <ContentPage.Content>
@@ -17,16 +16,16 @@
                 <Label Text="Hola! introduzca sus credenciales" />
                 <Entry x:Name="UsernameEntry"
                        Text="{Binding Username}"
-                       Placeholder="{x:Static local:Messages.Usuario}" />
+                       Placeholder="Email" />
                 <Entry x:Name="PasswordEntry"
                        Text="{Binding Password}"
-                       Placeholder="{x:Static local:Messages.Password}"
+                       Placeholder="Password"
                        IsPassword="True" />
                 <Label Text="Credenciales incorrectas" 
                        IsVisible="{Binding AreCredentialsInvalid}" 
                        TextColor="Red" />
             </StackLayout>
-            <Button Grid.Row="2" Text="{x:Static local:Messages.Autenticate}" Command="{Binding AuthenticateCommand}" />
+            <Button Grid.Row="2" Text="Authenticate" Command="{Binding AuthenticateCommand}" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>
