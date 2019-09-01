@@ -72,4 +72,5 @@
             </StackLayout>
         </Grid>
     </ContentPage.Content>
+            <views:MasterPageItem Title="{x:Static local:Messages.FichajeAutomatico}" IconSource="reminders.png" TargetType="{x:Type views7:FichajeAutomaticoView}" />
 </ContentPage>

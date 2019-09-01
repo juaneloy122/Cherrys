@@ -148,4 +148,7 @@
   <data name="FichajesQR" xml:space="preserve">
     <value>FichajesQR</value>
   </data>
+  <data name="FichajeAutomatico" xml:space="preserve">
+    <value>Fichaje automáticu</value>
+  </data>
 </root>
