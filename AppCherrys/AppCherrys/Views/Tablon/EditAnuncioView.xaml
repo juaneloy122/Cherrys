@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fonts="clr-namespace:AppCherrys.Controls.Fuentes"
+             mc:Ignorable="d"
+             x:Class="AppCherrys.Views.Tablon.EditAnuncioView"
+             Title="Modificar anuncio">
+ 
+    <ContentPage.Content>
+
+        <StackLayout>
+            <Label Text="Welcome to Xamarin.Forms!"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="Medium" Text="Modificar anuncio" TextColor="#FF8500" VerticalOptions="Center"/>
+            <fonts:FontAwesomeIcon x:Name="btnSave" Text="{x:Static fonts:Icon.Save}" TextColor="#FF8500" FontSize="30" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <fonts:FontAwesomeIcon x:Name="btnCancel"  Text="{x:Static fonts:Icon.Cerrar}" TextColor="#FF8500" FontSize="40" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+
+    </NavigationPage.TitleView>
+
+</ContentPage>
