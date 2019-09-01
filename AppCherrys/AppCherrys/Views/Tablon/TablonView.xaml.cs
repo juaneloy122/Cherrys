@@ -16,6 +16,10 @@ namespace AppCherrys.Views.Tablon
         {
             InitializeComponent();
 
+            TapGestureRecognizer tgr = new TapGestureRecognizer();
+            tgr.Tapped += (s, e) => AddItem_Clicked();
+            btnAdd.GestureRecognizers.Add(tgr);
+
             BindingContext = viewModel = new TablonViewModel();
         }
 
@@ -31,7 +35,7 @@ namespace AppCherrys.Views.Tablon
             ItemsListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+        async void AddItem_Clicked()
         {
             await Navigation.PushModalAsync(new NavigationPage(new NuevoAnuncioView()));
         }

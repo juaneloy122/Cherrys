@@ -29,5 +29,6 @@ namespace AppCherrys.Controls.Fuentes
         public static readonly string PulgarAbajo = "\uf165";
         public static readonly string CodigoQR = "\uf029";
         public static readonly string Add = "\uf055";
+        public static readonly string Check = "\uf058";
     }
 }

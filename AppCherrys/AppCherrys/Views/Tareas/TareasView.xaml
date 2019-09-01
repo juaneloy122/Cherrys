@@ -9,12 +9,9 @@
              
              Title="{Binding Title}"
              >
-    <ContentPage.ToolbarItems>
-        <!--<ToolbarItem Text="Añadir" Clicked="AddItem_Clicked" />-->
-    </ContentPage.ToolbarItems>
-
-    <StackLayout>
-        <ListView x:Name="ItemsListView"
+    <AbsoluteLayout>
+        <StackLayout>
+            <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Tareas}"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="true"
@@ -23,26 +20,29 @@
                 IsRefreshing="{Binding IsBusy, Mode=OneWay}"
                 CachingStrategy="RecycleElement"
                 ItemSelected="OnItemSelected">
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Label Text="{Binding Cabecera}" 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10">
+                                <Label Text="{Binding Cabecera}" 
                                 d:Text="{Binding .}"
                                 LineBreakMode="NoWrap" 
                                 Style="{DynamicResource ListItemTextStyle}" 
                                 FontSize="16"/>
-                            <Label Text="{Binding Descripcion}" 
+                                <Label Text="{Binding Descripcion}" 
                                 d:Text="Item description"
                                 LineBreakMode="NoWrap"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+        <fuentes:FontAwesomeIcon x:Name="btnAdd" x:FieldModifier="public" Text="{x:Static fuentes:Icon.Add}" TextColor="#FF8500"  FontSize="50" AbsoluteLayout.LayoutBounds=".95,.95,70,70"
+            AbsoluteLayout.LayoutFlags="PositionProportional"/>
+    </AbsoluteLayout>
     <NavigationPage.TitleView>
         <Grid>
             <Grid.ColumnDefinitions>
@@ -51,8 +51,7 @@
             </Grid.ColumnDefinitions>
             <Label FontSize="Medium" Text="{Binding Title}" TextColor="#FF8500" VerticalOptions="Center"/>
             <StackLayout Orientation="Horizontal" Grid.Column="1" HorizontalOptions="End">
-                <fuentes:FontAwesomeIcon x:Name="btnAdd" x:FieldModifier="public" Text="{x:Static fuentes:Icon.Add}" FontSize="Large" VerticalOptions="Center" TextColor="#FF8500" BackgroundColor="Transparent" HorizontalOptions="Center"/>
-                <Grid Margin="5,0,0,0" WidthRequest="50">
+                <Grid WidthRequest="50">
                     <Frame HasShadow="False" CornerRadius="40" Padding="5" IsClippedToBounds="True">
                         <Image Source="FotoPerfil.png"/>
                     </Frame>
