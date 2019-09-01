@@ -142,4 +142,7 @@
   <data name="Cancelar" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="FichajeAutomatico" xml:space="preserve">
+    <value>Fichaje automático</value>
+  </data>
 </root>

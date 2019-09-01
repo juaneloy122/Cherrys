@@ -11,6 +11,21 @@
     <ContentPage.Content>
         <AbsoluteLayout>
             <StackLayout>
+
+                <Grid VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <CheckBox Grid.Row="0" Grid.Column="0" VerticalOptions="Start" />
+                    <Label Grid.Row="0" Grid.Column="1" Text="Eventos anteriores" VerticalOptions="Start" Margin="0,6,0,0" />
+                </Grid>
+
+
                 <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Eventos}"
                 VerticalOptions="FillAndExpand"
@@ -23,28 +38,32 @@
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
-                                <Grid Padding="10">
+                                <!--<Grid Padding="10">
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="60"/>
                                         <ColumnDefinition/>
                                     </Grid.ColumnDefinitions>
                                     <Image Grid.Column="0" Source="logoCherrys.png" VerticalOptions="Start" HorizontalOptions="Start"/>
-                                    <StackLayout Grid.Column="1">
+                                    <StackLayout Grid.Column="1">-->
+                                <Grid Padding="10">
+                                    <Frame Grid.Row="0" Grid.ColumnSpan="2" HasShadow="True" CornerRadius="10" IsClippedToBounds="True" Margin="0,0,0,0">
                                         <Grid Padding="0">
                                             <Grid.ColumnDefinitions>
-                                                <ColumnDefinition Width="6*"/>
+                                                <ColumnDefinition Width="8*"/>
                                                 <ColumnDefinition Width="160"/>
                                             </Grid.ColumnDefinitions>
-                                            <Label Grid.Column="0" Text="{Binding Titulo}" VerticalTextAlignment="Start"/>
-                                            <Label Grid.Column="1" Text="{Binding FechaInicioFechaFIn} " VerticalTextAlignment="Start" HorizontalTextAlignment="Start"/>
+                                            <Label Grid.Column="0" Text="{Binding FechaInicioFechaFIn} " VerticalTextAlignment="Start" HorizontalTextAlignment="Start"/>
+                                            <Label Grid.Column="1" Text="{Binding Titulo}" VerticalTextAlignment="Start"/>
                                         </Grid>
-                                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding IdUsuario}"/>
-                                        <Label Text="{Binding Descripcion}" 
-                                d:Text="Item description"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
-                                    </StackLayout>
+                                    </Frame>
                                 </Grid>
+                                <!--<Label Grid.Column="1" Grid.Row="1" Text="{Binding IdUsuario}"/>
+                                        <Label Text="{Binding Descripcion}"-->
+                                <!--d:Text="Item description"
+                                Style="{DynamicResource ListItemDetailTextStyle}"
+                                FontSize="13" />-->
+                                <!--</StackLayout>
+                                </Grid>-->
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
