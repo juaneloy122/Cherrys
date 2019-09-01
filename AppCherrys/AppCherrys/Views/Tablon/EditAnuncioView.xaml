@@ -11,9 +11,21 @@
     <ContentPage.Content>
 
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Vertical" Padding="10">
+                <Entry Placeholder="{Binding Item.Titulo}" />
+                <Editor Placeholder="{Binding Item.Descripcion}" AutoSize="TextChanges"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Margin="20,0,20,0" TextColor="#FF8500" Text="Fecha de expriación" FontAttributes="Bold" VerticalOptions="Center"/>
+                    <DatePicker VerticalOptions="Center"/>
+                    <fonts:FontAwesomeIcon Text="{x:Static fonts:Icon.Calendario}" TextColor="#FF8500" FontSize="30" VerticalOptions="Center"/>
+                    
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <CheckBox VerticalOptions="Center"/>
+                    <Label Text="Todos los usuarios" VerticalOptions="Center"/>
+                </StackLayout>
+                
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 

@@ -44,7 +44,7 @@ namespace AppCherrys.Views.Tablon
 
         private async void EditItem_Clicked()
         {
-            await Navigation.PushModalAsync(new NavigationPage(new EditAnuncioView()));
+            await Navigation.PushModalAsync(new NavigationPage(new EditAnuncioView(viewModel.Item)));
         }
     }
 }

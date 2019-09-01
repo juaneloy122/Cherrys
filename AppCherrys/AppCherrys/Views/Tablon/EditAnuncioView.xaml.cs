@@ -1,4 +1,5 @@
 ﻿using AppCherrys.Models.Tablon;
+using AppCherrys.ViewModels.Tablon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace AppCherrys.Views.Tablon
     public partial class EditAnuncioView : ContentPage
     {
 
-        public EditAnuncioView()
+        public EditAnuncioView(Anuncio item)
         {
             InitializeComponent();
 
@@ -27,17 +28,17 @@ namespace AppCherrys.Views.Tablon
             btnSave.GestureRecognizers.Add(tgr1);
 
 
-            BindingContext = this;
+            BindingContext = new EditAnuncioViewModel(item);
         }
 
-        private void cancel()
+        private async void cancel()
         {
-
+            await Navigation.PopModalAsync();
         }
 
-        private void save()
+        private async void save()
         {
-
+            await Navigation.PopModalAsync();
         }
     }
 }
