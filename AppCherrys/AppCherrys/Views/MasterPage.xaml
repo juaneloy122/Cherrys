@@ -14,6 +14,7 @@
              xmlns:views6="clr-namespace:AppCherrys.Views.Doodle"
              xmlns:views7="clr-namespace:AppCherrys.Views.ControlDeAcceso"
              xmlns:views8="clr-namespace:AppCherrys.Views.ControlDeAcesoQR"
+             xmlns:views9="clr-namespace:AppCherrys.Views.FichajeAutomatico"
              xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
              xmlns:fonts="clr-namespace:AppCherrys.Controls.Fuentes"
              
@@ -47,7 +48,7 @@
                             <views:MasterPageItem Title="{x:Static local:Messages.Calendario}" Icon="{x:Static fonts:Icon.Calendario}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views4:CalendarioView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Fichajes}" Icon="{x:Static fonts:Icon.Fichajes}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views7:ControlDeAccesoView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.FichajesQR}" Icon="{x:Static fonts:Icon.CodigoQR}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views8:ControlDeAccesoQr}" />
-
+                            <views:MasterPageItem Title="{x:Static local:Messages.FichajeAutomatico}" Icon="{x:Static fonts:Icon.Fichajes}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views9:FichajeAutomaticoView}" />
                             <!--<views:MasterPageItem Title="{x:Static local:Messages.Actas}" Icon="{x:Static fonts:Icon.Actas}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views3:ActasView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Doodle}" Icon="{x:Static fonts:Icon.Doodle}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views6:DoodleView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Chat}" Icon="{x:Static fonts:Icon.Chat}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views5:ChatView}" />
