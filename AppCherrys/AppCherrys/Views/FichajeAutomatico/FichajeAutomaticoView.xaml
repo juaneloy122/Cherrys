@@ -47,4 +47,21 @@
             </StackLayout>
         </AbsoluteLayout>
     </ContentPage.Content>
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="Medium" Text="Fichaje automático" TextColor="#FF8500" VerticalOptions="Start"/>
+            <StackLayout Orientation="Horizontal" Grid.Column="1" HorizontalOptions="End">
+                <Grid WidthRequest="50">
+                    <Frame HasShadow="False" CornerRadius="40" Padding="5" IsClippedToBounds="True">
+                        <Image Source="FotoPerfil.png"/>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </Grid>
+
+    </NavigationPage.TitleView>
 </ContentPage>
