@@ -39,7 +39,7 @@ namespace AppCherrys.Views
                 var root = Detail.Navigation.NavigationStack[0];
                 Detail.Navigation.InsertPageBefore((Page)Activator.CreateInstance(item.TargetType), root);
                 await Detail.Navigation.PopToRootAsync();
-
+                masterPage.listView.SelectedItem = null;
                 IsPresented = false;
 
                 //Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));

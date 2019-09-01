@@ -10,7 +10,7 @@ namespace AppCherrys.ViewModels.ControlDeAcceso
 {
     public class ControlDeAccesoViewModel : BaseViewModel
     {
-        public string Titulo { get; set; } = "Fichajes";
+        public string Title { get; set; } = "Fichajes";
 
 
         public ICommand FichajesCommand { get; set; }
@@ -25,6 +25,7 @@ namespace AppCherrys.ViewModels.ControlDeAcceso
                 OnPropertyChanged("TextoBotonFichajes");
             }
         }
+
         public DateTime FechaRegistro
         {
             get => _FechaRegistro;

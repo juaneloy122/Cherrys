@@ -13,6 +13,7 @@
              xmlns:views5="clr-namespace:AppCherrys.Views.Chat"
              xmlns:views6="clr-namespace:AppCherrys.Views.Doodle"
              xmlns:views7="clr-namespace:AppCherrys.Views.ControlDeAcceso"
+             xmlns:views8="clr-namespace:AppCherrys.Views.ControlDeAcesoQR"
              xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
              xmlns:fonts="clr-namespace:AppCherrys.Controls.Fuentes"
              
@@ -44,11 +45,13 @@
                             <views:MasterPageItem Title="{x:Static local:Messages.Tablon}" Icon="{x:Static fonts:Icon.Libro_Abierto}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views1:TablonView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Tarea}" Icon="{x:Static fonts:Icon.Tareas}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views2:TareasView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Calendario}" Icon="{x:Static fonts:Icon.Calendario}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views4:CalendarioView}" />
+                            <views:MasterPageItem Title="{x:Static local:Messages.Fichajes}" Icon="{x:Static fonts:Icon.Fichajes}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views7:ControlDeAccesoView}" />
+                            <views:MasterPageItem Title="{x:Static local:Messages.FichajesQR}" Icon="{x:Static fonts:Icon.CodigoQR}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views8:ControlDeAccesoQr}" />
+
                             <!--<views:MasterPageItem Title="{x:Static local:Messages.Actas}" Icon="{x:Static fonts:Icon.Actas}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views3:ActasView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Doodle}" Icon="{x:Static fonts:Icon.Doodle}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views6:DoodleView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.Chat}" Icon="{x:Static fonts:Icon.Chat}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views5:ChatView}" />
                             <views:MasterPageItem Title="{x:Static local:Messages.QuienesSomos}" Icon="{x:Static fonts:Icon.SobreNosotros}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views:AboutPage}" />-->
-                            <views:MasterPageItem Title="{x:Static local:Messages.Fichajes}" Icon="{x:Static fonts:Icon.Fichajes}" ColorIcono="#FFDE55" SizeIcono="30" TargetType="{x:Type views7:ControlDeAccesoView}" />
                         </x:Array>
                     </ListView.ItemsSource>
 
@@ -56,8 +59,8 @@
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand" Orientation="Horizontal">
-                                    <fonts:FontAwesomeIcon Text="{Binding Icon}" TextColor="{Binding ColorIcono}" FontSize="{Binding SizeIcono}"/>
-                                    <Label Grid.Column="1" Text="{Binding Title}" TextColor="#FF8500"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticaNeue-Light"/>
+                                    <fonts:FontAwesomeIcon Text="{Binding Icon}" TextColor="{Binding ColorIcono}" FontSize="{Binding SizeIcono}" WidthRequest="40"/>
+                                    <Label Grid.Column="1" Text="{Binding Title}" TextColor="#FF8500" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontAttributes="Bold" FontFamily="HelveticaNeue-Light"/>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>

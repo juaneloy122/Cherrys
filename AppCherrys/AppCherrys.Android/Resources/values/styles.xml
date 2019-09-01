@@ -18,7 +18,7 @@
     <item name="colorPrimaryDark">#F1EFEF</item>
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
-    <item name="colorAccent">#E89241</item>
+    <item name="colorAccent">#FF8500</item>
     <!-- You can also set colorControlNormal, colorControlActivated
          colorControlHighlight and colorSwitchThumbNormal. -->
     <item name="windowActionModeOverlay">true</item>
@@ -29,7 +29,7 @@
 
     <item name="drawerArrowStyle">@style/DrawerIcon</item>
 
-    <item name="android:actionMenuTextColor">#E89241</item>
+    <item name="android:actionMenuTextColor">#FF8500</item>
 
     <item name="android:colorPressedHighlight">#00ff0000</item>
     <item name="android:colorLongPressedHighlight">#00ff0000</item>
@@ -39,16 +39,16 @@
   </style>
 
   <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
-    <item name="color">#E89241</item>
+    <item name="color">#FF8500</item>
   </style>
 
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
-    <item name="colorAccent">#E89241</item>
+    <item name="colorAccent">#FF8500</item>
   </style>
 
   <style name="AppToolbarTheme" parent="Theme.AppCompat.NoActionBar">
-    <item name="android:textColor">#E89241</item>
+    <item name="android:textColor">#FF8500</item>
   </style>
 
 

@@ -142,6 +142,15 @@ namespace AppCherrys.Constantes.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a FichajesQR.
+        /// </summary>
+        internal static string FichajesQR {
+            get {
+                return ResourceManager.GetString("FichajesQR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Guardar.
         /// </summary>
         internal static string Guardar {
