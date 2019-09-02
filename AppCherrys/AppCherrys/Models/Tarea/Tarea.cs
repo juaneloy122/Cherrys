@@ -2,6 +2,7 @@
 using CommonLib.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Text;
 
 namespace AppCherrys.Models.Tarea
@@ -30,6 +31,10 @@ namespace AppCherrys.Models.Tarea
         public DateTime FechaPrevistaFin { get; set; }
 
         public EstadoTarea Estado { get; set; }
+
+        public Color ColorIcono { get; set; }
+
+        public string Icono { get; set; }
     }
 
     

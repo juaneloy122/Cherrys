@@ -3,13 +3,25 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fonts="clr-namespace:AppCherrys.Controls.Fuentes"
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.Calendario.NuevoEventoView"
              Title="Nuevo evento">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancelar" Clicked="Cancelar_Clicked" />
-        <ToolbarItem Text="Guardar" Clicked="Guardar_Clicked" />
-    </ContentPage.ToolbarItems>
+   
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="Medium" Text="Nueva tarea" TextColor="#FF8500" VerticalOptions="Center"/>
+            <fonts:FontAwesomeIcon x:Name="btnSave" Text="{x:Static fonts:Icon.Save}" TextColor="#FF8500" FontSize="30" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <fonts:FontAwesomeIcon x:FieldModifier="public" x:Name="btnCancel"  Text="{x:Static fonts:Icon.Cerrar}" TextColor="#FF8500" FontSize="40" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+
+    </NavigationPage.TitleView>
 
     <ContentPage.Content>
         <Grid Padding="10">

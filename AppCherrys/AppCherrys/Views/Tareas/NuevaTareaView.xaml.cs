@@ -17,6 +17,29 @@ namespace AppCherrys.Views.Tareas
     {
         public Tarea Item { get; set; }
 
+        public NuevaTareaView(Tarea item)
+        {
+            InitializeComponent();
+
+            Item = item;
+
+            asignarBotonera();
+
+            BindingContext = this;
+        }
+
+        private void asignarBotonera()
+        {
+            TapGestureRecognizer tgr = new TapGestureRecognizer();
+            tgr.Tapped += (s, e) => Cancelar_Clicked();
+            btnCancel.GestureRecognizers.Add(tgr);
+
+            TapGestureRecognizer tgr1 = new TapGestureRecognizer();
+            tgr1.Tapped += (s, e) => Guardar_Clicked();
+            btnSave.GestureRecognizers.Add(tgr1);
+
+        }
+
         public NuevaTareaView()
         {
             InitializeComponent();
@@ -27,10 +50,12 @@ namespace AppCherrys.Views.Tareas
                 Descripcion = "Descripcion."
             };
 
+            asignarBotonera();
+
             BindingContext = this;
         }
 
-        async void Guardar_Clicked(object sender, EventArgs e)
+        async void Guardar_Clicked()
         {
             Item.FechaInicio = DateTime.Now;
             Item.IdUsuario = "Toño"; //Cambiar esto por el usuario logeado
@@ -38,7 +63,7 @@ namespace AppCherrys.Views.Tareas
             await Navigation.PopModalAsync();
         }
 
-        async void Cancelar_Clicked(object sender, EventArgs e)
+        async void Cancelar_Clicked()
         {
             await Navigation.PopModalAsync();
         }

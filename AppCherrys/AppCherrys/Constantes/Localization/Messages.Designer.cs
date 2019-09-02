@@ -133,6 +133,15 @@ namespace AppCherrys.Constantes.Localization {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Fichaje automático.
+        /// </summary>
+        internal static string FichajeAutomatico {
+            get {
+                return ResourceManager.GetString("FichajeAutomatico", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Fichajes.
         /// </summary>
         internal static string Fichajes {
@@ -147,15 +156,6 @@ namespace AppCherrys.Constantes.Localization {
         internal static string FichajesQR {
             get {
                 return ResourceManager.GetString("FichajesQR", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Busca una cadena traducida similar a Fichaje automático.
-        /// </summary>
-        internal static string FichajeAutomatico {
-            get {
-                return ResourceManager.GetString("FichajeAutomatico", resourceCulture);
             }
         }
         
