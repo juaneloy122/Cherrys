@@ -69,7 +69,7 @@
                 </ListView>
             </StackLayout>
             <StackLayout Orientation="Horizontal" HorizontalOptions="End" VerticalOptions="FillAndExpand" Grid.Row="2">
-                <fonts:FontAwesomeIcon x:Name="settings" x:FieldModifier="public" Text="{x:Static fonts:Icon.Settings}" TextColor="#FFDE55" FontSize="30"/>
+                <fonts:FontAwesomeIcon x:Name="settings" x:FieldModifier="public" Text="{x:Static fonts:Icon.Settings}" TextColor="#666666" FontSize="30"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>
