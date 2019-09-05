@@ -4,7 +4,6 @@
 
 namespace AppCherrys
 {
-    using AppCherrys.AppCherrysClient;
     using CommonLib.Models.Tablon;
     using Microsoft.Rest;
     using Microsoft.Rest.Serialization;
@@ -21,53 +20,246 @@ namespace AppCherrys
     /// <summary>
     /// Loggin de usuarios, servidor de anuncios, eventos, actas...
     /// </summary>
-    public partial class AppCherrysClient : ServiceClient<AppCherrysClient>, IAppCherrysClient
+    public partial class AppCherrysClientEjemplo : ServiceClient<AppCherrysClientEjemplo>, IAppCherrysClientEjemplo
     {
-        #region Propiedades y atributos
+       
         /// <summary>
         /// The base URI of the service.
         /// </summary>
-        protected  Uri BaseUri { get; set; }
+        public Uri BaseUri { get; set; }
 
         /// <summary>
         /// Gets or sets json serialization settings.
         /// </summary>
-        protected JsonSerializerSettings SerializationSettings { get; private set; }
+        public JsonSerializerSettings SerializationSettings { get; private set; }
 
         /// <summary>
         /// Gets or sets json deserialization settings.
         /// </summary>
-        protected JsonSerializerSettings DeserializationSettings { get; private set; }
+        public JsonSerializerSettings DeserializationSettings { get; private set; }
 
+        /// <summary>
+        /// Subscription credentials which uniquely identify client subscription.
+        /// </summary>
+        public ServiceClientCredentials Credentials { get; private set; }
 
-        #endregion
-
-        #region Constructor
-
-       
-        public AppCherrysClient() : base()
-        {            
+        /// <summary>
+        /// Initializes a new instance of the AppCherrysClient class.
+        /// </summary>
+        /// <param name='handlers'>
+        /// Optional. The delegating handlers to add to the http client pipeline.
+        /// </param>
+        protected AppCherrysClientEjemplo(params DelegatingHandler[] handlers) : base(handlers)
+        {
             this.Initialize();
         }
-              
+        public AppCherrysClientEjemplo() : base()
+        {
+            //this.BaseUri = new Uri($"{App.AzureBackendUrl}");
+
+            this.Initialize();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the AppCherrysClient class.
+        /// </summary>
+        /// <param name='rootHandler'>
+        /// Optional. The http client handler used to handle http transport.
+        /// </param>
+        /// <param name='handlers'>
+        /// Optional. The delegating handlers to add to the http client pipeline.
+        /// </param>
+        protected AppCherrysClientEjemplo(HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : base(rootHandler, handlers)
+        {
+            this.Initialize();
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the AppCherrysClient class.
+        /// </summary>
+        /// <param name='baseUri'>
+        /// Optional. The base URI of the service.
+        /// </param>
+        /// <param name='handlers'>
+        /// Optional. The delegating handlers to add to the http client pipeline.
+        /// </param>
+        protected AppCherrysClientEjemplo(Uri baseUri, params DelegatingHandler[] handlers) : this(handlers)
+        {
+            if (baseUri == null)
+            {
+                throw new ArgumentNullException("baseUri");
+            }
+            this.BaseUri = baseUri;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the AppCherrysClient class.
+        /// </summary>
+        /// <param name='baseUri'>
+        /// Optional. The base URI of the service.
+        /// </param>
+        /// <param name='rootHandler'>
+        /// Optional. The http client handler used to handle http transport.
+        /// </param>
+        /// <param name='handlers'>
+        /// Optional. The delegating handlers to add to the http client pipeline.
+        /// </param>
+        protected AppCherrysClientEjemplo(Uri baseUri, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        {
+            if (baseUri == null)
+            {
+                throw new ArgumentNullException("baseUri");
+            }
+            this.BaseUri = baseUri;
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the AppCherrysClient class.
+        /// </summary>
+        /// <param name='credentials'>
+        /// Required. Subscription credentials which uniquely identify client subscription.
+        /// </param>
+        /// <param name='handlers'>
+        /// Optional. The delegating handlers to add to the http client pipeline.
+        /// </param>
+        public AppCherrysClientEjemplo(ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        {
+            if (credentials == null)
+            {
+                throw new ArgumentNullException("credentials");
+            }
+            this.Credentials = credentials;
+            if (this.Credentials != null)
+            {
+                this.Credentials.InitializeServiceClient(this);
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the AppCherrysClient class.
+        /// </summary>
+        /// <param name='credentials'>
+        /// Required. Subscription credentials which uniquely identify client subscription.
+        /// </param>
+        /// <param name='rootHandler'>
+        /// Optional. The http client handler used to handle http transport.
+        /// </param>
+        /// <param name='handlers'>
+        /// Optional. The delegating handlers to add to the http client pipeline.
+        /// </param>
+        public AppCherrysClientEjemplo(ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        {
+            if (credentials == null)
+            {
+                throw new ArgumentNullException("credentials");
+            }
+            this.Credentials = credentials;
+            if (this.Credentials != null)
+            {
+                this.Credentials.InitializeServiceClient(this);
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the AppCherrysClient class.
+        /// </summary>
+        /// <param name='baseUri'>
+        /// Optional. The base URI of the service.
+        /// </param>
+        /// <param name='credentials'>
+        /// Required. Subscription credentials which uniquely identify client subscription.
+        /// </param>
+        /// <param name='handlers'>
+        /// Optional. The delegating handlers to add to the http client pipeline.
+        /// </param>
+        public AppCherrysClientEjemplo(Uri baseUri, ServiceClientCredentials credentials, params DelegatingHandler[] handlers) : this(handlers)
+        {
+            if (baseUri == null)
+            {
+                throw new ArgumentNullException("baseUri");
+            }
+            if (credentials == null)
+            {
+                throw new ArgumentNullException("credentials");
+            }
+            this.BaseUri = baseUri;
+            this.Credentials = credentials;
+            if (this.Credentials != null)
+            {
+                this.Credentials.InitializeServiceClient(this);
+            }
+        }
+
+        /// <summary>
+        /// Initializes a new instance of the AppCherrysClient class.
+        /// </summary>
+        /// <param name='baseUri'>
+        /// Optional. The base URI of the service.
+        /// </param>
+        /// <param name='credentials'>
+        /// Required. Subscription credentials which uniquely identify client subscription.
+        /// </param>
+        /// <param name='rootHandler'>
+        /// Optional. The http client handler used to handle http transport.
+        /// </param>
+        /// <param name='handlers'>
+        /// Optional. The delegating handlers to add to the http client pipeline.
+        /// </param>
+        public AppCherrysClientEjemplo(Uri baseUri, ServiceClientCredentials credentials, HttpClientHandler rootHandler, params DelegatingHandler[] handlers) : this(rootHandler, handlers)
+        {
+            if (baseUri == null)
+            {
+                throw new ArgumentNullException("baseUri");
+            }
+            if (credentials == null)
+            {
+                throw new ArgumentNullException("credentials");
+            }
+            this.BaseUri = baseUri;
+            this.Credentials = credentials;
+            if (this.Credentials != null)
+            {
+                this.Credentials.InitializeServiceClient(this);
+            }
+        }
+
+        /// <summary>
+        /// An optional partial-method to perform custom initialization.
+        ///</summary> 
+        partial void CustomInitialize();
         /// <summary>
         /// Initializes client properties.
         /// </summary>
         private void Initialize()
         {
             this.BaseUri = new Uri($"{App.AzureBackendUrl}");
-
-            SetConfiguracionSerializacionJSon();
-            SetConfiguracionDeserializacionJSon();
-
-            ServiceClientTracing.IsEnabled = true;
-            ServiceClientTracing.AddTracingInterceptor(new AppCherrys.AppCherrysClient.LogServicio());
-
+            SerializationSettings = new JsonSerializerSettings
+            {
+                Formatting = Formatting.Indented,
+                DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                DateTimeZoneHandling = DateTimeZoneHandling.Utc,
+                NullValueHandling = NullValueHandling.Ignore,
+                ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+                ContractResolver = new ReadOnlyJsonContractResolver(),
+                Converters = new List<JsonConverter>
+                    {
+                        new Iso8601TimeSpanConverter()
+                    }
+            };
+            DeserializationSettings = new JsonSerializerSettings
+            {
+                DateFormatHandling = DateFormatHandling.IsoDateFormat,
+                DateTimeZoneHandling = DateTimeZoneHandling.Utc,
+                NullValueHandling = NullValueHandling.Ignore,
+                ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
+                ContractResolver = new ReadOnlyJsonContractResolver(),
+                Converters = new List<JsonConverter>
+                    {
+                        new Iso8601TimeSpanConverter()
+                    }
+            };
+            CustomInitialize();
         }
-
-        #endregion
-
-        #region Metodos publicos
         /// <param name='customHeaders'>
         /// Headers that will be added to request.
         /// </param>
@@ -80,16 +272,17 @@ namespace AppCherrys
         public async Task<HttpOperationResponse<IList<Anuncio>>> ListWithHttpMessagesAsync(Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             // Tracing
-            
+            bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
-
-            _invocationId = ServiceClientTracing.NextInvocationId.ToString();
-            Dictionary<string, object> tracingParameters = new Dictionary<string, object>
+            if (_shouldTrace)
+            {
+                _invocationId = ServiceClientTracing.NextInvocationId.ToString();
+                Dictionary<string, object> tracingParameters = new Dictionary<string, object>
                 {
                     { "cancellationToken", cancellationToken }
                 };
-            ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
-
+                ServiceClientTracing.Enter(_invocationId, this, "List", tracingParameters);
+            }
             // Construct URL
             var _baseUrl = this.BaseUri.AbsoluteUri;
             var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "api/item").ToString();
@@ -98,21 +291,47 @@ namespace AppCherrys
             HttpResponseMessage _httpResponse = null;
             _httpRequest.Method = new HttpMethod("GET");
             _httpRequest.RequestUri = new Uri(_url);
-           
+            // Set Headers
+            if (customHeaders != null)
+            {
+                foreach (var _header in customHeaders)
+                {
+                    if (_httpRequest.Headers.Contains(_header.Key))
+                    {
+                        _httpRequest.Headers.Remove(_header.Key);
+                    }
+                    _httpRequest.Headers.TryAddWithoutValidation(_header.Key, _header.Value);
+                }
+            }
 
             // Serialize Request
             string _requestContent = null;
-           
+            // Set Credentials
+            if (this.Credentials != null)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await this.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+
             cancellationToken.ThrowIfCancellationRequested();
-           
+            try
+            {
+
                 ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback(AcceptAllCertifications);
 
                 _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
-           
+            }
+            catch (Exception ex)
+            {
 
-          
+                Console.WriteLine(ex.InnerException.Message);
+                throw;
+            }
+
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
-           
+            }
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
@@ -122,9 +341,10 @@ namespace AppCherrys
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
                 ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
-                
+                if (_shouldTrace)
+                {
                     ServiceClientTracing.Error(_invocationId, ex);
-                
+                }
                 _httpRequest.Dispose();
                 if (_httpResponse != null)
                 {
@@ -156,9 +376,10 @@ namespace AppCherrys
                     throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
                 }
             }
-           
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.Exit(_invocationId, _result);
-            
+            }
             return _result;
         }
 
@@ -184,9 +405,11 @@ namespace AppCherrys
             {
                 item.Validate();
             }
-          
+            // Tracing
+            bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
-           
+            if (_shouldTrace)
+            {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>
                 {
@@ -194,7 +417,7 @@ namespace AppCherrys
                     { "cancellationToken", cancellationToken }
                 };
                 ServiceClientTracing.Enter(_invocationId, this, "Edit", tracingParameters);
-           
+            }
             // Construct URL
             var _baseUrl = this.BaseUri.AbsoluteUri;
             var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "api/item").ToString();
@@ -203,7 +426,18 @@ namespace AppCherrys
             HttpResponseMessage _httpResponse = null;
             _httpRequest.Method = new HttpMethod("PUT");
             _httpRequest.RequestUri = new Uri(_url);
-           
+            // Set Headers
+            if (customHeaders != null)
+            {
+                foreach (var _header in customHeaders)
+                {
+                    if (_httpRequest.Headers.Contains(_header.Key))
+                    {
+                        _httpRequest.Headers.Remove(_header.Key);
+                    }
+                    _httpRequest.Headers.TryAddWithoutValidation(_header.Key, _header.Value);
+                }
+            }
 
             // Serialize Request
             string _requestContent = null;
@@ -214,14 +448,22 @@ namespace AppCherrys
                 _httpRequest.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json-patch+json; charset=utf-8");
             }
             // Set Credentials
-            
+            if (this.Credentials != null)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await this.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            // Send Request
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
-            
+            }
             cancellationToken.ThrowIfCancellationRequested();
             _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
-            
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
-           
+            }
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
@@ -231,9 +473,10 @@ namespace AppCherrys
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
                 ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
-                
+                if (_shouldTrace)
+                {
                     ServiceClientTracing.Error(_invocationId, ex);
-               
+                }
                 _httpRequest.Dispose();
                 if (_httpResponse != null)
                 {
@@ -247,9 +490,10 @@ namespace AppCherrys
                 Request = _httpRequest,
                 Response = _httpResponse
             };
-           
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.Exit(_invocationId, _result);
-            
+            }
             return _result;
         }
 
@@ -270,9 +514,11 @@ namespace AppCherrys
             {
                 item.Validate();
             }
-            
+            // Tracing
+            bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
-           
+            if (_shouldTrace)
+            {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>
                 {
@@ -280,7 +526,7 @@ namespace AppCherrys
                     { "cancellationToken", cancellationToken }
                 };
                 ServiceClientTracing.Enter(_invocationId, this, "Create", tracingParameters);
-            
+            }
             // Construct URL
             var _baseUrl = this.BaseUri.AbsoluteUri;
             var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "api/item").ToString();
@@ -289,7 +535,18 @@ namespace AppCherrys
             HttpResponseMessage _httpResponse = null;
             _httpRequest.Method = new HttpMethod("POST");
             _httpRequest.RequestUri = new Uri(_url);
-           
+            // Set Headers
+            if (customHeaders != null)
+            {
+                foreach (var _header in customHeaders)
+                {
+                    if (_httpRequest.Headers.Contains(_header.Key))
+                    {
+                        _httpRequest.Headers.Remove(_header.Key);
+                    }
+                    _httpRequest.Headers.TryAddWithoutValidation(_header.Key, _header.Value);
+                }
+            }
 
             // Serialize Request
             string _requestContent = null;
@@ -299,14 +556,23 @@ namespace AppCherrys
                 _httpRequest.Content = new StringContent(_requestContent, Encoding.UTF8);
                 _httpRequest.Content.Headers.ContentType = MediaTypeHeaderValue.Parse("application/json-patch+json; charset=utf-8");
             }
-            
+            // Set Credentials
+            if (this.Credentials != null)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await this.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            // Send Request
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
-           
+            }
             cancellationToken.ThrowIfCancellationRequested();
             _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
-           
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
-           
+            }
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
@@ -316,9 +582,10 @@ namespace AppCherrys
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
                 ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
-               
+                if (_shouldTrace)
+                {
                     ServiceClientTracing.Error(_invocationId, ex);
-                
+                }
                 _httpRequest.Dispose();
                 if (_httpResponse != null)
                 {
@@ -350,9 +617,10 @@ namespace AppCherrys
                     throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
                 }
             }
-           
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.Exit(_invocationId, _result);
-           
+            }
             return _result;
         }
 
@@ -369,9 +637,11 @@ namespace AppCherrys
         /// </return>
         public async Task<HttpOperationResponse<Anuncio>> GetItemWithHttpMessagesAsync(int id, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-           
+            // Tracing
+            bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
-           
+            if (_shouldTrace)
+            {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>
                 {
@@ -379,7 +649,7 @@ namespace AppCherrys
                     { "cancellationToken", cancellationToken }
                 };
                 ServiceClientTracing.Enter(_invocationId, this, "GetItem", tracingParameters);
-           
+            }
             // Construct URL
             var _baseUrl = this.BaseUri.AbsoluteUri;
             var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "api/item/{id}").ToString();
@@ -389,18 +659,38 @@ namespace AppCherrys
             HttpResponseMessage _httpResponse = null;
             _httpRequest.Method = new HttpMethod("GET");
             _httpRequest.RequestUri = new Uri(_url);
-           
+            // Set Headers
+            if (customHeaders != null)
+            {
+                foreach (var _header in customHeaders)
+                {
+                    if (_httpRequest.Headers.Contains(_header.Key))
+                    {
+                        _httpRequest.Headers.Remove(_header.Key);
+                    }
+                    _httpRequest.Headers.TryAddWithoutValidation(_header.Key, _header.Value);
+                }
+            }
 
             // Serialize Request
             string _requestContent = null;
-            
+            // Set Credentials
+            if (this.Credentials != null)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await this.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            // Send Request
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
-           
+            }
             cancellationToken.ThrowIfCancellationRequested();
             _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
-           
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
-           
+            }
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
@@ -410,9 +700,10 @@ namespace AppCherrys
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
                 ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
-                
+                if (_shouldTrace)
+                {
                     ServiceClientTracing.Error(_invocationId, ex);
-               
+                }
                 _httpRequest.Dispose();
                 if (_httpResponse != null)
                 {
@@ -444,9 +735,10 @@ namespace AppCherrys
                     throw new SerializationException("Unable to deserialize the response.", _responseContent, ex);
                 }
             }
-          
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.Exit(_invocationId, _result);
-            
+            }
             return _result;
         }
 
@@ -463,9 +755,11 @@ namespace AppCherrys
         /// </return>
         public async Task<HttpOperationResponse> DeleteWithHttpMessagesAsync(int id, Dictionary<string, List<string>> customHeaders = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-           
+            // Tracing
+            bool _shouldTrace = ServiceClientTracing.IsEnabled;
             string _invocationId = null;
-           
+            if (_shouldTrace)
+            {
                 _invocationId = ServiceClientTracing.NextInvocationId.ToString();
                 Dictionary<string, object> tracingParameters = new Dictionary<string, object>
                 {
@@ -473,7 +767,7 @@ namespace AppCherrys
                     { "cancellationToken", cancellationToken }
                 };
                 ServiceClientTracing.Enter(_invocationId, this, "Delete", tracingParameters);
-           
+            }
             // Construct URL
             var _baseUrl = this.BaseUri.AbsoluteUri;
             var _url = new Uri(new Uri(_baseUrl + (_baseUrl.EndsWith("/") ? "" : "/")), "api/item/{id}").ToString();
@@ -483,19 +777,38 @@ namespace AppCherrys
             HttpResponseMessage _httpResponse = null;
             _httpRequest.Method = new HttpMethod("DELETE");
             _httpRequest.RequestUri = new Uri(_url);
-           
+            // Set Headers
+            if (customHeaders != null)
+            {
+                foreach (var _header in customHeaders)
+                {
+                    if (_httpRequest.Headers.Contains(_header.Key))
+                    {
+                        _httpRequest.Headers.Remove(_header.Key);
+                    }
+                    _httpRequest.Headers.TryAddWithoutValidation(_header.Key, _header.Value);
+                }
+            }
 
             // Serialize Request
             string _requestContent = null;
             // Set Credentials
-           
+            if (this.Credentials != null)
+            {
+                cancellationToken.ThrowIfCancellationRequested();
+                await this.Credentials.ProcessHttpRequestAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
+            }
+            // Send Request
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.SendRequest(_invocationId, _httpRequest);
-           
+            }
             cancellationToken.ThrowIfCancellationRequested();
             _httpResponse = await this.HttpClient.SendAsync(_httpRequest, cancellationToken).ConfigureAwait(false);
-            
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.ReceiveResponse(_invocationId, _httpResponse);
-           
+            }
             HttpStatusCode _statusCode = _httpResponse.StatusCode;
             cancellationToken.ThrowIfCancellationRequested();
             string _responseContent = null;
@@ -505,9 +818,10 @@ namespace AppCherrys
                 _responseContent = await _httpResponse.Content.ReadAsStringAsync().ConfigureAwait(false);
                 ex.Request = new HttpRequestMessageWrapper(_httpRequest, _requestContent);
                 ex.Response = new HttpResponseMessageWrapper(_httpResponse, _responseContent);
-               
+                if (_shouldTrace)
+                {
                     ServiceClientTracing.Error(_invocationId, ex);
-                
+                }
                 _httpRequest.Dispose();
                 if (_httpResponse != null)
                 {
@@ -521,48 +835,12 @@ namespace AppCherrys
                 Request = _httpRequest,
                 Response = _httpResponse
             };
-           
+            if (_shouldTrace)
+            {
                 ServiceClientTracing.Exit(_invocationId, _result);
-           
+            }
             return _result;
         }
-
-        #endregion 
-
-        #region Metodos privados
-        private void SetConfiguracionDeserializacionJSon()
-        {
-            DeserializationSettings = new JsonSerializerSettings
-            {
-                DateFormatHandling = DateFormatHandling.IsoDateFormat,
-                DateTimeZoneHandling = DateTimeZoneHandling.Utc,
-                NullValueHandling = NullValueHandling.Ignore,
-                ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-                ContractResolver = new ReadOnlyJsonContractResolver(),
-                Converters = new List<JsonConverter>
-                    {
-                        new Iso8601TimeSpanConverter()
-                    }
-            };
-        }
-
-        private void SetConfiguracionSerializacionJSon()
-        {
-            SerializationSettings = new JsonSerializerSettings
-            {
-                Formatting = Formatting.Indented,
-                DateFormatHandling = DateFormatHandling.IsoDateFormat,
-                DateTimeZoneHandling = DateTimeZoneHandling.Utc,
-                NullValueHandling = NullValueHandling.Ignore,
-                ReferenceLoopHandling = ReferenceLoopHandling.Serialize,
-                ContractResolver = new ReadOnlyJsonContractResolver(),
-                Converters = new List<JsonConverter>
-                    {
-                        new Iso8601TimeSpanConverter()
-                    }
-            };
-        }
-        #endregion
 
     }
 }

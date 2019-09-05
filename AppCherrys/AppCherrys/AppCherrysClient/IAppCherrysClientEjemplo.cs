@@ -17,10 +17,31 @@ namespace AppCherrys
     /// <summary>
     /// Loggin de usuarios, servidor de anuncios, eventos, actas...
     /// </summary>
-    public partial interface IAppCherrysClient : IDisposable
+    public partial interface IAppCherrysClientEjemplo : IDisposable
     {
-              
-        /// <param name='customHeaders'>
+        /// <summary>
+        /// The base URI of the service.
+        /// </summary>
+        Uri BaseUri { get; set; }
+
+        /// <summary>
+        /// Gets or sets json serialization settings.
+        /// </summary>
+        JsonSerializerSettings SerializationSettings { get; }
+
+        /// <summary>
+        /// Gets or sets json deserialization settings.
+        /// </summary>
+        JsonSerializerSettings DeserializationSettings { get; }
+
+        /// <summary>
+        /// Subscription credentials which uniquely identify client
+        /// subscription.
+        /// </summary>
+        ServiceClientCredentials Credentials { get; }
+
+
+            /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
         /// <param name='cancellationToken'>
