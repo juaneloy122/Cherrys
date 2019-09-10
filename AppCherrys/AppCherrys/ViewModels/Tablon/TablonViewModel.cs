@@ -12,14 +12,31 @@ namespace AppCherrys.ViewModels.Tablon
 {
     public class TablonViewModel : BaseViewModel
     {
-        public IDataStore<Anuncio> DataStore
+        //public IDataStore<Anuncio> DataStore
+        //{
+        //    get
+        //    {
+        //        if (App.UseMockDataStore)
+        //            return new MockDataAnuncios();
+        //        else
+        //            return new AzureDataStoreAnuncio();
+        //    }
+        //}
+
+        private IDataStore<Anuncio> _Cliente = null;
+        public IDataStore<Anuncio> Cliente
         {
             get
             {
                 if (App.UseMockDataStore)
                     return new MockDataAnuncios();
                 else
-                    return new AzureDataStoreAnuncio();
+                {
+                    if(_Cliente == null)
+                        _Cliente = new AppCherrysClient().ServiceTablon;
+
+                    return _Cliente;
+                }
             }
         }
 
@@ -35,7 +52,7 @@ namespace AppCherrys.ViewModels.Tablon
             MessagingCenter.Subscribe<NuevoAnuncioView, Anuncio>(this, EnumEventos.AddAnuncio.ToString(), async (obj, item) =>
            {
                var newItem = item as Anuncio;               
-               await DataStore.AddItemAsync(newItem);
+               await Cliente.CreateItemAsync(newItem);
                await ExecuteLoadItemsCommand();
            });
         }
@@ -50,7 +67,7 @@ namespace AppCherrys.ViewModels.Tablon
             try
             {
                 Anuncios.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await Cliente.GetItemsAsync();
                 foreach (var item in items)
                 {
                     Anuncios.Add(item);

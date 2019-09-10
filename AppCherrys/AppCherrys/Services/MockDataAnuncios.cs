@@ -1,10 +1,11 @@
 ﻿using CommonLib.Models.Tablon;
 using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace AppCherrys.Services
 {
-    public class MockDataAnuncios : MockDataStore<Anuncio>
+    public class MockDataAnuncios : MockDataStore<Anuncio>, IClientTablon
     {
         public MockDataAnuncios()
         {
@@ -21,6 +22,11 @@ namespace AppCherrys.Services
             {
                 Items.Add(Anuncio);
             }
+        }
+
+        public void Dispose()
+        {
+            throw new NotImplementedException();
         }
     }
 }

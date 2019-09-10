@@ -28,7 +28,7 @@ namespace AppCherrys.ViewModels.Actas
             {
                 var newItem = item as Acta;
                 Actas.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
+                await DataStore.CreateItemAsync (newItem);
             });
         }
 
@@ -42,7 +42,7 @@ namespace AppCherrys.ViewModels.Actas
             try
             {
                 Actas.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await DataStore.GetItemsAsync();
                 foreach (var item in items)
                 {
                     Actas.Add(item);

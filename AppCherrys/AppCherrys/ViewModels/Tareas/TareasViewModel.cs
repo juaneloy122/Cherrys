@@ -28,7 +28,7 @@ namespace AppCherrys.ViewModels.Tareas
             {
                 var newItem = item as Tarea;
                 Tareas.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
+                await DataStore.CreateItemAsync(newItem);
             });
         }
 
@@ -42,7 +42,7 @@ namespace AppCherrys.ViewModels.Tareas
             try
             {
                 Tareas.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await DataStore.GetItemsAsync();
                 foreach (var item in items)
                 {
                     Tareas.Add(item);

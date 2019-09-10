@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using AppCherrys.Models;
 using AppCherrys.Models.Tablon;
@@ -17,38 +18,62 @@ namespace AppCherrys.Services
            
         }
 
-        public async Task<bool> AddItemAsync(T anuncio)
+      
+        public IList<T> GetItems()
         {
-            Items.Add(anuncio);
-
-            return await Task.FromResult(true);
+            return Items;
         }
 
-        public async Task<bool> UpdateItemAsync(T anuncio)
+        public Task<IList<T>> GetItemsAsync()
         {
-            var oldItem = Items.Where((T arg) => arg.Id == anuncio.Id).FirstOrDefault();
+            return Task.Factory.StartNew(s => GetItems(), CancellationToken.None);
+        }
+
+        public void EditItem(T item)
+        {
+            var oldItem = Items.Where((T arg) => arg.Id == item.Id).FirstOrDefault();
             Items.Remove(oldItem);
-            Items.Add(anuncio);
-
-            return await Task.FromResult(true);
+            Items.Add(item);
         }
 
-        public async Task<bool> DeleteItemAsync(int id)
+        public Task EditItemAsync(T item)
         {
-            var oldItem = Items.Where((T arg) => arg.Id == id).FirstOrDefault();
-            Items.Remove(oldItem);
-
-            return await Task.FromResult(true);
+            return Task.Factory.StartNew(s => EditItem(item), CancellationToken.None);
         }
 
-        public async Task<T> GetItemAsync(int id)
+        public T CreateItem(T item)
         {
-            return await Task.FromResult(Items.FirstOrDefault(s => s.Id == id));
+            int newId = Items.Select((T arg) => arg.Id).Max() + 1;
+            item.Id = newId;
+            Items.Add(item);
+
+            return item;
         }
 
-        public async Task<IList<T>> GetItemsAsync(bool forceRefresh = false)
+        public Task<T> CreateItemAsync(T item)
         {
-            return await Task.FromResult(Items);
+            return Task.Factory.StartNew(s => CreateItem(item), CancellationToken.None);
+        }
+
+        public T GetItem(int id)
+        {
+            return Items.FirstOrDefault(s => s.Id == id);
+        }
+
+        public Task<T> GetItemAsync(int id)
+        {
+            return Task.Factory.StartNew(s => GetItem(id), CancellationToken.None);
+        }
+
+        public void DeleteItem(int id)
+        {
+            T deletedItem = Items.FirstOrDefault(s => s.Id == id);
+            Items.Remove(deletedItem);
+        }
+
+        public Task DeleteItemAsync(int id)
+        {
+            return Task.Factory.StartNew(s => DeleteItem(id), CancellationToken.None);
         }
     }
 }

@@ -58,7 +58,7 @@ namespace CommonLib.Models.Tablon
         /// <summary>
         /// Validate the object. Throws ValidationException if validation fails.
         /// </summary>
-        public virtual void Validate()
+        public virtual void Validar()
         {
             if (Titulo == null)
             {

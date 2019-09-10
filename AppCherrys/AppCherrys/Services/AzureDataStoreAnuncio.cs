@@ -10,51 +10,52 @@ using Xamarin.Essentials;
 
 namespace AppCherrys.Services
 {
-    public class AzureDataStoreAnuncio : AzureDataStore, IDataStore<Anuncio>
+    public class AzureDataStoreAnuncio //: IDataStore<Anuncio>
     {
-        
-        public AzureDataStoreAnuncio()
-        {
-           
-        }
+        //IClientTablon Cliente = null;
 
-        #region Metodos publicos
-        public async Task<IList<Anuncio>> GetItemsAsync(bool forceRefresh = false)
-        {
-            IList<Anuncio> items = AppCherrysClientExtensions.List(Cliente);
+        //public AzureDataStoreAnuncio()
+        //{
+        //    Cliente = new AppCherrysClient().ServiceTablon;
+        //}
 
-            return items;
+        //#region Metodos publicos
+        //public async Task<IList<Anuncio>> GetItemsAsync(bool forceRefresh = false)
+        //{
+        //    IList<Anuncio> items = Cliente.GetAnuncios();// AppCherrysClientExtensions.List(Cliente);
 
-        }
+        //    return items;
 
-        public async Task<Anuncio> GetItemAsync(int id)
-        {
+        //}
 
-            Anuncio item = AppCherrysClientExtensions.GetItem(Cliente, id);
+        //public async Task<Anuncio> GetItemAsync(int id)
+        //{
 
-            return item;
-        }
+        //    Anuncio item = Cliente.GetAnuncio( id);
 
-        public async Task<bool> AddItemAsync(Anuncio item)
-        {
-            AppCherrysClientExtensions.CreateAsync(Cliente, item);
+        //    return item;
+        //}
 
-            return await Task.FromResult(true);
-        }
+        //public async Task<bool> AddItemAsync(Anuncio item)
+        //{
+        //    Cliente.CreateAnuncioAsync( item);
 
-        public async Task<bool> UpdateItemAsync(Anuncio anuncio)
-        {
-            AppCherrysClientExtensions.EditAsync(Cliente, anuncio);
+        //    return await Task.FromResult(true);
+        //}
 
-            return await Task.FromResult(true);
-        }
+        //public async Task<bool> UpdateItemAsync(Anuncio anuncio)
+        //{
+        //    Cliente.EditAnuncioAsync( anuncio);
 
-        public async Task<bool> DeleteItemAsync(int id)
-        {
-            AppCherrysClientExtensions.DeleteAsync(Cliente, id); 
+        //    return await Task.FromResult(true);
+        //}
 
-            return await Task.FromResult(true);
-        }
-        #endregion
+        //public async Task<bool> DeleteItemAsync(int id)
+        //{
+        //    Cliente.DeleteAnuncioAsync( id); 
+
+        //    return await Task.FromResult(true);
+        //}
+        //#endregion
     }
 }

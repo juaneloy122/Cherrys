@@ -6,10 +6,25 @@ namespace AppCherrys.Services
 {
     public interface IDataStore<T>
     {
-        Task<bool> AddItemAsync(T item);
-        Task<bool> UpdateItemAsync(T item);
-        Task<bool> DeleteItemAsync(int id);
+       
+        IList<T> GetItems();
+
+        Task<IList<T>> GetItemsAsync();
+
+        void EditItem(T item);
+
+        Task EditItemAsync(T item);
+
+        T CreateItem(T item);
+
+        Task<T> CreateItemAsync(T item);
+
+        T GetItem(int id);
+
         Task<T> GetItemAsync(int id);
-        Task<IList<T>> GetItemsAsync(bool forceRefresh = false);
+
+        void DeleteItem(int id);
+
+        Task DeleteItemAsync(int id);
     }
 }

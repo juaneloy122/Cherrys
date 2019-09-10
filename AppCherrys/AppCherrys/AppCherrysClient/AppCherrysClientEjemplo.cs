@@ -403,7 +403,7 @@ namespace AppCherrys
         {
             if (item != null)
             {
-                item.Validate();
+                item.Validar();
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;
@@ -512,7 +512,7 @@ namespace AppCherrys
         {
             if (item != null)
             {
-                item.Validate();
+                item.Validar();
             }
             // Tracing
             bool _shouldTrace = ServiceClientTracing.IsEnabled;

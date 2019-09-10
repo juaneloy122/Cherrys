@@ -28,7 +28,7 @@ namespace AppCherrys.ViewModels.Calendario
             {
                 var newItem = item as Evento;
                 Eventos.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
+                await DataStore.CreateItemAsync(newItem);
             });
         }
 
@@ -42,7 +42,7 @@ namespace AppCherrys.ViewModels.Calendario
             try
             {
                 Eventos.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await DataStore.GetItemsAsync();
                 foreach (var item in items)
                 {
                     Eventos.Add(item);
