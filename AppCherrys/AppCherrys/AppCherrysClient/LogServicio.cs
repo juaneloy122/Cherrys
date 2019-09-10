@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Net.Http;
 
-namespace AppCherrys
+namespace AppCherrys.AppCherrysClient
 {
     public class LogServicio : IServiceClientTracingInterceptor
     {
