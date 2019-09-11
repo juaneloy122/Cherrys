@@ -12,16 +12,6 @@ namespace AppCherrys.ViewModels.Tablon
 {
     public class TablonViewModel : BaseViewModel
     {
-        //public IDataStore<Anuncio> DataStore
-        //{
-        //    get
-        //    {
-        //        if (App.UseMockDataStore)
-        //            return new MockDataAnuncios();
-        //        else
-        //            return new AzureDataStoreAnuncio();
-        //    }
-        //}
 
         private IDataStore<Anuncio> _Cliente = null;
         public IDataStore<Anuncio> Cliente
@@ -66,7 +56,7 @@ namespace AppCherrys.ViewModels.Tablon
 
             try
             {
-                Anuncios.Clear();
+                Anuncios.Clear();                
                 var items = await Cliente.GetItemsAsync();
                 foreach (var item in items)
                 {

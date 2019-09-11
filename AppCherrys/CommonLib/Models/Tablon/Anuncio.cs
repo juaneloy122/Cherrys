@@ -23,7 +23,7 @@ namespace CommonLib.Models.Tablon
         /// </summary>
         public Anuncio(string titulo, string descripcion, DateTime fechaPublicacion, string idUsuarioPublicacion, int? id = default(int?))
         {
-            Id = id.Value;
+            Id = id.HasValue ? id.Value :-1;
             Titulo = titulo;
             Descripcion = descripcion;
             FechaPublicacion = fechaPublicacion;

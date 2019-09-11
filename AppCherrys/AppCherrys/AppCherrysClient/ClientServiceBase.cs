@@ -13,7 +13,7 @@ namespace AppCherrys
     /// <summary>
     /// Contiene los metodos comunes para acceder a los controladores de las APIs
     /// </summary>
-    internal class ClientServiceBase
+    public class ClientServiceBase
     {
         #region propiedades
         protected HttpClient _HttpClient = null;

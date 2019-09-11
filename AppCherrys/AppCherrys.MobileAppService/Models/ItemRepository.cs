@@ -26,8 +26,8 @@ namespace AppCherrys.Models
         public void Add(Anuncio item)
         {
             //esto hay que cambiarlo para que sume siempre uno
-            item.Id = 4;
-            items[item.Id] = item;
+
+            items.TryAdd(item.Id, item);
         }
 
         public Anuncio Get(int id)

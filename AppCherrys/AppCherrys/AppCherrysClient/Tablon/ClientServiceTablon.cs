@@ -14,7 +14,7 @@ using System.Threading.Tasks;
 
 namespace AppCherrys.Tablon
 {
-    internal class ClientServiceTablon: ClientServiceBase, IDataStore <Anuncio>// IClientTablon
+    public class ClientServiceTablon: ClientServiceBase, IDataStore <Anuncio>// IClientTablon
     {
         #region propiedades
        
@@ -322,8 +322,11 @@ namespace AppCherrys.Tablon
 
             HttpStatusCode statusCode = httpResponse.StatusCode;
             default(CancellationToken).ThrowIfCancellationRequested();
-            
-            if ((int)statusCode != 200 && (int)statusCode != 404)
+
+            if ((int)statusCode == 404)
+                throw new Exception("No se encontró el Id del item que se pretendía borrar");
+
+            if ((int)statusCode != 200)
                 tratarError(null, invocationId, httpRequest, httpResponse, statusCode);
           
             // Create Result

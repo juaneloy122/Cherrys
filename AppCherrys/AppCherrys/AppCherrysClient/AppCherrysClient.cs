@@ -19,7 +19,7 @@ namespace AppCherrys
         /// </summary>
         protected Uri BaseUri { get; set; }
 
-        internal ClientServiceTablon ServiceTablon { get; private set; } = null;
+        public ClientServiceTablon ServiceTablon { get; private set; } = null;
         #endregion
 
         #region Constructor
