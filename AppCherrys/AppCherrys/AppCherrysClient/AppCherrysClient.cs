@@ -5,18 +5,8 @@
 namespace AppCherrys
 {
     using AppCherrys.Tablon;
-    using CommonLib.Models.Tablon;
     using Microsoft.Rest;
-    using Microsoft.Rest.Serialization;
-    using Newtonsoft.Json;
     using System;
-    using System.Collections.Generic;
-    using System.Net;
-    using System.Net.Http;
-    using System.Net.Http.Headers;
-    using System.Text;
-    using System.Threading;
-    using System.Threading.Tasks;
 
     /// <summary>
     /// Loggin de usuarios, servidor de anuncios, eventos, actas...
@@ -46,7 +36,7 @@ namespace AppCherrys
         private void Initialize()
         {
             this.BaseUri = new Uri($"{App.AzureBackendUrl}");
-                       
+
             var baseUrl = this.BaseUri.AbsoluteUri;
 
             //pal tablon
@@ -56,9 +46,9 @@ namespace AppCherrys
 
         #endregion
 
-       
 
-       
+
+
 
     }
 }
