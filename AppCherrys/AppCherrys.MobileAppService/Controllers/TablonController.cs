@@ -9,13 +9,13 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AppCherrys.Controllers
 {
-    [Route("api/item")]
+    [Route("api/tablon")]
     [ApiController]
-    public class ItemController : ControllerBase
+    public class TablonController : ControllerBase
     {
-        private readonly IItemRepository ItemRepository;
+        private readonly IItemRepository<Anuncio> ItemRepository;
 
-        public ItemController(IItemRepository itemRepository)
+        public TablonController(IItemRepository<Anuncio> itemRepository)
         {
             ItemRepository = itemRepository;
         }

@@ -40,7 +40,7 @@ namespace AppCherrys
             var baseUrl = this.BaseUri.AbsoluteUri;
 
             //pal tablon
-            var urlTablon = new Uri(new Uri(baseUrl + (baseUrl.EndsWith("/") ? "" : "/")), "api/item").ToString();
+            var urlTablon = new Uri(new Uri(baseUrl + (baseUrl.EndsWith("/") ? "" : "/")), "api/tablon").ToString();
             ServiceTablon = new ClientServiceTablon(this.HttpClient, urlTablon);
         }
 

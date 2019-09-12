@@ -1,16 +1,31 @@
-﻿using AppCherrys.Constantes;
+﻿using CommonLib.Constantes;
 using CommonLib.Interfaces;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace AppCherrys.Models.Tarea
+namespace CommonLib.Models.Tarea
 {
     /// <summary>
     /// Define una tarea
     /// </summary>
     public class Tarea : IItem
     {
+
+        public Tarea() { }
+
+        /// <summary>
+        /// Initializes a new instance of the Anuncio class.
+        /// </summary>
+        public Tarea(string titulo, string descripcion, DateTime fechaInicio, DateTime fechaFin, string idUsuarioPublicacion, int id = -1)
+        {
+            Id = id;
+            Titulo = titulo;
+            Descripcion = descripcion;
+            FechaInicio = fechaInicio;
+            FechaFin = fechaFin;
+            IdUsuario = idUsuarioPublicacion;
+        }
+
         public string Cabecera => FechaInicio.ToShortDateString() + " (" + IdUsuario + ") " + Titulo;
         public int Id { get; set; }
         public string Titulo { get; set; }
@@ -32,5 +47,5 @@ namespace AppCherrys.Models.Tarea
         public EstadoTarea Estado { get; set; }
     }
 
-    
+
 }

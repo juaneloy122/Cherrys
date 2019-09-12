@@ -5,12 +5,12 @@ using CommonLib.Models.Tablon;
 
 namespace AppCherrys.Models
 {
-    public class ItemRepository : IItemRepository
+    public class AnuncioRepository : IItemRepository<Anuncio>
     {
         private static ConcurrentDictionary<int, Anuncio> items =
             new ConcurrentDictionary<int, Anuncio>();
 
-        public ItemRepository()
+        public AnuncioRepository()
         {
             Add(new Anuncio { Id = 1, Titulo = "Visita a Kikiricoop", Descripcion = "This is an item description." });
             Add(new Anuncio { Id = 2, Titulo = "Local de Noreña concedido", Descripcion = "This is an item description." });

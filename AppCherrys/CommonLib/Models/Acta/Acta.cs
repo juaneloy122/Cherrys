@@ -3,13 +3,28 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace AppCherrys.Models.Acta
+namespace CommonLib.Models.Acta
 {
     /// <summary>
     /// Acta publicada
     /// </summary>
     public class Acta:IItem
     {
+        public Acta() { }
+
+        /// <summary>
+        /// Initializes a new instance of the Anuncio class.
+        /// </summary>
+        public Acta(string titulo, string descripcion, DateTime fecha, string rutaDocumento, string idUsuarioPublicacion, int id = -1)
+        {
+            Id = id;
+            Titulo = titulo;
+            Descripcion = descripcion;
+            Fecha = fecha;
+            IdUsuario = idUsuarioPublicacion;
+            RutaDocumento = rutaDocumento;
+        }
+
         public string Cabecera => Fecha.ToShortDateString() + " (" + IdUsuario + ") " + Titulo;
         public int Id { get; set; }       
         public string Titulo { get; set; }

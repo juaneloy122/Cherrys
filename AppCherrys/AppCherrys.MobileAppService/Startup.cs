@@ -8,6 +8,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using AppCherrys.Models;
+using CommonLib.Models.Tablon;
 
 namespace AppCherrys.MobileAppService
 {
@@ -24,7 +25,7 @@ namespace AppCherrys.MobileAppService
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            services.AddSingleton<IItemRepository, ItemRepository>();
+            services.AddSingleton<IItemRepository<Anuncio>, AnuncioRepository>();
 
             services.AddSwaggerGen(c =>
             {

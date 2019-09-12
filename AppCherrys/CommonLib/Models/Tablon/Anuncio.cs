@@ -21,9 +21,9 @@ namespace CommonLib.Models.Tablon
         /// <summary>
         /// Initializes a new instance of the Anuncio class.
         /// </summary>
-        public Anuncio(string titulo, string descripcion, DateTime fechaPublicacion, string idUsuarioPublicacion, int? id = default(int?))
+        public Anuncio(string titulo, string descripcion, DateTime fechaPublicacion, string idUsuarioPublicacion, int id = -1)
         {
-            Id = id.HasValue ? id.Value :-1;
+            Id = id;
             Titulo = titulo;
             Descripcion = descripcion;
             FechaPublicacion = fechaPublicacion;
