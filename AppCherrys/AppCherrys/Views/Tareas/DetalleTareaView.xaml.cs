@@ -1,21 +1,15 @@
-﻿using AppCherrys.Models.Tarea;
-using AppCherrys.ViewModels.Tareas;
-using System;
-using System.Collections.Generic;
+﻿using AppCherrys.ViewModels.Tareas;
+using CommonLib.Models.Tarea;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace AppCherrys.Views.Tareas
 {
     [DesignTimeVisible(false)]
     public partial class DetalleTareaView : ContentPage
     {
-       TareaDetalleViewModel viewModel;
+        TareaDetalleViewModel viewModel;
 
         public DetalleTareaView(TareaDetalleViewModel viewModel)
         {

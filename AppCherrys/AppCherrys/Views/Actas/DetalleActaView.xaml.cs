@@ -1,14 +1,8 @@
-﻿using AppCherrys.Models.Acta;
-using AppCherrys.ViewModels.Actas;
-using System;
-using System.Collections.Generic;
+﻿using AppCherrys.ViewModels.Actas;
+using CommonLib.Models.Acta;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace AppCherrys.Views.Actas
 {

@@ -1,14 +1,8 @@
-﻿using AppCherrys.Models.Calendario;
-using AppCherrys.ViewModels.Calendario;
-using System;
-using System.Collections.Generic;
+﻿using AppCherrys.ViewModels.Calendario;
+using CommonLib.Models.Calendario;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace AppCherrys.Views.Calendario
 {

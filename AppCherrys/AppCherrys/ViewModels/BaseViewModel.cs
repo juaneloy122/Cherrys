@@ -3,16 +3,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-using Xamarin.Forms;
-
-using AppCherrys.Models;
-using AppCherrys.Services;
-using AppCherrys.Models.Tablon;
-
 namespace AppCherrys.ViewModels
 {
     public class BaseViewModel : INotifyPropertyChanged
-    {        
+    {
         bool isBusy = false;
         public bool IsBusy
         {

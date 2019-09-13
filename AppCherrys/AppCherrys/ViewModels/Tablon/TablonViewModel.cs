@@ -1,22 +1,35 @@
-﻿using System;
+﻿using AppCherrys.ClientService;
+using AppCherrys.Constantes;
+using AppCherrys.MockDataStore;
+using AppCherrys.Views.Tablon;
+using CommonLib.Models.Tablon;
+using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
-
-using AppCherrys.Models;
-using AppCherrys.Views;
-using AppCherrys.Models.Tablon;
-using AppCherrys.Views.Tablon;
-using AppCherrys.Services;
-using AppCherrys.Constantes;
 
 namespace AppCherrys.ViewModels.Tablon
 {
     public class TablonViewModel : BaseViewModel
     {
-        public IDataStore<Anuncio> DataStore => DependencyService.Get<IDataStore<Anuncio>>() ?? new MockDataAnuncios();
+
+        private IDataStore<Anuncio> _Cliente = null;
+        public IDataStore<Anuncio> Cliente
+        {
+            get
+            {
+                if (App.UseMockDataStore)
+                    return new MockDataAnuncios();
+                else
+                {
+                    if (_Cliente == null)
+                        _Cliente = AppCherrysClient.GetInstance().ServiceTablon;
+
+                    return _Cliente;
+                }
+            }
+        }
 
         public ObservableCollection<Anuncio> Anuncios { get; set; }
         public Command LoadItemsCommand { get; set; }
@@ -27,12 +40,12 @@ namespace AppCherrys.ViewModels.Tablon
             Anuncios = new ObservableCollection<Anuncio>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NuevoAnuncioView, Anuncio>(this, EnumEventos.AddAnuncio.ToString (), async (obj, item) =>
-            {
-                var newItem = item as Anuncio;
-                Anuncios.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
-            });
+            MessagingCenter.Subscribe<NuevoAnuncioView, Anuncio>(this, EnumEventos.AddAnuncio.ToString(), async (obj, item) =>
+           {
+               var newItem = item as Anuncio;
+               await Cliente.CreateItemAsync(newItem);
+               await ExecuteLoadItemsCommand();
+           });
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -45,7 +58,7 @@ namespace AppCherrys.ViewModels.Tablon
             try
             {
                 Anuncios.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await Cliente.GetItemsAsync();
                 foreach (var item in items)
                 {
                     Anuncios.Add(item);

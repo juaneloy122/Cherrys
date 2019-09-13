@@ -1,7 +1,4 @@
-﻿using AppCherrys.Models.Acta;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CommonLib.Models.Acta;
 
 namespace AppCherrys.ViewModels.Actas
 {

@@ -1,12 +1,6 @@
-﻿using System;
+﻿using AppCherrys.ViewModels.Tablon;
 using System.ComponentModel;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using AppCherrys.Models;
-using AppCherrys.ViewModels;
-using AppCherrys.ViewModels.Tablon;
-using AppCherrys.Models.Tablon;
 
 namespace AppCherrys.Views.Tablon
 {
@@ -28,7 +22,7 @@ namespace AppCherrys.Views.Tablon
         {
             InitializeComponent();
 
-            var item = new Anuncio
+            var item = new CommonLib.Models.Tablon.Anuncio
             {
                 Titulo = "Anuncio 1",
                 Descripcion = "This is an item description."

@@ -1,7 +1,8 @@
-﻿using AppCherrys.Constantes;
-using AppCherrys.Models.Calendario;
-using AppCherrys.Services;
+﻿using AppCherrys.ClientService;
+using AppCherrys.Constantes;
+using AppCherrys.MockDataStore;
 using AppCherrys.Views.Calendario;
+using CommonLib.Models.Calendario;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -13,7 +14,22 @@ namespace AppCherrys.ViewModels.Calendario
     public class CalendarioViewModel : BaseViewModel
     {
 
-        public IDataStore<Evento> DataStore => DependencyService.Get<IDataStore<Evento>>() ?? new MockDataCalendario();
+        private IDataStore<Evento> _Cliente = null;
+        public IDataStore<Evento> Cliente
+        {
+            get
+            {
+                if (App.UseMockDataStore)
+                    return new MockDataCalendario();
+                else
+                {
+                    if (_Cliente == null)
+                        _Cliente = AppCherrysClient.GetInstance().ServiceCalendario;
+
+                    return _Cliente;
+                }
+            }
+        }
 
         public ObservableCollection<Evento> Eventos { get; set; }
         public Command LoadItemsCommand { get; set; }
@@ -24,12 +40,12 @@ namespace AppCherrys.ViewModels.Calendario
             Eventos = new ObservableCollection<Evento>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NuevoEventoView, Evento>(this, EnumEventos.AddEvento.ToString (), async (obj, item) =>
-            {
-                var newItem = item as Evento;
-                Eventos.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
-            });
+            MessagingCenter.Subscribe<NuevoEventoView, Evento>(this, EnumEventos.AddEvento.ToString(), async (obj, item) =>
+           {
+               var newItem = item as Evento;
+               Eventos.Add(newItem);
+               await Cliente.CreateItemAsync(newItem);
+           });
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -42,7 +58,7 @@ namespace AppCherrys.ViewModels.Calendario
             try
             {
                 Eventos.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await Cliente.GetItemsAsync();
                 foreach (var item in items)
                 {
                     Eventos.Add(item);

@@ -6,14 +6,16 @@ namespace CommonLib.Interfaces
     {
         int Id { get; set; }
 
-        string Titulo { get; set; }
+        void Validar();
 
-        string Descripcion { get; set; }
+        //string Titulo { get; set; }
 
-        /// <summary>
-        /// Quien crea el item
-        /// </summary>
-        string IdUsuario { get; set; }
+        //string Descripcion { get; set; }
+
+        ///// <summary>
+        ///// Quien crea el item
+        ///// </summary>
+        //string IdUsuario { get; set; }
     }
 }
 

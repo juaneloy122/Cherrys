@@ -1,7 +1,8 @@
-﻿using AppCherrys.Constantes;
-using AppCherrys.Models.Tarea;
-using AppCherrys.Services;
+﻿using AppCherrys.ClientService;
+using AppCherrys.Constantes;
+using AppCherrys.MockDataStore;
 using AppCherrys.Views.Tareas;
+using CommonLib.Models.Tarea;
 using System;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
@@ -13,7 +14,22 @@ namespace AppCherrys.ViewModels.Tareas
     public class TareasViewModel : BaseViewModel
     {
 
-        public IDataStore<Tarea> DataStore => DependencyService.Get<IDataStore<Tarea>>() ?? new MockDataTareas();
+        private IDataStore<Tarea> _Cliente = null;
+        public IDataStore<Tarea> Cliente
+        {
+            get
+            {
+                if (App.UseMockDataStore)
+                    return new MockDataTareas();
+                else
+                {
+                    if (_Cliente == null)
+                        _Cliente =  AppCherrysClient.GetInstance().ServiceTarea;
+
+                    return _Cliente;
+                }
+            }
+        }
 
         public ObservableCollection<Tarea> Tareas { get; set; }
         public Command LoadItemsCommand { get; set; }
@@ -24,12 +40,12 @@ namespace AppCherrys.ViewModels.Tareas
             Tareas = new ObservableCollection<Tarea>();
             LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
 
-            MessagingCenter.Subscribe<NuevaTareaView, Tarea>(this, EnumEventos.AddTarea.ToString (), async (obj, item) =>
-            {
-                var newItem = item as Tarea;
-                Tareas.Add(newItem);
-                await DataStore.AddItemAsync(newItem);
-            });
+            MessagingCenter.Subscribe<NuevaTareaView, Tarea>(this, EnumEventos.AddTarea.ToString(), async (obj, item) =>
+           {
+               var newItem = item as Tarea;
+               Tareas.Add(newItem);
+               await Cliente.CreateItemAsync(newItem);
+           });
         }
 
         async Task ExecuteLoadItemsCommand()
@@ -42,7 +58,7 @@ namespace AppCherrys.ViewModels.Tareas
             try
             {
                 Tareas.Clear();
-                var items = await DataStore.GetItemsAsync(true);
+                var items = await Cliente.GetItemsAsync();
                 foreach (var item in items)
                 {
                     Tareas.Add(item);
