@@ -1,6 +1,4 @@
-﻿using AppCherrys.Models;
-using AppCherrys.ViewModels.Tablon;
-using CommonLib.Models.Tablon;
+﻿using AppCherrys.ViewModels.Tablon;
 using System.ComponentModel;
 using Xamarin.Forms;
 

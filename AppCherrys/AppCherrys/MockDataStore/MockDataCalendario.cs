@@ -1,8 +1,8 @@
-﻿using AppCherrys.Models.Calendario;
+﻿using CommonLib.Models.Calendario;
 using System;
 using System.Collections.Generic;
 
-namespace AppCherrys.Services
+namespace AppCherrys.MockDataStore
 {
 
     public class MockDataCalendario : MockDataStore<Evento>

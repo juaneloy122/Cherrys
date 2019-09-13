@@ -1,7 +1,4 @@
-﻿using AppCherrys.Models.Calendario;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CommonLib.Models.Calendario;
 
 namespace AppCherrys.ViewModels.Calendario
 {

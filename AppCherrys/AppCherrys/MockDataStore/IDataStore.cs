@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AppCherrys.Services
+namespace AppCherrys.MockDataStore
 {
     public interface IDataStore<T>
     {
-       
+
         IList<T> GetItems();
 
         Task<IList<T>> GetItemsAsync();

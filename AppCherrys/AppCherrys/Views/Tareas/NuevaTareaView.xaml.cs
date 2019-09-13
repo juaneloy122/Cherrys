@@ -1,14 +1,9 @@
 ﻿using AppCherrys.Constantes;
-using AppCherrys.Models.Tarea;
+using CommonLib.Models.Tarea;
 using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace AppCherrys.Views.Tareas
 {
@@ -34,7 +29,7 @@ namespace AppCherrys.Views.Tareas
         {
             Item.FechaInicio = DateTime.Now;
             Item.IdUsuario = "Toño"; //Cambiar esto por el usuario logeado
-            MessagingCenter.Send(this, EnumEventos.AddTarea.ToString (), Item);
+            MessagingCenter.Send(this, EnumEventos.AddTarea.ToString(), Item);
             await Navigation.PopModalAsync();
         }
 

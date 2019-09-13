@@ -1,5 +1,5 @@
-﻿using AppCherrys.Models.Calendario;
-using AppCherrys.ViewModels.Calendario;
+﻿using AppCherrys.ViewModels.Calendario;
+using CommonLib.Models.Calendario;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;

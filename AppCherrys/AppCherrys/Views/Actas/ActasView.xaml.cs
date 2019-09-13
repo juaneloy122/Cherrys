@@ -1,5 +1,5 @@
-﻿using AppCherrys.Models.Acta;
-using AppCherrys.ViewModels.Actas;
+﻿using AppCherrys.ViewModels.Actas;
+using CommonLib.Models.Acta;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;

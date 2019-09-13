@@ -9,6 +9,10 @@ using Microsoft.Extensions.Logging;
 using Swashbuckle.AspNetCore.Swagger;
 using AppCherrys.Models;
 using CommonLib.Models.Tablon;
+using CommonLib.Models.Usuario;
+using CommonLib.Models.Acta;
+using CommonLib.Models.Calendario;
+using CommonLib.Models.Tarea;
 
 namespace AppCherrys.MobileAppService
 {
@@ -26,6 +30,10 @@ namespace AppCherrys.MobileAppService
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.AddSingleton<IItemRepository<Anuncio>, AnuncioRepository>();
+            services.AddSingleton<IItemRepository<Acta>, ActaRepository>();
+            services.AddSingleton<IItemRepository<Usuario>, UsuarioRepository>();
+            services.AddSingleton<IItemRepository<Evento>, CalendarioRepository>();
+            services.AddSingleton<IItemRepository<Tarea>, TareaRepository>();
 
             services.AddSwaggerGen(c =>
             {

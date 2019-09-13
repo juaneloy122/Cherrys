@@ -1,24 +1,21 @@
-﻿using System;
+﻿using CommonLib.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using AppCherrys.Models;
-using AppCherrys.Models.Tablon;
-using CommonLib.Interfaces;
 
-namespace AppCherrys.Services
+namespace AppCherrys.MockDataStore
 {
-    public class MockDataStore <T>: IDataStore<T> where T: IItem
+    public class MockDataStore<T> : IDataStore<T> where T : IItem
     {
-        protected  List<T> Items;
+        protected List<T> Items;
 
         public MockDataStore()
         {
-           
+
         }
 
-      
+
         public IList<T> GetItems()
         {
             return Items;

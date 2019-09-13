@@ -1,9 +1,8 @@
-﻿using AppCherrys.Models.Calendario;
-using AppCherrys.Models.Tarea;
+﻿using CommonLib.Models.Tarea;
 using System;
 using System.Collections.Generic;
 
-namespace AppCherrys.Services
+namespace AppCherrys.MockDataStore
 {
 
     public class MockDataTareas : MockDataStore<Tarea>

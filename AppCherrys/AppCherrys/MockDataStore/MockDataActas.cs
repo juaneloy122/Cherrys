@@ -1,11 +1,10 @@
-﻿using AppCherrys.Models.Acta;
+﻿using CommonLib.Models.Acta;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
-namespace AppCherrys.Services
+namespace AppCherrys.MockDataStore
 {
-    
+
     public class MockDataActas : MockDataStore<Acta>
     {
         public MockDataActas()

@@ -1,10 +1,6 @@
-﻿using System;
+﻿using AppCherrys.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using AppCherrys.Services;
-using AppCherrys.Views;
-using System.Threading.Tasks;
 
 namespace AppCherrys
 {
@@ -15,11 +11,11 @@ namespace AppCherrys
         //If using other emulators besides stock Google images you may need to adjust the IP address
         public static string AzureBackendUrl =
             DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:37601";
-        public static bool UseMockDataStore = false;
+        public static bool UseMockDataStore = true;
 
         public App()
         {
-            InitializeComponent();                      
+            InitializeComponent();
 
             MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
         }

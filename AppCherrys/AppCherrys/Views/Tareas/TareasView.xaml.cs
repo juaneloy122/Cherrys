@@ -1,5 +1,5 @@
-﻿using AppCherrys.Models.Tarea;
-using AppCherrys.ViewModels.Tareas;
+﻿using AppCherrys.ViewModels.Tareas;
+using CommonLib.Models.Tarea;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -39,7 +39,7 @@ namespace AppCherrys.Views.Tareas
         {
             base.OnAppearing();
 
-            if (viewModel.Tareas .Count == 0)
+            if (viewModel.Tareas.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
     }

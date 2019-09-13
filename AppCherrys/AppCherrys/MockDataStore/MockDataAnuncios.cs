@@ -1,11 +1,12 @@
-﻿using CommonLib.Models.Tablon;
+﻿using AppCherrys.ClientService;
+using CommonLib.Models.Tablon;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace AppCherrys.Services
+namespace AppCherrys.MockDataStore
 {
-    public class MockDataAnuncios : MockDataStore<Anuncio>, IClientTablon
+    public class MockDataAnuncios : MockDataStore<Anuncio>, IClient<Anuncio>
     {
         public MockDataAnuncios()
         {

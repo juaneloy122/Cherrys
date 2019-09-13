@@ -1,7 +1,4 @@
-﻿using AppCherrys.Models.Tarea;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using CommonLib.Models.Tarea;
 
 namespace AppCherrys.ViewModels.Tareas
 {

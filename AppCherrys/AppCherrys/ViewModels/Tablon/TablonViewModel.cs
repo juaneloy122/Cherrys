@@ -1,5 +1,6 @@
-﻿using AppCherrys.Constantes;
-using AppCherrys.Services;
+﻿using AppCherrys.ClientService;
+using AppCherrys.Constantes;
+using AppCherrys.MockDataStore;
 using AppCherrys.Views.Tablon;
 using CommonLib.Models.Tablon;
 using System;
@@ -22,8 +23,8 @@ namespace AppCherrys.ViewModels.Tablon
                     return new MockDataAnuncios();
                 else
                 {
-                    if(_Cliente == null)
-                        _Cliente = new AppCherrysClient().ServiceTablon;
+                    if (_Cliente == null)
+                        _Cliente = AppCherrysClient.GetInstance().ServiceTablon;
 
                     return _Cliente;
                 }
@@ -41,7 +42,7 @@ namespace AppCherrys.ViewModels.Tablon
 
             MessagingCenter.Subscribe<NuevoAnuncioView, Anuncio>(this, EnumEventos.AddAnuncio.ToString(), async (obj, item) =>
            {
-               var newItem = item as Anuncio;               
+               var newItem = item as Anuncio;
                await Cliente.CreateItemAsync(newItem);
                await ExecuteLoadItemsCommand();
            });
@@ -56,7 +57,7 @@ namespace AppCherrys.ViewModels.Tablon
 
             try
             {
-                Anuncios.Clear();                
+                Anuncios.Clear();
                 var items = await Cliente.GetItemsAsync();
                 foreach (var item in items)
                 {

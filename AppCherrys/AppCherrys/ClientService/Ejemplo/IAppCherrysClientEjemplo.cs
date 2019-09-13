@@ -4,15 +4,13 @@
 
 namespace AppCherrys
 {
+    using CommonLib.Models.Tablon;
+    using Microsoft.Rest;
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
-    using System.Net.Http;
     using System.Threading;
     using System.Threading.Tasks;
-    using Newtonsoft.Json;
-    using Microsoft.Rest;
-    using Models;
-    using CommonLib.Models.Tablon;
 
     /// <summary>
     /// Loggin de usuarios, servidor de anuncios, eventos, actas...
@@ -41,7 +39,7 @@ namespace AppCherrys
         ServiceClientCredentials Credentials { get; }
 
 
-            /// <param name='customHeaders'>
+        /// <param name='customHeaders'>
         /// The headers that will be added to request.
         /// </param>
         /// <param name='cancellationToken'>

@@ -1,10 +1,9 @@
-using AppCherrys;
-using AppCherrys.Services;
+using AppCherrys.ClientService;
+using AppCherrys.MockDataStore;
 using AppCherrysTU;
 using CommonLib.Models.Tablon;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
-using System.Collections.Generic;
 
 namespace AppCherrysClientTU.ClientService
 {
@@ -20,16 +19,16 @@ namespace AppCherrysClientTU.ClientService
 
         public IDataStore<Anuncio> Cliente { get; private set; }
 
-        public Anuncio NuevoAnuncio { get; set; }= new Anuncio("Prueba", "Prueba unitaria", DateTime.Now, "VS");
+        public Anuncio NuevoAnuncio { get; set; } = new Anuncio("Prueba", "Prueba unitaria", DateTime.Now, "VS");
 
         #endregion
         protected override void Arrange()
         {
             base.Arrange();
-           
-            Cliente = new AppCherrysClient().ServiceTablon;
-        }      
+
+            Cliente = AppCherrysClient.GetInstance().ServiceTablon;
+        }
     }
 
-   
+
 }
