@@ -44,11 +44,42 @@ namespace CommonLib.Models.Calendario
         [JsonProperty(PropertyName = "IdUsuario")]
         public string IdUsuario { get; set; }
 
+        private DateTime _fechaInicio;
         [JsonProperty(PropertyName = "FechaInicio")]
-        public DateTime FechaInicio { get; set; }
+        public DateTime FechaInicio
+        {
+            get
+            {
+                return _fechaInicio;
+            }
 
+            set
+            {
+                if (value == DateTime.MinValue)
+                    value = System.DateTime.Now;
+
+                _fechaInicio = value;
+            }
+
+        }
+
+        private DateTime _fechaFin;
         [JsonProperty(PropertyName = "FechaFin")]
-        public DateTime FechaFin { get; set; }
+        public DateTime FechaFin
+        {
+            get
+            {
+                return _fechaFin;
+            }
+
+            set
+            {
+                if (value == DateTime.MinValue)
+                    value = System.DateTime.Now;
+
+                _fechaFin = value;
+            }
+        }
 
         /// <summary>
         /// Validate the object. Throws ValidationException if validation fails.
