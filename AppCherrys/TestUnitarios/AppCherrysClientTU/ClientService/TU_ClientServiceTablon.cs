@@ -170,7 +170,7 @@ namespace AppCherrysClientTU.ClientService
         }
 
         [TestMethod]
-        public void Should_AddItemAsincronamente()
+        public void Should_EditItemAsincronamente()
         {
             Anuncio item = addAnuncioPrueba();
             item.Descripcion = "Prueba sincrona";
