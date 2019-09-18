@@ -13,6 +13,7 @@ using CommonLib.Models.Usuario;
 using CommonLib.Models.Acta;
 using CommonLib.Models.Calendario;
 using CommonLib.Models.Tarea;
+using ST_Utilidades.Log;
 
 namespace AppCherrys.MobileAppService
 {
@@ -43,6 +44,7 @@ namespace AppCherrys.MobileAppService
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            Log.InitLog ("logs\\MobileAppService.txt");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

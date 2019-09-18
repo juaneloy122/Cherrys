@@ -1,0 +1,30 @@
+2019-09-18 15:20:34.526 +02:00 [INF] Hello, world!
+2019-09-18 15:20:34.637 +02:00 [DBG] Dividing 10 by 0
+2019-09-18 15:20:34.753 +02:00 [ERR] Something went wrong
+System.DivideByZeroException: Attempted to divide by zero.
+   at ST_Utilidades.Log.Log.InitLog(String pathFichero) in C:\GitHub\Cherrys\ST_Common\ST_Utilidades\Log\Log.cs:line 26
+2019-09-18 15:46:16.599 +02:00 [INF] Hello, world!
+2019-09-18 15:46:16.643 +02:00 [DBG] Dividing 10 by 0
+2019-09-18 15:46:16.698 +02:00 [ERR] Something went wrong
+System.DivideByZeroException: Attempted to divide by zero.
+   at ST_Utilidades.Log.Log.InitLog(String pathFichero) in C:\GitHub\Cherrys\ST_Common\ST_Utilidades\Log\Log.cs:line 26
+2019-09-18 16:00:55.309 +02:00 [INF] Hello, world!
+2019-09-18 16:00:55.353 +02:00 [DBG] Dividing 10 by 0
+2019-09-18 16:00:55.410 +02:00 [ERR] Something went wrong
+System.DivideByZeroException: Attempted to divide by zero.
+   at ST_Utilidades.Log.Log.InitLog(String pathFichero) in C:\GitHub\Cherrys\ST_Common\ST_Utilidades\Log\Log.cs:line 26
+2019-09-18 16:02:14.015 +02:00 [INF] Hello, world!
+2019-09-18 16:02:14.059 +02:00 [DBG] Dividing 10 by 0
+2019-09-18 16:02:14.118 +02:00 [ERR] Something went wrong
+System.DivideByZeroException: Attempted to divide by zero.
+   at ST_Utilidades.Log.Log.InitLog(String pathFichero) in C:\GitHub\Cherrys\ST_Common\ST_Utilidades\Log\Log.cs:line 26
+2019-09-18 17:01:12.511 +02:00 [INF] Hello, world!
+2019-09-18 17:01:12.560 +02:00 [DBG] Dividing 10 by 0
+2019-09-18 17:01:12.620 +02:00 [ERR] Something went wrong
+System.DivideByZeroException: Attempted to divide by zero.
+   at ST_Utilidades.Log.Log.InitLog(String pathFichero) in C:\GitHub\Cherrys\ST_Common\ST_Utilidades\Log\Log.cs:line 26
+2019-09-18 17:07:09.478 +02:00 [INF] Hello, world!
+2019-09-18 17:07:09.521 +02:00 [DBG] Dividing 10 by 0
+2019-09-18 17:07:09.577 +02:00 [ERR] Something went wrong
+System.DivideByZeroException: Attempted to divide by zero.
+   at ST_Utilidades.Log.Log.InitLog(String pathFichero) in C:\GitHub\Cherrys\ST_Common\ST_Utilidades\Log\Log.cs:line 28
