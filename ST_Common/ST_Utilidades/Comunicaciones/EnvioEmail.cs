@@ -42,12 +42,12 @@ namespace ST_Utilidades.Comunicaciones
         /// <summary>
         /// Puerto de envío.
         /// </summary>
-        public int PuertoEnvio { get; set; } = 465;
+        public int PuertoEnvio { get; set; } = 993;
 
         /// <summary>
         /// Servidor de correo SMTP
         /// </summary>
-        public string Host { get; set; } = "mail.coralesdesign.com";
+        public string Host { get; set; } = "mail.coralesdesign.es";
                
         /// <summary>
         /// Asunto del email
@@ -191,6 +191,7 @@ namespace ST_Utilidades.Comunicaciones
 
             try
             {
+                client.Timeout = 10000;
                 client.Send(msg);
                 return true;
             }
@@ -200,15 +201,12 @@ namespace ST_Utilidades.Comunicaciones
                 string mensajeError = "No se ha podido mandar el email:\n" + ex.Message;
                 foreach (string dire in DireccionesReceptores)
                 {
-                    MailMessage msgBug = new MailMessage();
-                    msgBug.To.Add(dire.Trim());
-                    configurarCuerpoYAsunto(ref msgBug, Asunto, Cuerpo);
-                    adjuntarArchivos(ref msgBug, RutasAdjuntos);
-                    adjuntarArchivos(ref msg, FicherosAdjuntos);
+                    msg.To.Clear();
+                    msg.To.Add(dire.Trim());
 
                     try
                     {
-                        client.Send(msgBug);
+                        client.Send(msg);
                     }
                     catch (Exception ex2)
                     {

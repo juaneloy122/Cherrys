@@ -22,6 +22,8 @@ namespace ST_Utilidades_TU.Comunicaciones
         }
     }
 
+    [TestClass]
+
     public class When_SeEnviaUnEmail : TU_EnvioEmail
     {
         protected override void Act()
