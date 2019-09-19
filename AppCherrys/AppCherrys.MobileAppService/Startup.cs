@@ -44,7 +44,7 @@ namespace AppCherrys.MobileAppService
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
-            Log.InitLog ("logs\\MobileAppService.txt");
+            Log.InitLog ("logs\\MobileAppService.txt", "SERVICIO KUMQUAT");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
