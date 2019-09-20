@@ -42,7 +42,7 @@ namespace ST_Utilidades.Comunicaciones
         /// <summary>
         /// Puerto de envío.
         /// </summary>
-        public int PuertoEnvio { get; set; } = 993;
+        public int PuertoEnvio { get; set; } = 26;
 
         /// <summary>
         /// Servidor de correo SMTP
@@ -139,12 +139,16 @@ namespace ST_Utilidades.Comunicaciones
 
            
 
+
             foreach (string dire in DireccionesReceptores)
             {
                 try
                 {
                     validarDireccion(dire);
-                    msg.To.Add(dire.Trim());
+                    string[] arrayDirecciones = dire.Trim ().Split(';');
+                    foreach (string d in arrayDirecciones)
+                        if(!string.IsNullOrEmpty (d))
+                            msg.To.Add(d.Trim());
                 }
                 catch (Exception ex3)
                 {
@@ -186,12 +190,12 @@ namespace ST_Utilidades.Comunicaciones
                 Credentials = new System.Net.NetworkCredential(DireccionServidor, ClaveServidor),
                 Port = PuertoEnvio,
                 Host = Host,
-                EnableSsl = true
+                EnableSsl = false,
+                Timeout = 10000
             };
 
             try
-            {
-                client.Timeout = 10000;
+            {               
                 client.Send(msg);
                 return true;
             }

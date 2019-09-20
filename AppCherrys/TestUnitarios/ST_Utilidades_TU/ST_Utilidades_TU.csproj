@@ -13,10 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Log\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\..\..\ST_Common\ST_Utilidades\ST_Utilidades.csproj" />
     <ProjectReference Include="..\AppCherrysTU\AppCherrysTU.csproj" />
   </ItemGroup>
