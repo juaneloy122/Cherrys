@@ -5,9 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:fonts="clr-namespace:AppCherrys.Controls.Fuentes"
              mc:Ignorable="d"
-             x:Class="AppCherrys.Views.Tablon.TablonView"
-             Title="{Binding Title}"
-             >
+             x:Class="AppCherrys.Views.Tablon.TablonView">
     <ContentPage.Content>
         <AbsoluteLayout>
             <StackLayout>
@@ -44,28 +42,26 @@
                                                 <ColumnDefinition Width="85"/>
                                             </Grid.ColumnDefinitions>
                                             <StackLayout Grid.Column="0" Orientation="Vertical">
-                                                <Label Text="{Binding Titulo}" VerticalTextAlignment="Start" FontAttributes="Bold" TextColor="Black"/>
-                                                <Label Grid.Row="1" Text="{Binding IdUsuario}" TextColor="#FF8500"/>
+                                                <Label Text="{Binding Titulo}" VerticalTextAlignment="Start" FontAttributes="Bold" TextColor="{DynamicResource ColorTitulos}"/>
+                                                <Label Grid.Row="1" Text="{Binding IdUsuario}" TextColor="{DynamicResource ColorTitulos}"/>
                                             </StackLayout>
                                             <StackLayout Grid.Column="1" Orientation="Vertical">
                                                 <fonts:FontAwesomeIcon Text="{Binding Icono}" TextColor="{Binding ColorIcono}" FontSize="15" HorizontalOptions="End"/>
-                                                <Label Text="{Binding FechaPublicacion, StringFormat='{0:dd/MM/yyyy}'}" VerticalTextAlignment="Start" HorizontalTextAlignment="End" TextColor="Gray"/>
+                                                <Label Text="{Binding FechaPublicacion, StringFormat='{0:dd/MM/yyyy}'}" VerticalTextAlignment="Start" HorizontalTextAlignment="End" TextColor="{DynamicResource ColorTextoLetraSecundario}"/>
                                             </StackLayout>
                                         </Grid>
                                         <Label Text="{Binding Descripcion}" 
                                 d:Text="Item description"
-                                Style="{DynamicResource ListItemDetailTextStyle}" TextColor="Black" Grid.Row="2" Grid.ColumnSpan="2"
+                                Style="{DynamicResource ListItemDetailTextStyle}" Grid.Row="2" Grid.ColumnSpan="2"
                                 FontSize="13" />
                                     </StackLayout>
-
                                 </Grid>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
             </StackLayout>
-            <fonts:FontAwesomeIcon x:Name="btnAdd" x:FieldModifier="public" Text="{x:Static fonts:Icon.Add}" TextColor="#FF8500" FontSize="50" AbsoluteLayout.LayoutBounds=".95,.95,70,70"
-            AbsoluteLayout.LayoutFlags="PositionProportional"/>
+            <fonts:FontAwesomeIcon x:Name="btnAdd" x:FieldModifier="public" Text="{x:Static fonts:Icon.Add}" FontSize="50" AbsoluteLayout.LayoutBounds=".95,.95,70,70" AbsoluteLayout.LayoutFlags="PositionProportional"/>
         </AbsoluteLayout>
     </ContentPage.Content>
     <NavigationPage.TitleView>
@@ -74,7 +70,7 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <Label FontSize="Medium" Text="{Binding Title}" TextColor="#FF8500" VerticalOptions="Center"/>
+            <Label FontSize="Medium" Text="{Binding Title}" TextColor="{DynamicResource ColorTitulos}" VerticalOptions="Center"/>
             <StackLayout Orientation="Horizontal" Grid.Column="1" HorizontalOptions="End">
                 <Grid WidthRequest="50">
                     <Frame HasShadow="False" CornerRadius="40" Padding="5" IsClippedToBounds="True">

@@ -8,16 +8,13 @@
              xmlns:views="clr-namespace:AppCherrys.Views"
              xmlns:views1="clr-namespace:AppCherrys.Views.Tablon"
              xmlns:views2="clr-namespace:AppCherrys.Views.Tareas"
-             xmlns:views3="clr-namespace:AppCherrys.Views.Actas"
              xmlns:views4="clr-namespace:AppCherrys.Views.Calendario"
-             xmlns:views5="clr-namespace:AppCherrys.Views.Chat"
-             xmlns:views6="clr-namespace:AppCherrys.Views.Doodle"
              xmlns:views7="clr-namespace:AppCherrys.Views.ControlDeAcceso"
              xmlns:views8="clr-namespace:AppCherrys.Views.ControlDeAcesoQR"
              xmlns:views9="clr-namespace:AppCherrys.Views.FichajeAutomatico"
              xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
              xmlns:fonts="clr-namespace:AppCherrys.Controls.Fuentes"
-             
+             BackgroundColor="{DynamicResource NavigationBarColor}"
              Padding="0,40,0,0"
              Title="Menú">
 

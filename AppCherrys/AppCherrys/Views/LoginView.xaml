@@ -24,10 +24,10 @@
                 <Entry x:Name="PasswordEntry"
                        Text="{Binding Password}"
                        Placeholder="{x:Static local:Messages.Password}"
-                       IsPassword="True" />
+                       IsPassword="True"/>
                 <Label Text="Credenciales incorrectas" 
                        IsVisible="{Binding AreCredentialsInvalid}" 
-                       TextColor="Red" />
+                       TextColor="Red"/>
             </StackLayout>
             <Button Grid.Row="2" Text="{x:Static local:Messages.Autenticate}" Command="{Binding AuthenticateCommand}" CornerRadius="20" BackgroundColor="#FFDE55" TextColor="#FF8500"/>
         </Grid>

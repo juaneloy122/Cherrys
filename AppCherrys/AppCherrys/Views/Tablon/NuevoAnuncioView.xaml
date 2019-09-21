@@ -62,9 +62,9 @@
                 <ColumnDefinition Width="60"/>
                 <ColumnDefinition Width="60"/>
             </Grid.ColumnDefinitions>
-            <Label FontSize="Medium" Text="Nuevo anuncio" TextColor="#FF8500" VerticalOptions="Center"/>
-            <fonts:FontAwesomeIcon x:Name="btnSave" Text="{x:Static fonts:Icon.Save}" TextColor="#FF8500" FontSize="30" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <fonts:FontAwesomeIcon x:FieldModifier="public" x:Name="btnCancel"  Text="{x:Static fonts:Icon.Cerrar}" TextColor="#FF8500" FontSize="40" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label FontSize="Medium" Text="Nuevo anuncio" TextColor="{DynamicResource ColorTitulos}" VerticalOptions="Center"/>
+            <fonts:FontAwesomeIcon x:Name="btnSave" Text="{x:Static fonts:Icon.Save}" FontSize="30" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <fonts:FontAwesomeIcon x:FieldModifier="public" x:Name="btnCancel" Text="{x:Static fonts:Icon.Cerrar}" FontSize="40" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"/>
         </Grid>
 
     </NavigationPage.TitleView>

@@ -51,13 +51,17 @@ namespace AppCherrys
             else
                 DependencyService.Register<AzureDataStore>();
 
+
             MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
+
+          
         }
 
         protected override void OnSleep()
         {
             // Handle when your app sleeps
         }
+
 
         protected override void OnResume()
         {

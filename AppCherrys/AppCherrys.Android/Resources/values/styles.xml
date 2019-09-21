@@ -15,7 +15,7 @@
     <!-- colorPrimary is used for the default action bar background -->
     <item name="colorPrimary">#F1EFEF</item>
     <!-- colorPrimaryDark is used for the status bar -->
-    <item name="colorPrimaryDark">#F1EFEF</item>
+    <item name="colorPrimaryDark">#FF8500</item>
     <!-- colorAccent is used as the default value for colorControlActivated
          which is used to tint widgets -->
     <item name="colorAccent">#FF8500</item>
@@ -37,6 +37,10 @@
     <item name="android:colorActivatedHighlight">#00ff0000</item>
     
   </style>
+  
+  
+  
+  
 
   <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
     <item name="color">#FF8500</item>
