@@ -1,8 +1,9 @@
 ﻿using AppCherrys.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using AppCherrys.Constantes.Localization;
-
+using AppCherrys.Constantes.Localization;using ST_Utilidades.Log;
+using System;
+
 namespace AppCherrys
 {
     public partial class App : Application
@@ -16,12 +17,17 @@ namespace AppCherrys
 
         public App()
         {
+            string nombreUsuario = Environment.UserName;
+            Log.InitLog($"\\loggs\\Kumquat_{nombreUsuario}.txt", "Kumquat");
+
             Localization.Current.OnCultureChanged += (culture) =>
             {
                 Messages.Culture = culture;
             };
             Localization.Current.EnsureDeviceOrDefaultCulture(defaultCultureName: "es", availableCultures: new[] { "es", "en", "as" });
             MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
+
+            Log.AddNormal("Se inicializa la aplicación");
         }
 
         protected override void OnSleep()
