@@ -1,4 +1,5 @@
-﻿using AppCherrys.Views.Tareas;
+﻿using AppCherrys.Views.Configuracion;
+using AppCherrys.Views.Tareas;
 using System;
 using System.ComponentModel;
 using Xamarin.Forms;
@@ -51,7 +52,7 @@ namespace AppCherrys.Views
         private async void OnSettingsTap()
         {
             var root = Detail.Navigation.NavigationStack[0];
-            Detail.Navigation.InsertPageBefore(new TareasView(), root);
+            Detail.Navigation.InsertPageBefore(new ConfigurationView(), root);
             await Detail.Navigation.PopToRootAsync();
 
             IsPresented = false;

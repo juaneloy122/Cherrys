@@ -37,15 +37,10 @@
     <item name="android:colorActivatedHighlight">#00ff0000</item>
     
   </style>
-  
-  
-  
-  
 
   <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
     <item name="color">#FF8500</item>
   </style>
-
 
   <style name="AppCompatDialogStyle" parent="Theme.AppCompat.Light.Dialog">
     <item name="colorAccent">#FF8500</item>
@@ -54,10 +49,4 @@
   <style name="AppToolbarTheme" parent="Theme.AppCompat.NoActionBar">
     <item name="android:textColor">#FF8500</item>
   </style>
-
-
-  
-  
-  
-  
 </resources>

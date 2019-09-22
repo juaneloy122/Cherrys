@@ -3,15 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AppCherrys.Resources.DarkTheme">
 
-
-
     <Color x:Key="PageBackgroundColor">#252423</Color>
     <Color x:Key="NavigationBarColor">#201f1E</Color>
     <Color x:Key="ColorTitulos">#FF8500</Color>
     <Color x:Key="ColorTextoLetraNormal">White</Color>
     <Color x:Key="ColorTextoLetraSecundario">White</Color>
-    
-    
 
     <!--<Color x:Key="ColorGrisOscuro">#FF8500</Color>
     <Color x:Key="TituloColor">#FF8500</Color>
