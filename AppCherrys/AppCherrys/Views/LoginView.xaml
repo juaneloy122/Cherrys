@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
+             xmlns:controlessyncfusion="clr-namespace:ST_ControlesCliente.ControlesSyncFusion;assembly=ST_ControlesCliente"
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.LoginView"
               NavigationPage.HasNavigationBar="false">
@@ -18,6 +19,20 @@
                 <Image Source="QKT.png"/>
             </StackLayout>
             <StackLayout Grid.Row="1">
+                <controlessyncfusion:SF_TextInputLayout 
+                    UnfocusedColor="Green"
+                    ContainerBackgroundColor="{Binding BackgroundColor}"
+                    FocusedColor="Red"
+                    ContainerType="Outlined"
+                    HelperText="Name on your card"
+                    Hint="Name"
+                    IsHintAlwaysFloated="True"
+                    OutlineCornerRadius="5"
+                    >
+                    <Entry x:Name="name" Text=""/>
+                </controlessyncfusion:SF_TextInputLayout>
+
+
                 <Entry x:Name="UsernameEntry"
                        Text="{Binding Username}"
                        Placeholder="{x:Static local:Messages.Usuario}" />

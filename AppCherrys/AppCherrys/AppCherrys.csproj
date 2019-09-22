@@ -19,6 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ST_ControlesCliente\ST_ControlesCliente.csproj" />
     <ProjectReference Include="..\CommonLib\CommonLib.csproj" />
   </ItemGroup>
 

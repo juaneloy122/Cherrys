@@ -27,12 +27,14 @@ namespace AppCherrys
 
         public App()
         {
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTQ2MDgyQDMxMzcyZTMzMmUzMGlERUxKYkdqcWxpK0lSb0I2YXplNmFVbTdCb0V5ejVYb28zb1lCUDJJcnc9");
+
             Localization.Current.OnCultureChanged += (culture) =>
             {
                 Messages.Culture = culture;
             };
             Localization.Current.EnsureDeviceOrDefaultCulture(defaultCultureName: "es", availableCultures: new[] { "es", "en", "as" });
-
 
             MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
         }
