@@ -15,6 +15,10 @@ namespace AppCherrys.Views.Calendario
         {
             InitializeComponent();
 
+            TapGestureRecognizer tgr = new TapGestureRecognizer();
+            tgr.Tapped += (s, e) => AddItem_Clicked();
+            btnAdd.GestureRecognizers.Add(tgr);
+
             BindingContext = viewModel = new CalendarioViewModel();
         }
 
@@ -30,7 +34,7 @@ namespace AppCherrys.Views.Calendario
             ItemsListView.SelectedItem = null;
         }
 
-        async void AddItem_Clicked(object sender, EventArgs e)
+        async void AddItem_Clicked()
         {
             await Navigation.PushModalAsync(new NavigationPage(new NuevoEventoView()));
         }

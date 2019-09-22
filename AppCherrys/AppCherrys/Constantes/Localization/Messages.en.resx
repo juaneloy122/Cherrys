@@ -142,4 +142,13 @@
   <data name="Cancelar" xml:space="preserve">
     <value>Cancel</value>
   </data>
+  <data name="Fichajes" xml:space="preserve">
+    <value>Fichajes</value>
+  </data>
+  <data name="FichajesQR" xml:space="preserve">
+    <value>FichajesQR</value>
+  </data>
+  <data name="FichajeAutomatico" xml:space="preserve">
+    <value>Automatic signing</value>
+  </data>
 </root>

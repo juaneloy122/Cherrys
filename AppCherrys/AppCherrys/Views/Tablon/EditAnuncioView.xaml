@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fonts="clr-namespace:AppCherrys.Controls.Fuentes"
+             mc:Ignorable="d"
+             x:Class="AppCherrys.Views.Tablon.EditAnuncioView"
+             Title="Modificar anuncio">
+
+    <ContentPage.Content>
+
+        <StackLayout>
+            <StackLayout Orientation="Vertical" Padding="10">
+                <Frame Margin="0,0,0,5" CornerRadius="10" HasShadow="True">
+                    <StackLayout>
+                        <Entry Placeholder="{Binding Item.Titulo}" />
+                        <Editor Placeholder="{Binding Item.Descripcion}" AutoSize="TextChanges"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Margin="0,0,0,5" CornerRadius="10" HasShadow="True">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Margin="20,0,20,0" TextColor="#FF8500" Text="Fecha de expriación" FontAttributes="Bold" VerticalOptions="Center"/>
+                        <DatePicker VerticalOptions="Center"/>
+                        <fonts:FontAwesomeIcon Text="{x:Static fonts:Icon.Calendario}" TextColor="#FF8500" FontSize="30" VerticalOptions="Center"/>
+                    </StackLayout>
+                </Frame>
+                <Frame Margin="0,0,0,5" CornerRadius="10" HasShadow="True">
+                    <StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox VerticalOptions="Center"/>
+                            <Label Text="Todos los usuarios" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox VerticalOptions="Center"/>
+                            <Label Text="José Manuel Rodriguez" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox VerticalOptions="Center"/>
+                            <Label Text="Antonio josé Lopez" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox VerticalOptions="Center"/>
+                            <Label Text="Marino García" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox VerticalOptions="Center"/>
+                            <Label Text="Pepe Fernandez" VerticalOptions="Center"/>
+                        </StackLayout>
+                        <StackLayout Orientation="Horizontal">
+                            <CheckBox VerticalOptions="Center"/>
+                            <Label Text="Juan Solo" VerticalOptions="Center"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+           
+        </StackLayout>
+    </ContentPage.Content>
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="60"/>
+                <ColumnDefinition Width="60"/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="Medium" Text="Modificar anuncio" TextColor="#FF8500" VerticalOptions="Center"/>
+            <fonts:FontAwesomeIcon x:Name="btnSave" Text="{x:Static fonts:Icon.Save}" TextColor="#FF8500" FontSize="30" Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <fonts:FontAwesomeIcon x:Name="btnCancel"  Text="{x:Static fonts:Icon.Cerrar}" TextColor="#FF8500" FontSize="40" Grid.Column="2" VerticalOptions="Center" HorizontalOptions="Center"/>
+        </Grid>
+
+    </NavigationPage.TitleView>
+
+</ContentPage>
