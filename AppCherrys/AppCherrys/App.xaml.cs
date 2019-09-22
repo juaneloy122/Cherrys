@@ -1,8 +1,9 @@
 ﻿using AppCherrys.Views;
 using Xamarin.Essentials;
 using Xamarin.Forms;
-using AppCherrys.Constantes.Localization;using ST_Utilidades.Log;
+using AppCherrys.Constantes.Localization;
 using System;
+using ST_Utilidades.Log;
 
 namespace AppCherrys
 {
@@ -18,7 +19,7 @@ namespace AppCherrys
         public App()
         {
             string nombreUsuario = Environment.UserName;
-            Log.InitLog($"\\loggs\\Kumquat_{nombreUsuario}.txt", "Kumquat");
+           
 
             Localization.Current.OnCultureChanged += (culture) =>
             {

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CommonLib.Constantes;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Net.Mail;
@@ -6,7 +7,8 @@ using System.Net.Mime;
 using System.Text;
 
 namespace ST_Utilidades.Comunicaciones
-{
+{     
+
     /// <summary>
     /// Clase que se utiliza para el envío de correos electrónicos.
     /// </summary>
@@ -62,7 +64,7 @@ namespace ST_Utilidades.Comunicaciones
         /// <summary>
         /// Lista con los paths de los ficheros que se pretenden adjuntar al email.
         /// </summary>
-        public string[] RutasAdjuntos { get; set; }
+        private string[] RutasAdjuntos { get; set; }
 
         /// <summary>
         /// Lista con los ficheros que se pretenden adjuntar al email, sólo pueden ser texto plano.
@@ -122,6 +124,51 @@ namespace ST_Utilidades.Comunicaciones
         #endregion
 
         #region Métodos publicos
+        public bool EnviarEmail()
+        {
+            MailMessage msg = new MailMessage();
+            return enviarEmail(msg);
+        }
+
+        /// <summary>
+        /// Envia un email con conexión segura.
+        /// Por defecto se manda al puerto y servidor de gmail, a la dirección antonioastur@gmail.com
+        /// </summary>
+        public bool EnviarEmail(string[] direcciones, string asunto, string mensaje)
+        {
+            DireccionesReceptores = direcciones;
+            Asunto = asunto;
+            Cuerpo = mensaje;
+
+            return EnviarEmail();
+        }
+
+        /// <summary>
+        /// Envia un email con conexión segura.
+        /// Por defecto se manda al puerto y servidor de gmail, a la dirección antonioastur@gmail.com
+        /// </summary>
+        public bool EnviarEmail(string[] direcciones, string[] direccionesOcultas, string asunto, string mensaje)
+        {
+            DireccionesReceptores = direcciones;
+            DireccionesReceptoresOcultos = direccionesOcultas;
+            Asunto = asunto;
+            Cuerpo = mensaje;
+
+            return EnviarEmail();
+        }
+
+        /// <summary>
+        /// Envia un email con conexión segura.
+        /// Por defecto se manda al puerto y servidor de gmail, a la dirección antonioastur@gmail.com
+        /// </summary>
+        public bool EnviarEmail(string direccion, string asunto, string mensaje)
+        {
+            DireccionesReceptores = new string[] { direccion };
+            Asunto = asunto;
+            Cuerpo = mensaje;
+
+            return EnviarEmail();
+        }
 
         /// <summary>
         /// Envia un email con conexión segura.
@@ -129,10 +176,9 @@ namespace ST_Utilidades.Comunicaciones
         /// conexionSegura: se realiza conexión SSL
         /// credenciales: si es true, se meten credenciales al servidor
         /// </summary>
-        public bool EnviarEmail()
+        private bool enviarEmail(MailMessage msg)
         {
-            //1º.Configuramos el email
-            MailMessage msg = new MailMessage();
+            //1º.Configuramos el email            
 
             if (DireccionesReceptores == null && DireccionesReceptoresOcultos == null)
                 throw new Exception("Es necesario indicar las direcciones de correo a las que se envía el email.");
@@ -179,11 +225,7 @@ namespace ST_Utilidades.Comunicaciones
             msg.From = new MailAddress(DireccionServidor, DisplayName, System.Text.Encoding.UTF8);
 
             configurarCuerpoYAsunto(ref msg, Asunto, Cuerpo);
-
-            //Adjuntos
-            adjuntarArchivos(ref msg, RutasAdjuntos);
-            adjuntarArchivos(ref msg, FicherosAdjuntos);
-
+                       
             //Servidor de correo
             SmtpClient client = new SmtpClient
             {
@@ -222,6 +264,17 @@ namespace ST_Utilidades.Comunicaciones
             }
         }
 
+        public bool EnviarEmail(List<Attachment> adjuntos)
+        {
+            MailMessage msg = new MailMessage();
+            foreach (Attachment atacheado in adjuntos)
+                msg.Attachments.Add(atacheado);
+
+            return enviarEmail(msg);
+        }
+
+       
+
         private void validarDireccion(string direccion)
         {
             if (string.IsNullOrEmpty (direccion) || direccion.Length < 6)
@@ -249,20 +302,20 @@ namespace ST_Utilidades.Comunicaciones
             msg.IsBodyHtml = true;
         }
 
-        private void adjuntarArchivos(ref MailMessage msg, string[] adjuntos)
+        public List <Attachment > AdjuntarArchivos(string[] adjuntos, string mediaType )
         {
-            if (adjuntos != null)
-            {
-                foreach (string adjunto in adjuntos)
-                {
-                    //En vez de abjuntar el archivo directamente, lo cargamos en memoria, porque si se adjunta directamente deja el fichero pillado.                 ;
-                    msg.Attachments.Add(new Attachment(getStreamFile(adjunto), Path.GetFileName(adjunto), null));
+            if (adjuntos == null || adjuntos.Length == 0)
+                return null;
 
-                    //Attachment archivo = new Attachment(adjunto);
-                    ////Se le puede dar un nombre al archivo para que quede bonito, ej. archivo.Name = "Resolucion.pdf";
-                    //msg.Attachments.Add(archivo);
-                }
+            List<Attachment> atacheados = new List<Attachment>();
+            foreach (string adjunto in adjuntos)
+            {
+                //En vez de abjuntar el archivo directamente, lo cargamos en memoria, porque si se adjunta directamente deja el fichero pillado. 
+                atacheados.Add(new Attachment(getStreamFile(adjunto), Path.GetFileName(adjunto), mediaType));
             }
+
+            return atacheados;
+
         }
 
         private Stream getStreamFile(string filePath)
@@ -277,59 +330,22 @@ namespace ST_Utilidades.Comunicaciones
             }
         }
 
-        private void adjuntarArchivos(ref MailMessage msg, System.IO.Stream[] adjuntos)
+        private void adjuntarArchivos(ref MailMessage msg, System.IO.Stream[] adjuntos, string mediaType = MediaTypeNames.Text.Plain)
         {
             if (adjuntos != null)
             {
                 foreach (System.IO.Stream adjunto in adjuntos)
                 {
-                    Attachment archivo = new Attachment(adjunto, new ContentType(MediaTypeNames.Text.Plain));
+                    Attachment archivo = new Attachment(adjunto, new ContentType(mediaType));
                     //Se le puede dar un nombre al archivo para que quede bonito, ej. archivo.Name = "Resolucion.pdf";
                     msg.Attachments.Add(archivo);
                 }
             }
         }
-              
 
-        /// <summary>
-        /// Envia un email con conexión segura.
-        /// Por defecto se manda al puerto y servidor de gmail, a la dirección antonioastur@gmail.com
-        /// </summary>
-        public bool EnviarEmail(string[] direcciones, string asunto, string mensaje)
-        {
-            DireccionesReceptores = direcciones;
-            Asunto = asunto;
-            Cuerpo = mensaje;
+       
 
-            return EnviarEmail();
-        }
-
-        /// <summary>
-        /// Envia un email con conexión segura.
-        /// Por defecto se manda al puerto y servidor de gmail, a la dirección antonioastur@gmail.com
-        /// </summary>
-        public bool EnviarEmail(string[] direcciones, string[] direccionesOcultas, string asunto, string mensaje)
-        {
-            DireccionesReceptores = direcciones;
-            DireccionesReceptoresOcultos = direccionesOcultas;
-            Asunto = asunto;
-            Cuerpo = mensaje;
-
-            return EnviarEmail();
-        }
-
-        /// <summary>
-        /// Envia un email con conexión segura.
-        /// Por defecto se manda al puerto y servidor de gmail, a la dirección antonioastur@gmail.com
-        /// </summary>
-        public bool EnviarEmail(string direccion, string asunto, string mensaje)
-        {
-            DireccionesReceptores = new string[] { direccion };
-            Asunto = asunto;
-            Cuerpo = mensaje;
-
-            return EnviarEmail();
-        }
+        
                
         #endregion
     }

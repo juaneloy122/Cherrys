@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using Serilog;
+using Serilog.Core;
 using ST_Utilidades.Comunicaciones;
 using ST_Utilidades.Constantes;
 
@@ -24,24 +25,35 @@ namespace ST_Utilidades.Log
 
         public static void InitLog (string pathFichero, string proceso)
         {
-            NombreProceso = proceso;
+            try
+            {
+                NombreProceso = proceso;
 
-            Serilog.Log.Logger = new LoggerConfiguration()
-                .MinimumLevel.Debug()
-                .WriteTo.Console()
-                .WriteTo.File(pathFichero, rollingInterval: RollingInterval.Day)
-                .CreateLogger();
+                Serilog.Log.Logger = new LoggerConfiguration()
+                    .MinimumLevel.Debug()
+                    .WriteTo.Console()
+                    .WriteTo.File(pathFichero, rollingInterval: RollingInterval.Day)
+                    .CreateLogger();
 
-            AddLineasVacias(5);
-            AddNormal("INICIANDO...");
-            AddNormal("INICIANDO...");
-            AddNormal("INICIANDO...");
-            AddNormal("INICIANDO...");
-            AddNormal("INICIANDO...");
-            MsgLog msg = new MsgLog("INICIO DE PROCESO");
-            msg.AddInit("Usuario: " + Environment.UserName);
-            msg.Escribir();
+                AddLineasVacias(5);
+                AddNormal("INICIANDO...");
+                AddNormal("INICIANDO...");
+                AddNormal("INICIANDO...");
+                AddNormal("INICIANDO...");
+                AddNormal("INICIANDO...");
+                MsgLog msg = new MsgLog("INICIO DE PROCESO");
+                msg.AddInit("Usuario: " + Environment.UserName);
+                msg.Escribir();
+
+            }
+            catch 
+            {
+                Console.Error.WriteLine("Error al inicializar el log");
+            }
+            
         }
+
+      
 
         public static void CloseAndFlush()
         {
