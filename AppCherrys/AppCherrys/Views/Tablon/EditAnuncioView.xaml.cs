@@ -1,5 +1,5 @@
-﻿using AppCherrys.Models.Tablon;
-using AppCherrys.ViewModels.Tablon;
+﻿using AppCherrys.ViewModels.Tablon;
+using CommonLib.Models.Tablon;
 using System;
 using System.Collections.Generic;
 using System.Linq;
