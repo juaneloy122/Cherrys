@@ -5,10 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
              xmlns:controlessyncfusion="clr-namespace:ST_ControlesCliente.ControlesSyncFusion;assembly=ST_ControlesCliente"
+             xmlns:estilos="clr-namespace:AppCherrys"
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.LoginView"
               NavigationPage.HasNavigationBar="false">
+  
     <ContentPage.Content>
+       
         <Grid Margin="16">
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -27,11 +30,13 @@
                     HelperText="Name on your card"
                     Hint="Name"
                     IsHintAlwaysFloated="True"
-                    OutlineCornerRadius="5"
-                    >
+                    OutlineCornerRadius="5">
                     <Entry x:Name="name" Text=""/>
                 </controlessyncfusion:SF_TextInputLayout>
 
+                <Label Text="ESTO ES UNA PRUEBA" Style="{DynamicResource resLabelTitulo}"/>
+                <Label Text="ESTO ES UNA PRUEBA" Style="{DynamicResource resLabelSubtitulo}"/>
+                <Label Text="ESTO ES UNA PRUEBA"/>
 
                 <Entry x:Name="UsernameEntry"
                        Text="{Binding Username}"
