@@ -3,6 +3,8 @@ using Xamarin.Essentials;
 using Xamarin.Forms;
 using AppCherrys.Constantes.Localization;
 using System;
+using ST_Utilidades.Log;
+using AppCherrys.Enums;
 
 namespace AppCherrys
 {
@@ -25,6 +27,31 @@ namespace AppCherrys
 
         public static string TextoBoton = "Acceder";
 
+        public static Theme ActualTema
+        {
+            get => _ActualTheme;
+            set
+            {
+                _ActualTheme = value;
+            }
+        }
+
+        public event EventHandler CambioTema
+        {
+            add
+            {
+                _CambioTema -= value;
+                _CambioTema += value;
+            }
+            remove
+            {
+                _CambioTema -= value;
+            }
+        }
+
+        private event EventHandler _CambioTema = null;
+        private static Theme _ActualTheme = Theme.Light;
+
         public App()
         {
 
@@ -37,6 +64,8 @@ namespace AppCherrys
             Localization.Current.EnsureDeviceOrDefaultCulture(defaultCultureName: "es", availableCultures: new[] { "es", "en", "as" });
 
             MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
+
+            Log.AddNormal("Se inicializa la aplicación");
         }
 
         protected override void OnSleep()

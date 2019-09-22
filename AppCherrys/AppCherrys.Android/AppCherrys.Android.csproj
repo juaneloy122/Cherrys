@@ -105,6 +105,10 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\ST_Common\ST_UtilidadesDroid\ST_UtilidadesDroid.csproj">
+      <Project>{219570c6-a3a8-4862-a72e-148bcb8da158}</Project>
+      <Name>ST_UtilidadesDroid</Name>
+    </ProjectReference>
     <ProjectReference Include="..\AppCherrys\AppCherrys.csproj">
       <Project>{5D392413-E029-4C49-A5B8-AEBF6D33C358}</Project>
       <Name>AppCherrys</Name>
