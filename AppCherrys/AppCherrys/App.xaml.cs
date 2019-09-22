@@ -16,16 +16,27 @@ namespace AppCherrys
             DeviceInfo.Platform == DevicePlatform.Android ? "http://10.0.2.2:5000" : "http://localhost:37601";
         public static bool UseMockDataStore = true;
 
+        //Puesto para fichajes maqueta
+
+        public static bool EntradaSalida = false;
+
+        public static string Usuario = string.Empty;
+
+        public static DateTime Fecha = DateTime.MinValue;
+
+        public static string TextoBoton = "Acceder";
+
         public App()
         {
-            string nombreUsuario = Environment.UserName;
-           
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTQ2MDgyQDMxMzcyZTMzMmUzMGlERUxKYkdqcWxpK0lSb0I2YXplNmFVbTdCb0V5ejVYb28zb1lCUDJJcnc9");
 
             Localization.Current.OnCultureChanged += (culture) =>
-            {
-                Messages.Culture = culture;
+            {
+                Messages.Culture = culture;
             };
-            Localization.Current.EnsureDeviceOrDefaultCulture(defaultCultureName: "es", availableCultures: new[] { "es", "en", "as" });
+            Localization.Current.EnsureDeviceOrDefaultCulture(defaultCultureName: "es", availableCultures: new[] { "es", "en", "as" });
+
             MainPage = new NavigationPage(new LoginView());// new LoginView();// new MainPage();
 
             Log.AddNormal("Se inicializa la aplicación");
@@ -36,9 +47,12 @@ namespace AppCherrys
             // Handle when your app sleeps
         }
 
+
         protected override void OnResume()
         {
             // Handle when your app resumes
         }
     }
 }
+
+          

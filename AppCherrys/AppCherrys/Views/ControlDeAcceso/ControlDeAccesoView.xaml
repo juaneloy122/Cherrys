@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fonts="clr-namespace:AppCherrys.Controls.Fuentes"
+             mc:Ignorable="d"
+             x:Class="AppCherrys.Views.ControlDeAcceso.ControlDeAccesoView"
+             Title="{Binding Title}">
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10"/>
+                <RowDefinition/>
+                <RowDefinition Height="10"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="10"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="10"/>
+            </Grid.ColumnDefinitions>
+
+            <Frame Grid.Row="1" Grid.Column="1" HasShadow="True" CornerRadius="40" IsClippedToBounds="True">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="5*"/>
+                        <RowDefinition Height="50"/>
+                    </Grid.RowDefinitions>
+
+                    <Label x:Name="usuario" Text="{Binding Usuario}" TextColor="Black" FontAttributes="Bold" FontSize="Medium" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <Label Grid.Row="1" x:Name="fechaFichaje" IsVisible="{Binding FechaVisible}" Text="{Binding FechaRegistro }" TextColor="Black" FontAttributes="Bold" FontSize="Small" HorizontalOptions="Center" VerticalOptions="Center"/>
+                    <fonts:FontAwesomeIcon Grid.Row="2" x:Name="icono" x:FieldModifier="public" Text="{Binding Icono}" TextColor="{Binding ColorIcono}" FontSize="100" VerticalOptions="Center" HorizontalOptions="Center"/>
+                    <Button x:Name="btnFichajes" IsEnabled="{Binding Enabled}" Grid.Row="3" Text="{Binding TextoBotonFichajes}" Command="{Binding FichajesCommand}" CornerRadius="20" BackgroundColor="#FFDE55" TextColor="#FF8500"/>
+                </Grid>
+            </Frame>
+        </Grid>
+    </ContentPage.Content>
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label FontSize="Medium" Text="{Binding Title}" TextColor="#FF8500" VerticalOptions="Center"/>
+            <StackLayout Orientation="Horizontal" Grid.Column="1" HorizontalOptions="End">
+                <Grid WidthRequest="50">
+                    <Frame HasShadow="False" CornerRadius="40" Padding="5" IsClippedToBounds="True">
+                        <Image Source="FotoPerfil.png"/>
+                    </Frame>
+                </Grid>
+            </StackLayout>
+        </Grid>
+
+    </NavigationPage.TitleView>
+</ContentPage>

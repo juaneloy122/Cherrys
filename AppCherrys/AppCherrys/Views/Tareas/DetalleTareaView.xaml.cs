@@ -15,6 +15,10 @@ namespace AppCherrys.Views.Tareas
         {
             InitializeComponent();
 
+            TapGestureRecognizer tgr = new TapGestureRecognizer();
+            tgr.Tapped += (s, e) => EditItem_Clicked();
+            btnEdit.GestureRecognizers.Add(tgr);
+
             BindingContext = this.viewModel = viewModel;
         }
 
@@ -30,6 +34,11 @@ namespace AppCherrys.Views.Tareas
 
             viewModel = new TareaDetalleViewModel(item);
             BindingContext = viewModel;
+        }
+
+        private async void EditItem_Clicked()
+        {
+            await Navigation.PushModalAsync(new NavigationPage(new NuevaTareaView(viewModel.Item)));
         }
     }
 }
