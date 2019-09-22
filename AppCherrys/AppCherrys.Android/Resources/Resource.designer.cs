@@ -17268,16 +17268,8 @@ namespace AppCherrys.Droid
 			// aapt resource value: 0x7f020058
 			public const int Avatar1 = 2130837592;
 			
-<<<<<<< HEAD
-			// aapt resource value: 0x7f0b004f
-			public const int app_name = 2131427407;
-			
-			// aapt resource value: 0x7f0b0040
-			public const int appbar_scrolling_view_behavior = 2131427392;
-=======
 			// aapt resource value: 0x7f020059
 			public const int Avatar10 = 2130837593;
->>>>>>> Desarrollo
 			
 			// aapt resource value: 0x7f02005a
 			public const int Avatar11 = 2130837594;
@@ -17294,16 +17286,8 @@ namespace AppCherrys.Droid
 			// aapt resource value: 0x7f02005e
 			public const int Avatar15 = 2130837598;
 			
-<<<<<<< HEAD
-			// aapt resource value: 0x7f0b004e
-			public const int hello = 2131427406;
-			
-			// aapt resource value: 0x7f0b0046
-			public const int hide_bottom_view_on_scroll_behavior = 2131427398;
-=======
 			// aapt resource value: 0x7f02005f
 			public const int Avatar16 = 2130837599;
->>>>>>> Desarrollo
 			
 			// aapt resource value: 0x7f020060
 			public const int Avatar17 = 2130837600;
