@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppCherrys.Views.FichajeAutomatico.ModificacionFichajeAutomaticoView"
+             Title="Modificación fichaje automático">
+
+    <AbsoluteLayout>
+        <StackLayout>
+            <Grid Padding="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Frame Grid.Row="0" Grid.ColumnSpan="2" HasShadow="True" CornerRadius="20" IsClippedToBounds="True" Margin="0,0,0,10">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Label Grid.Row="0" Text="Marina Gutierrez Sacramento" HorizontalTextAlignment="Center" FontAttributes="Bold"/>
+
+                        <Label Grid.Row="1" Text="22/08/2019  16:10" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </Frame>
+                <TimePicker Grid.Row="1" Grid.ColumnSpan="2" Format="t" HorizontalOptions="Center" Time="16:10" ></TimePicker>
+
+                <Button Grid.Row="2" Grid.Column="0" Text="CANCELAR" BackgroundColor="Red" x:Name="btnCancelar" TextColor="White" Clicked="BtnCancelar_Clicked"/>
+                <Button Grid.Row="2" Grid.Column="1" Text="ACEPTAR" BackgroundColor="LightBlue" x:Name="btnAceptar" TextColor="White" Clicked="BtnAceptar_Clicked"/>
+            </Grid>
+        </StackLayout>
+    </AbsoluteLayout>
+</ContentPage>

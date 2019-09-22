@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppCherrys.Views.Tareas;
+using System;
 using System.ComponentModel;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,6 +16,11 @@ namespace AppCherrys.Views
             InitializeComponent();
 
             masterPage.listView.ItemSelected += OnItemSelected;
+
+            TapGestureRecognizer tgr = new TapGestureRecognizer();
+            tgr.Tapped += (s, e) => OnSettingsTap();
+            masterPage.settings.GestureRecognizers.Add(tgr);
+
 
             //Este código es el que hace que en Universal Windows se oculte el menú izquierdo
             //pero cuando selecciono una vista, deja de aparecer el menú, por eso lo deshabilité,
@@ -33,7 +39,7 @@ namespace AppCherrys.Views
                 var root = Detail.Navigation.NavigationStack[0];
                 Detail.Navigation.InsertPageBefore((Page)Activator.CreateInstance(item.TargetType), root);
                 await Detail.Navigation.PopToRootAsync();
-
+                masterPage.listView.SelectedItem = null;
                 IsPresented = false;
 
                 //Detail = new NavigationPage((Page)Activator.CreateInstance(item.TargetType));
@@ -41,5 +47,16 @@ namespace AppCherrys.Views
                 //IsPresented = false;
             }
         }
+
+        private async void OnSettingsTap()
+        {
+            var root = Detail.Navigation.NavigationStack[0];
+            Detail.Navigation.InsertPageBefore(new TareasView(), root);
+            await Detail.Navigation.PopToRootAsync();
+
+            IsPresented = false;
+        }
+
+
     }
 }

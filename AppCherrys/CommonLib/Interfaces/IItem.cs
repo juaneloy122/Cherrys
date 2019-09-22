@@ -6,7 +6,7 @@ namespace CommonLib.Interfaces
     {
         int Id { get; set; }
 
-        void Validar();
+       // void Validar();
 
         //string Titulo { get; set; }
 

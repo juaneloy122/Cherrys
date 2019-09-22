@@ -28,6 +28,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Messages.resx</DependentUpon>
     </Compile>
+    <Compile Update="Views\ControlDeAcesoQR\ControlDeAccesoQrView.xaml.cs">
+      <DependentUpon>ControlDeAccesoQrView.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -71,13 +74,28 @@
     <EmbeddedResource Update="Views\Chat\ChatView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Views\ControlDeAcceso\ControlDeAccesoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ControlDeAcesoQR\ControlDeAccesoQrView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Views\Doodle\DoodleView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FichajeAutomatico\FichajeAutomaticoView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\FichajeAutomatico\ModificacionFichajeAutomaticoView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\LoginView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\MasterPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Tablon\EditAnuncioView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Views\Tareas\DetalleTareaView.xaml">

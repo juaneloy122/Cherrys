@@ -1,4 +1,5 @@
-﻿using AppCherrys.ViewModels;
+﻿using AppCherrys.Services;
+using AppCherrys.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,18 @@ namespace AppCherrys.Views
                 _ViewModel.AuthenticateCommand.Execute(null);
                
             };
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+
+            Device.BeginInvokeOnMainThread(() =>
+            {
+                var statusBarStyleManager = DependencyService.Get<IStatusBarStyleManager>();
+
+                statusBarStyleManager.SetDarkTheme();
+            });
         }
     }
 }
