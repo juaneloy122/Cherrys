@@ -4,13 +4,14 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:fonts="clr-namespace:AppCherrys.Controls.Fuentes"
+             xmlns:syncTheme="clr-namespace:Syncfusion.XForms.Themes;assembly=Syncfusion.Core.XForms"
+             xmlns:controlessyncfusion="clr-namespace:ST_ControlesCliente.ControlesSyncFusion;assembly=ST_ControlesCliente"
              mc:Ignorable="d"
              x:Class="AppCherrys.App">
 
     <Application.Resources>
-
-        <!--<ResourceDictionary Source="Resources\LightTheme.xaml"/>-->
-        <ResourceDictionary Source="Resources/DarkTheme.xaml" />
+        <ResourceDictionary Source="Resources\LightTheme.xaml"/>
+        <!--<ResourceDictionary Source="Resources/DarkTheme.xaml" />-->
         
         <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
             <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}"/>
@@ -24,12 +25,16 @@
             <Setter Property="TextColor" Value="{DynamicResource ColorTitulos}"/>
         </Style>
 
-            
-        
-       
-        
-        
-        
+        <Style TargetType="controlessyncfusion:SF_TextInputLayout">
+            <Setter Property="UnfocusedColor" Value="{DynamicResource ColorEntrysUnfocus}"/>
+            <Setter Property="FocusedColor" Value="{DynamicResource ColorEntrysFocus}"/>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="{DynamicResource ColorTextoLetraNormal}"/>
+        </Style>
+
+
+
         <!--<Style TargetType="fonts:FontAwesomeIcon" ApplyToDerivedTypes="True">
             <Setter Property="TextColor" Value="{DynamicResource ColorTitulos}"/>
         </Style>-->

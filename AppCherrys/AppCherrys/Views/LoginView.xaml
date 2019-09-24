@@ -22,29 +22,23 @@
                 <Image Source="QKT.png"/>
             </StackLayout>
             <StackLayout Grid.Row="1">
-                <controlessyncfusion:SF_TextInputLayout 
-                    UnfocusedColor="Green"
-                    ContainerBackgroundColor="{Binding BackgroundColor}"
-                    FocusedColor="Red"
+                <controlessyncfusion:SF_TextInputLayout
                     ContainerType="Outlined"
-                    HelperText="Name on your card"
-                    Hint="Name"
+                    Hint="{x:Static local:Messages.Usuario}"
                     IsHintAlwaysFloated="True"
                     OutlineCornerRadius="5">
-                    <Entry x:Name="name" Text=""/>
+                    <Entry x:Name="UsernameEntry" Text="{Binding Username}" />
                 </controlessyncfusion:SF_TextInputLayout>
-
-                <Label Text="ESTO ES UNA PRUEBA"/>
-                <Label Text="ESTO ES UNA PRUEBA"/>
-                <Label Text="ESTO ES UNA PRUEBA"/>
-
-                <Entry x:Name="UsernameEntry"
-                       Text="{Binding Username}"
-                       Placeholder="{x:Static local:Messages.Usuario}" />
-                <Entry x:Name="PasswordEntry"
+                <controlessyncfusion:SF_TextInputLayout
+                    ContainerType="Outlined"
+                    Hint="{x:Static local:Messages.Password}"
+                    IsHintAlwaysFloated="True"
+                    OutlineCornerRadius="5">
+                    <Entry x:Name="PasswordEntry"
                        Text="{Binding Password}"
-                       Placeholder="{x:Static local:Messages.Password}"
                        IsPassword="True"/>
+                </controlessyncfusion:SF_TextInputLayout>
+                
                 <Label Text="Credenciales incorrectas" 
                        IsVisible="{Binding AreCredentialsInvalid}" 
                        TextColor="Red"/>
