@@ -13,7 +13,7 @@
         <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
             <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}"/>
         </Style>
-        <Style TargetType="NavigationPage">
+        <Style TargetType="NavigationPage" ApplyToDerivedTypes="True">
             <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationBarColor}" />
             <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationBarColor}"/>
         </Style>

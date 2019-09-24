@@ -38,10 +38,6 @@
 
   </style>
 
-
-
-
-
   <style name="DrawerIcon" parent="Widget.AppCompat.DrawerArrowToggle">
     <item name="color">#FF8500</item>
   </style>
@@ -55,9 +51,4 @@
     <item name="android:textColor">#FF8500</item>
   </style>
 
-
-
-
-
-
-</resources>
+  </resources>
