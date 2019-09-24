@@ -6,8 +6,8 @@
     <Color x:Key="PageBackgroundColor">#FFFFFF</Color> <!-- Blanco -->
     <Color x:Key="NavigationBarColor">#FFFFFF</Color> <!-- Blanco -->
     <Color x:Key="ColorTitulos">#FF8500</Color> <!-- Naranja -->
-    <Color x:Key="ColorTextoLetraNormal">Black</Color> <!-- Negro -->
-    <Color x:Key="ColorTextoLetraSecundario">Gray</Color>
+    <!--<Color x:Key="ColorTextoLetraNormal">Black</Color> --><!-- Negro --><!--
+    <Color x:Key="ColorTextoLetraSecundario">Gray</Color>-->
 
     <!--<Color x:Key="SecondaryColor">#FFDE55</Color>
     <Color x:Key="TituloTextColor">#FF8500</Color>

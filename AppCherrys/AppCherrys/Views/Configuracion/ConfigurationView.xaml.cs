@@ -33,12 +33,10 @@ namespace AppCherrys.Views.Configuracion
                 {
                     case Theme.Dark:
                         mergedDictionaries.Add(new DarkTheme());
-                        App.ActualTema = Theme.Dark;
                         break;
                     case Theme.Light:
                     default:
                         mergedDictionaries.Add(new LightTheme());
-                        App.ActualTema = Theme.Light;
                         break;
                 }
                 statusLabel.Text = $"{theme.ToString()} cargado el theme. Cierre esta página.";

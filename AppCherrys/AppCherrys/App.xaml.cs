@@ -27,33 +27,10 @@ namespace AppCherrys
 
         public static string TextoBoton = "Acceder";
 
-        public static Theme ActualTema
-        {
-            get => _ActualTheme;
-            set
-            {
-                _ActualTheme = value;
-            }
-        }
-
-        public event EventHandler CambioTema
-        {
-            add
-            {
-                _CambioTema -= value;
-                _CambioTema += value;
-            }
-            remove
-            {
-                _CambioTema -= value;
-            }
-        }
-
-        private event EventHandler _CambioTema = null;
-        private static Theme _ActualTheme = Theme.Light;
 
         public App()
         {
+            InitializeComponent();
 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTQ2MDgyQDMxMzcyZTMzMmUzMGlERUxKYkdqcWxpK0lSb0I2YXplNmFVbTdCb0V5ejVYb28zb1lCUDJJcnc9");
 

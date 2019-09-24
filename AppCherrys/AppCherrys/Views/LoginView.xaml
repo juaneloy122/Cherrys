@@ -34,8 +34,8 @@
                     <Entry x:Name="name" Text=""/>
                 </controlessyncfusion:SF_TextInputLayout>
 
-                <Label Text="ESTO ES UNA PRUEBA" Style="{DynamicResource resLabelTitulo}"/>
-                <Label Text="ESTO ES UNA PRUEBA" Style="{DynamicResource resLabelSubtitulo}"/>
+                <Label Text="ESTO ES UNA PRUEBA"/>
+                <Label Text="ESTO ES UNA PRUEBA"/>
                 <Label Text="ESTO ES UNA PRUEBA"/>
 
                 <Entry x:Name="UsernameEntry"
