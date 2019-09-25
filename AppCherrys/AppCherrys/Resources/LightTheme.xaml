@@ -10,5 +10,7 @@
     <Color x:Key="ColorTextoLetraSecundario">Gray</Color>  <!-- Gris -->
     <Color x:Key="ColorEntrysUnfocus">Black</Color>
     <Color x:Key="ColorEntrysFocus">#FF8500</Color>
+    <Color x:Key="ColorAmarilloKumquat">#FFDE55</Color>
+    <Color x:Key="ColorTarjertas">#FFFFFF</Color>
 
 </ResourceDictionary>

@@ -9,6 +9,9 @@
     <Color x:Key="ColorTextoLetraNormal">#FFFFFF</Color>
     <Color x:Key="ColorTextoLetraSecundario">#FFFFFF</Color>
     <Color x:Key="ColorEntrysUnfocus">#FFFFFF</Color>
+    <Color x:Key="ColorEntrysUnfocusTarjetas">#000000</Color>
     <Color x:Key="ColorEntrysFocus">#FF8500</Color>
+    <Color x:Key="ColorAmarilloKumquat">#FFDE55</Color>
+    <Color x:Key="ColorTarjertas">#FFFFFF</Color>
 
 </ResourceDictionary>

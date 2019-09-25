@@ -206,6 +206,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="ControlesSyncFusion\SF_CardView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="ControlesSyncFusion\SF_CheckBox.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="ControlesSyncFusion\SF_TextInputLayout.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
