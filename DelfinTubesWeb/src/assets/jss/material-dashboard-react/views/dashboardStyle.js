@@ -76,7 +76,17 @@ const dashboardStyle = {
       fontWeight: "400",
       lineHeight: "1"
     }
+  },
+
+  tarjetaDashBoard: {
+    marginLeft: "1%"
+  },
+
+  tarjetaDahsnboardSeparaciones:{
+    marginTop: "5px!Important",
+    marginBottom: "5px!Important"
   }
+
 };
 
 export default dashboardStyle;

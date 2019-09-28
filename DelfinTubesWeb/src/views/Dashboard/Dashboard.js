@@ -45,25 +45,130 @@ export default function Dashboard() {
   const classes = useStyles();
   return (
     <div>
-      <GridContainer>
-        <GridItem xs={12} sm={12} md={12}>
-          <Card>
-            <CardHeader color="danger" stats icon>
+      <GridContainer >
+        <GridItem xs={12} sm={12} md={12} >
+          <Card className={classes.tarjetaDahsnboardSeparaciones}>
+          {/*   <CardHeader color="danger" stats icon>
               <CardIcon color="danger">
                 <Icon>info_outline</Icon>
               </CardIcon>
               <p className={classes.cardCategory}>Fixed Issues</p>
               <h3 className={classes.cardTitle}>75</h3>
+            </CardHeader> */}
+            <CardHeader>
+              <h3>01/12/2019 - 15:05 (Administración)</h3>
             </CardHeader>
-            <CardFooter stats>
+            <div className={classes.tarjetaDashBoard}>
+              <p>Reconocimiento médico el próximo 10 de julio, a las 18:00 en el Centro Médico.</p>
+              <p> Se ruega entregar firmado, el consentimiento que se adjunta, en secretaría. Muchas Gracias!</p>
+            </div>
+           {/*  <CardFooter stats>
               <div className={classes.stats}>
                 <LocalOffer />
                 Tracked from Github
               </div>
-            </CardFooter>
+            </CardFooter> */}
           </Card>
         </GridItem>
         <GridItem xs={12} sm={12} md={12}>
+          <Card  className={classes.tarjetaDahsnboardSeparaciones}>
+          {/*   <CardHeader color="danger" stats icon>
+              <CardIcon color="danger">
+                <Icon>info_outline</Icon>
+              </CardIcon>
+              <p className={classes.cardCategory}>Fixed Issues</p>
+              <h3 className={classes.cardTitle}>75</h3>
+            </CardHeader> */}
+            <CardHeader>
+              <h3>01/12/2019 - 15:05 (Administración)</h3>
+            </CardHeader>
+            <div className={classes.tarjetaDashBoard}>
+              <p>Reconocimiento médico el próximo 10 de julio, a las 18:00 en el Centro Médico.</p>
+              <p> Se ruega entregar firmado, el consentimiento que se adjunta, en secretaría. Muchas Gracias!</p>
+            </div>
+           {/*  <CardFooter stats>
+              <div className={classes.stats}>
+                <LocalOffer />
+                Tracked from Github
+              </div>
+            </CardFooter> */}
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={12}>
+          <Card className={classes.tarjetaDahsnboardSeparaciones}>
+          {/*   <CardHeader color="danger" stats icon>
+              <CardIcon color="danger">
+                <Icon>info_outline</Icon>
+              </CardIcon>
+              <p className={classes.cardCategory}>Fixed Issues</p>
+              <h3 className={classes.cardTitle}>75</h3>
+            </CardHeader> */}
+            <CardHeader>
+              <h3>01/12/2019 - 15:05 (Administración)</h3>
+            </CardHeader>
+            <div className={classes.tarjetaDashBoard}>
+              <p>Reconocimiento médico el próximo 10 de julio, a las 18:00 en el Centro Médico.</p>
+              <p> Se ruega entregar firmado, el consentimiento que se adjunta, en secretaría. Muchas Gracias!</p>
+            </div>
+           {/*  <CardFooter stats>
+              <div className={classes.stats}>
+                <LocalOffer />
+                Tracked from Github
+              </div>
+            </CardFooter> */}
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={12}>
+          <Card className={classes.tarjetaDahsnboardSeparaciones}>
+          {/*   <CardHeader color="danger" stats icon>
+              <CardIcon color="danger">
+                <Icon>info_outline</Icon>
+              </CardIcon>
+              <p className={classes.cardCategory}>Fixed Issues</p>
+              <h3 className={classes.cardTitle}>75</h3>
+            </CardHeader> */}
+            <CardHeader>
+              <h3>01/12/2019 - 15:05 (Administración)</h3>
+            </CardHeader>
+            <div className={classes.tarjetaDashBoard}>
+              <p>Reconocimiento médico el próximo 10 de julio, a las 18:00 en el Centro Médico.</p>
+              <p> Se ruega entregar firmado, el consentimiento que se adjunta, en secretaría. Muchas Gracias!</p>
+            </div>
+           {/*  <CardFooter stats>
+              <div className={classes.stats}>
+                <LocalOffer />
+                Tracked from Github
+              </div>
+            </CardFooter> */}
+          </Card>
+        </GridItem>
+        <GridItem xs={12} sm={12} md={12}>
+          <Card className={classes.tarjetaDahsnboardSeparaciones}>
+          {/*   <CardHeader color="danger" stats icon>
+              <CardIcon color="danger">
+                <Icon>info_outline</Icon>
+              </CardIcon>
+              <p className={classes.cardCategory}>Fixed Issues</p>
+              <h3 className={classes.cardTitle}>75</h3>
+            </CardHeader> */}
+            <CardHeader>
+              <h3>01/12/2019 - 15:05 (Administración)</h3>
+            </CardHeader>
+            <div className={classes.tarjetaDashBoard}>
+              <p>Reconocimiento médico el próximo 10 de julio, a las 18:00 en el Centro Médico.</p>
+              <p> Se ruega entregar firmado, el consentimiento que se adjunta, en secretaría. Muchas Gracias!</p>
+            </div>
+           {/*  <CardFooter stats>
+              <div className={classes.stats}>
+                <LocalOffer />
+                Tracked from Github
+              </div>
+            </CardFooter> */}
+          </Card>
+        </GridItem>
+     
+     
+       {/*  <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="danger" stats icon>
               <CardIcon color="danger">
@@ -114,8 +219,8 @@ export default function Dashboard() {
             </CardFooter>
           </Card>
         </GridItem>
-      </GridContainer>
-      <GridContainer>
+       */}</GridContainer>
+  {/*     <GridContainer>
         <GridItem xs={12} sm={12} md={12}>
           <CustomTabs
             title="Tasks:"
@@ -158,8 +263,8 @@ export default function Dashboard() {
           />
         </GridItem>
       </GridContainer>
-      <GridContainer>
-      <GridItem xs={12} sm={12} md={12}>
+ */}{/*       <GridContainer>
+        <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="warning">
               <h4 className={classes.cardTitleWhite}>Employees Stats</h4>
@@ -181,7 +286,7 @@ export default function Dashboard() {
             </CardBody>
           </Card>
         </GridItem>
-      </GridContainer>
+      </GridContainer> */}
     </div>
   );
 }
