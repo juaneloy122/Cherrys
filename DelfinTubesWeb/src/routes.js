@@ -55,7 +55,7 @@ const dashboardRoutes = [
   },
   {
     path: "/table",
-    name: "Panel de control",
+    name: "Panel de control (4)",
     rtlName: "قائمة الجدول",
     icon: "content_paste",
     component: TableList,
