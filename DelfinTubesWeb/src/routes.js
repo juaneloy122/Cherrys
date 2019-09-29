@@ -63,7 +63,7 @@ const dashboardRoutes = [
   },
   {
     path: "/typography",
-    name: "Typography",
+    name: "Gestión de nóminas",
     rtlName: "طباعة",
     icon: LibraryBooks,
     component: Typography,
