@@ -31,10 +31,12 @@ body {
   background-color: #777777;
 }
 .title {
-  margin-top: 30px;
+  margin-top: 0px;
   margin-bottom: 25px;
   min-height: 32px;
   font-weight: 500;
+  font-size: 135px;
+  color:red;
 }
 
 .tim-row p {
@@ -405,7 +407,7 @@ body {
   text-decoration: none;
 }
 .section-examples h5 {
-  margin-top: 30px;
+  margin-top: ¡0px;
 }
 .components-page .wrapper > .header,
 .tutorial-page .wrapper > .header {
@@ -650,4 +652,6 @@ footer .pull-center {
     margin-left: 10px;
     margin-right: 10px;
   }
+
+  
 }

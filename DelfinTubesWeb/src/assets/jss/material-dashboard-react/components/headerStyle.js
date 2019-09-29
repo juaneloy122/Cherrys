@@ -19,12 +19,10 @@ const headerStyle = () => ({
     marginBottom: "0",
     position: "absolute",
     width: "100%",
-    paddingTop: "10px",
     zIndex: "1029",
     color: grayColor[7],
     border: "0",
     borderRadius: "3px",
-    padding: "10px 0",
     transition: "all 150ms ease 0s",
     minHeight: "50px",
     display: "block"
@@ -40,11 +38,13 @@ const headerStyle = () => ({
     ...defaultFont,
     letterSpacing: "unset",
     lineHeight: "30px",
-    fontSize: "18px",
+    fontSize: "30px",
     borderRadius: "3px",
     textTransform: "none",
-    color: "inherit",
-    margin: "0",
+    color: "#00acc1",
+    padding:"0!Important",
+    paddingTop:"50px!Important",
+    paddingLeft:"15px!Important",
     "&:hover,&:focus": {
       background: "transparent"
     }

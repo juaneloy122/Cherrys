@@ -91,8 +91,11 @@ const dashboardStyle = {
     color: "green",
     fontSize:"35px",
     alignContent: "rigth"
-  }
-  
+  },
+
+  estiloTitulos:{
+    fontSize: "30px!Important"
+  },
 
 };
 

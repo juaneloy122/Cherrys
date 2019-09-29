@@ -35,29 +35,26 @@ export default function Header(props) {
     [" " + classes[color]]: color
   });
   return (
-    <AppBar className={classes.appBar + appBarClasses}>
-      <Toolbar className={classes.container}>
-        <div className={classes.flex}>
-          {/* Here we create navbar brand, based on route name */}
-          <Button color="transparent" href="#" className={classes.title}>
-            {makeBrand()}
-          </Button>
-        </div>
-        <Hidden smDown implementation="css">
-          {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
-        </Hidden>
-        <Hidden mdUp implementation="css">
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            onClick={props.handleDrawerToggle}
-          >
-            <Menu />
-          </IconButton>
-        </Hidden>
-      </Toolbar>
-    </AppBar>
-  );
+  //   <AppBar className={classes.appBar + appBarClasses}>
+  //     <Toolbar className={classes.container}>
+       
+  //       <Hidden smDown implementation="css">
+  //         {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
+  //       </Hidden>
+  //       <Hidden mdUp implementation="css">
+  //         <IconButton
+  //           color="inherit"
+  //           aria-label="open drawer"
+  //           onClick={props.handleDrawerToggle}
+  //         >
+  //           <Menu />
+  //         </IconButton>
+  //       </Hidden>
+  //     </Toolbar>
+  //   </AppBar>
+  // );
+  <div></div>
+  )
 }
 
 Header.propTypes = {
