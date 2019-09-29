@@ -7,6 +7,7 @@ import ListItem from "@material-ui/core/ListItem";
 import List from "@material-ui/core/List";
 // core components
 import styles from "assets/jss/material-dashboard-react/components/footerStyle.js";
+import { textAlign } from "@material-ui/system";
 
 const useStyles = makeStyles(styles);
 
@@ -15,42 +16,38 @@ export default function Footer(props) {
   return (
     <footer className={classes.footer}>
       <div className={classes.container}>
-        <div className={classes.left}>
-          <List className={classes.list}>
+        <div style={{textAlign:"center"}}>
+          {<List className={classes.list}>
             <ListItem className={classes.inlineBlock}>
               <a href="#home" className={classes.block}>
-                Home
+                Política de privacidad
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
-              <a href="#company" className={classes.block}>
-                Company
+              <a href="" className={classes.block}>
+                Aviso legal
               </a>
             </ListItem>
             <ListItem className={classes.inlineBlock}>
               <a href="#portfolio" className={classes.block}>
-                Portfolio
-              </a>
-            </ListItem>
-            <ListItem className={classes.inlineBlock}>
-              <a href="#blog" className={classes.block}>
-                Blog
+                Cookies
               </a>
             </ListItem>
           </List>
+          }
         </div>
         <p className={classes.right}>
           <span>
             &copy; {1900 + new Date().getYear()}{" "}
+            Design by
             <a
-              href="https://www.creative-tim.com?ref=mdr-footer"
+              href="https://www.coralesdesign.com"
               target="_blank"
               className={classes.a}
-            >
-              Creative Tim
+              style={{ padding: "0px 0px 5px 0px" }}> AZAI
             </a>
-            , made with love for a better web
           </span>
+
         </p>
       </div>
     </footer>
