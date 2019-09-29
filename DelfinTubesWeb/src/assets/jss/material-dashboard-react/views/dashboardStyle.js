@@ -85,7 +85,14 @@ const dashboardStyle = {
   tarjetaDahsnboardSeparaciones:{
     marginTop: "5px!Important",
     marginBottom: "5px!Important"
+  },
+
+  colorVerde:{
+    color: "green",
+    fontSize:"35px",
+    alignContent: "rigth"
   }
+  
 
 };
 
