@@ -47,10 +47,10 @@ export default function TableList() {
   const classes = useStyles();
   return (
     <GridContainer>
-      <GridItem xs={8}>
+      <GridItem xs={4}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Incidencias sin resolver (4) </h4>
+            <h4 className={classes.cardTitleWhite}>Usuarios </h4>
             {/* <p className={classes.cardCategoryWhite}>
               Here is a subtitle for this table
             </p> */}
@@ -58,13 +58,15 @@ export default function TableList() {
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Fecha", "Nombre", "Apellidos", "Tipo solicitud", "Estado", ""]}
+              tableHead={["Usuario", ""]}
               tableData={[
-                ["12/05/2019 07:55", "Papa", "Pig", "SOLICITUD DE VACAIONES", <i className="material-icons" style={{ color: "green" }}>thumb_up</i>, <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["02/01/2018 10:02", "Alfonso", "Couthrow Fernández", "SOLICITUD DE VACACIONES", <i className="material-icons" style={{ color: "red" }}>thumb_down</i>, <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["29/03/2018 15:38", "Pedro", "Martínez García", "SOLICITUD DE EXPEDIENTE", <i className="material-icons" style={{ color: "red" }}>thumb_down</i>, <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["01/03 /2018 20:56", "Pepe", "Sky", "CUADRO MÉDICO", <i className="material-icons" style={{ color: "red" }}>thumb_down</i>, <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["25/12/2019 08:34", "Pepa", "Pig", "SOLICITUD DE VACAIONES", <i className="material-icons" style={{ color: "red" }}>thumb_down</i>, <i className="material-icons" style={{ cursor: "pointer" }}>create</i>]
+                ["José González", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                ["Arturo Campos", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                ["Rodrigo Cortés", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                ["Juan Gómez Jurado", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                ["Cristina Alonso", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                ["María Josefina de los Campos", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                ["DelfínTubes", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>]
               ]}
             />
           </CardBody>
