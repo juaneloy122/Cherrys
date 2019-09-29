@@ -38,6 +38,7 @@ import {
 } from "variables/charts.js";
 
 import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
+import { Grid } from "@material-ui/core";
 
 const useStyles = makeStyles(styles);
 
@@ -61,7 +62,16 @@ export default function Dashboard() {
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader> */}
             <CardHeader>
-              <h3>01/12/2019 - 15:05 (Administración)</h3>
+              <GridContainer>
+                <GridItem xs={5} sm={5} md={5}>
+                  <h3>Administración</h3>
+                </GridItem>
+                <GridItem xs={7} sm={7} md={7}>
+                  <div style={{ textAlign: 'right' }}>
+                    <h3>01/12/2019 - 15:05</h3>
+                  </div>
+                </GridItem>
+              </GridContainer>
             </CardHeader>
             <div className={classes.tarjetaDashBoard}>
               <GridContainer >
@@ -76,8 +86,8 @@ export default function Dashboard() {
                 </GridItem>
                 <GridItem xs={12} sm={12} md={12}>
                   <i className={"material-icons"} style={{ fontSize: "40px" }}>insert_drive_file</i>
-                  <label style={{color:'black'}}>Consentimiento.pdf</label>
-                 
+                  <label style={{ color: 'black', verticalAlign: 'super' }}>Consentimiento.pdf</label>
+
                 </GridItem>
               </GridContainer>
             </div>
@@ -101,16 +111,25 @@ export default function Dashboard() {
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader> */}
             <CardHeader>
-              <h3>02/12/2019 - 16:26 (Administración)</h3>
+            <GridContainer>
+                <GridItem xs={5} sm={5} md={5}>
+                  <h3>Administración</h3>
+                </GridItem>
+                <GridItem xs={7} sm={7} md={7}>
+                  <div style={{ textAlign: 'right' }}>
+                    <h3>02/12/2019 - 16:26 </h3>
+                  </div>
+                </GridItem>
+              </GridContainer>
             </CardHeader>
             <div className={classes.tarjetaDashBoard}>
               <GridContainer >
                 <GridItem xs={10} sm={10} md={10} >
                   <p>Recordar inscribiros para asistir a la cena de Navidad de este año que se celebrará el Viernes 12 de Diciembre en Casa Pepe.</p>
                   <p>
-                    Para isncribirse enviar un correo a 
+                    Para isncribirse enviar un correo a
                     <a href="RRHH@delfintubes.com"> RRHH@delfintubes.com</a>
-                </p>
+                  </p>
                 </GridItem>
                 <GridItem xs={2} sm={2} md={2} >
                   <div style={{ textAlign: 'center' }}>
@@ -139,7 +158,16 @@ export default function Dashboard() {
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader> */}
             <CardHeader>
-              <h3>03/12/2019 - 15:05 (Administración)</h3>
+            <GridContainer>
+                <GridItem xs={5} sm={5} md={5}>
+                  <h3>Administración</h3>
+                </GridItem>
+                <GridItem xs={7} sm={7} md={7}>
+                  <div style={{ textAlign: 'right' }}>
+                    <h3>03/12/2019 - 15:05 </h3>
+                  </div>
+                </GridItem>
+              </GridContainer>
             </CardHeader>
             <div className={classes.tarjetaDashBoard}>
               <GridContainer >
@@ -179,7 +207,16 @@ export default function Dashboard() {
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader> */}
             <CardHeader>
-              <h3>19/11/2019 - 15:05 (Administración)</h3>
+            <GridContainer>
+                <GridItem xs={5} sm={5} md={5}>
+                  <h3>Administración</h3>
+                </GridItem>
+                <GridItem xs={7} sm={7} md={7}>
+                  <div style={{ textAlign: 'right' }}>
+                    <h3>19/11/2019 - 15:05  </h3>
+                  </div>
+                </GridItem>
+              </GridContainer>
             </CardHeader>
             <div className={classes.tarjetaDashBoard}>
               <GridContainer >
@@ -214,7 +251,16 @@ export default function Dashboard() {
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader> */}
             <CardHeader>
-              <h3>18/11/2019 - 15:05 (Administración)</h3>
+            <GridContainer>
+                <GridItem xs={5} sm={5} md={5}>
+                  <h3>Administración</h3>
+                </GridItem>
+                <GridItem xs={7} sm={7} md={7}>
+                  <div style={{ textAlign: 'right' }}>
+                    <h3>18/11/2019 - 15:05  </h3>
+                  </div>
+                </GridItem>
+              </GridContainer>
             </CardHeader>
             <div className={classes.tarjetaDashBoard}>
               <GridContainer >
@@ -249,7 +295,16 @@ export default function Dashboard() {
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader> */}
             <CardHeader>
-              <h3>15/11/2019 - 15:05 (Administración)</h3>
+            <GridContainer>
+                <GridItem xs={5} sm={5} md={5}>
+                  <h3>Administración</h3>
+                </GridItem>
+                <GridItem xs={7} sm={7} md={7}>
+                  <div style={{ textAlign: 'right' }}>
+                    <h3>15/11/2019 - 15:05  </h3>
+                  </div>
+                </GridItem>
+              </GridContainer>
             </CardHeader>
             <div className={classes.tarjetaDashBoard}>
               <GridContainer >
@@ -284,7 +339,16 @@ export default function Dashboard() {
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader> */}
             <CardHeader>
-              <h3>13/11/2019 - 15:05 (Administración)</h3>
+            <GridContainer>
+                <GridItem xs={5} sm={5} md={5}>
+                  <h3>Administración</h3>
+                </GridItem>
+                <GridItem xs={7} sm={7} md={7}>
+                  <div style={{ textAlign: 'right' }}>
+                    <h3>13/11/2019 - 15:05 </h3>
+                  </div>
+                </GridItem>
+              </GridContainer>
             </CardHeader>
             <div className={classes.tarjetaDashBoard}>
               <GridContainer >
@@ -319,7 +383,16 @@ export default function Dashboard() {
               <h3 className={classes.cardTitle}>75</h3>
             </CardHeader> */}
             <CardHeader>
-              <h3>10/11/2019 - 15:05 (Administración)</h3>
+            <GridContainer>
+                <GridItem xs={5} sm={5} md={5}>
+                  <h3>Administración</h3>
+                </GridItem>
+                <GridItem xs={7} sm={7} md={7}>
+                  <div style={{ textAlign: 'right' }}>
+                    <h3>10/11/2019 - 15:05</h3>
+                  </div>
+                </GridItem>
+              </GridContainer>
             </CardHeader>
             <div className={classes.tarjetaDashBoard}>
               <GridContainer >

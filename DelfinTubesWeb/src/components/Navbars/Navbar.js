@@ -58,17 +58,16 @@ export default function Header(props) {
     //     </Toolbar>
     //   </AppBar>
     // );
-    <GridContainer >
+    <div className={classes.margenDerecho}>
         <ImageComponent
-          className={classNames.margenDerecho}
           image={logo}
           roundedColor="white"
-          imageWidth="120"
-          marginRight="120"
-          imageHeight="120"
+          texAlign="Center"
+          imageWidth="80"
+          imageHeight="80"
           roundedSize="8">
         </ImageComponent>
-    </GridContainer>
+    </div>
   )
 }
 

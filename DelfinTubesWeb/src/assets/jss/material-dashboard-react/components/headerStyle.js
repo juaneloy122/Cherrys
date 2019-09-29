@@ -51,7 +51,8 @@ const headerStyle = () => ({
   },
 
   margenDerecho:{
-    marginRight: "55px"
+    marginLeft: "90%",
+    marginTop: "1%"
   },
 
   appResponsive: {
