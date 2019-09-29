@@ -48,7 +48,7 @@ export default function Dashboard() {
       <GridContainer >
 
         <GridItem>
-          <h3>Nuevos mensajes</h3>
+          <h3>Mensajes sin validar</h3>
         </GridItem>
 
         <GridItem xs={12} sm={12} md={12} >
@@ -166,7 +166,7 @@ export default function Dashboard() {
 
         <GridItem>
           <br />
-          <h3>Mensajes antiguos</h3>
+          <h3>Mensajes validados</h3>
         </GridItem>
 
         <GridItem xs={12} sm={12} md={12} >

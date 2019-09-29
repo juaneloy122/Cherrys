@@ -44,14 +44,14 @@ export default function UserProfile() {
         <GridItem xs={12} sm={12} md={12}>
           <Card>
             <CardHeader color="primary">
-              <h4 className={classes.cardTitleWhite}>Nuevo anuncio</h4>
+              <h4 className={classes.cardTitleWhite}>Nueva  incidencia</h4>
               {/* <p className={classes.cardCategoryWhite}>Complete your profile</p> */}
             </CardHeader>
             <CardBody>
               <GridContainer>
                 <GridItem xs={12} sm={12} md={5}>
                   <CustomInput
-                    labelText="Título del anuncio"
+                    labelText="Título de la incidencia"
                     id="company-disabled"
                     formControlProps={{
                       fullWidth: true
@@ -83,7 +83,7 @@ export default function UserProfile() {
             </CardBody>
             <CardFooter style={{ alignSelf: "flex-end" }}>
               <GridItem>
-                <Button color="primary">Crear Anuncio</Button>
+                <Button color="primary">Crear Incidencia</Button>
               </GridItem>
             </CardFooter>
           </Card>

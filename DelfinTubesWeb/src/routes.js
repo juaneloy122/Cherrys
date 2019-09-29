@@ -47,7 +47,7 @@ const dashboardRoutes = [
   },
   {
     path: "/user",
-    name: " Tablón administrador",
+    name: " Incidencias",
     rtlName: "ملف تعريفي للمستخدم",
     icon: Person,
     component: UserProfile,

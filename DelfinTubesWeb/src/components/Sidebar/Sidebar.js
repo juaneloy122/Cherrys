@@ -88,10 +88,9 @@ export default function Sidebar(props) {
         })}
         target="_blank"
       >
-        <div className={classes.logoImage}>
+        <div>
           <img src={logo} alt="logo" className={classes.img} />
         </div>
-        {logoText}
       </a>
     </div>
   );

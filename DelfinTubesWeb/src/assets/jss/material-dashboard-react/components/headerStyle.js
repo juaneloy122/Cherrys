@@ -49,6 +49,11 @@ const headerStyle = () => ({
       background: "transparent"
     }
   },
+
+  margenDerecho:{
+    marginRight: "55px"
+  },
+
   appResponsive: {
     top: "8px"
   },

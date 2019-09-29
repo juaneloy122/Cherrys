@@ -1,6 +1,9 @@
 import React from "react";
 import classNames from "classnames";
+import logo from "assets/img/FotoPerfil.png";
+import ImageComponent from "react-rounded-image";
 import PropTypes from "prop-types";
+import GridContainer from "components/Grid/GridContainer.js";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -15,6 +18,8 @@ import RTLNavbarLinks from "./RTLNavbarLinks.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "assets/jss/material-dashboard-react/components/headerStyle.js";
+import { Grid } from "@material-ui/core";
+import GridItem from "components/Grid/GridItem.js";
 
 const useStyles = makeStyles(styles);
 
@@ -35,25 +40,35 @@ export default function Header(props) {
     [" " + classes[color]]: color
   });
   return (
-  //   <AppBar className={classes.appBar + appBarClasses}>
-  //     <Toolbar className={classes.container}>
-       
-  //       <Hidden smDown implementation="css">
-  //         {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
-  //       </Hidden>
-  //       <Hidden mdUp implementation="css">
-  //         <IconButton
-  //           color="inherit"
-  //           aria-label="open drawer"
-  //           onClick={props.handleDrawerToggle}
-  //         >
-  //           <Menu />
-  //         </IconButton>
-  //       </Hidden>
-  //     </Toolbar>
-  //   </AppBar>
-  // );
-  <div></div>
+    //   <AppBar className={classes.appBar + appBarClasses}>
+    //     <Toolbar className={classes.container}>
+
+    //       <Hidden smDown implementation="css">
+    //         {props.rtlActive ? <RTLNavbarLinks /> : <AdminNavbarLinks />}
+    //       </Hidden>
+    //       <Hidden mdUp implementation="css">
+    //         <IconButton
+    //           color="inherit"
+    //           aria-label="open drawer"
+    //           onClick={props.handleDrawerToggle}
+    //         >
+    //           <Menu />
+    //         </IconButton>
+    //       </Hidden>
+    //     </Toolbar>
+    //   </AppBar>
+    // );
+    <GridContainer >
+        <ImageComponent
+          className={classNames.margenDerecho}
+          image={logo}
+          roundedColor="white"
+          imageWidth="120"
+          marginRight="120"
+          imageHeight="120"
+          roundedSize="8">
+        </ImageComponent>
+    </GridContainer>
   )
 }
 
