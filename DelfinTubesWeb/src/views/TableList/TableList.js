@@ -8,6 +8,8 @@ import Table from "components/Table/Table.js";
 import Card from "components/Card/Card.js";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
+import DelfintubesIco from "assets/img/delfintubes_ico.jpg"
+import { Grid } from "@material-ui/core";
 
 const styles = {
   cardCategoryWhite: {
@@ -45,31 +47,48 @@ export default function TableList() {
   const classes = useStyles();
   return (
     <GridContainer>
-      <GridItem xs={12} sm={12} md={12}>
+      <GridItem xs={8}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
-            <p className={classes.cardCategoryWhite}>
+            <h4 className={classes.cardTitleWhite}>Incidencias sin resolver (4) </h4>
+            {/* <p className={classes.cardCategoryWhite}>
               Here is a subtitle for this table
-            </p>
+            </p> */}
           </CardHeader>
           <CardBody>
             <Table
               tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
+              tableHead={["Fecha", "Nombre", "Apellidos", "Tipo solicitud", "Estado", ""]}
               tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+                ["12/05/2019 07:55", "Papa", "Pig", "SOLICITUD DE VACAIONES", <i className="material-icons" style={{ color: "green" }}>thumb_up</i>, <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                ["02/01/2018 10:02", "Alfonso", "Couthrow Fernández", "SOLICITUD DE VACACIONES", <i className="material-icons" style={{ color: "red" }}>thumb_down</i>, <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                ["29/03/2018 15:38", "Pedro", "Martínez García", "SOLICITUD DE EXPEDIENTE", <i className="material-icons" style={{ color: "red" }}>thumb_down</i>, <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                ["01/03 /2018 20:56", "Pepe", "Sky", "CUADRO MÉDICO", <i className="material-icons" style={{ color: "red" }}>thumb_down</i>, <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                ["25/12/2019 08:34", "Pepa", "Pig", "SOLICITUD DE VACAIONES", <i className="material-icons" style={{ color: "red" }}>thumb_down</i>, <i className="material-icons" style={{ cursor: "pointer" }}>create</i>]
               ]}
             />
           </CardBody>
         </Card>
       </GridItem>
-      <GridItem xs={12} sm={12} md={12}>
+
+      <GridItem xs={4} style={{ margin: "auto" }}>
+        <Card>
+          <CardBody style={{ margin: "auto" }}>
+            <label style={{ textAlign: "center" }}>
+              <a href="www.google.es"> Alta/modificación usuario</a> </label>
+          </CardBody>
+          <CardBody style={{ margin: "auto" }}>
+            <label style={{ textAlign: "center" }}>
+              <a href="www.google.es"> Envío de anuncio </a></label>
+          </CardBody>
+          <CardBody style={{ margin: "auto" }}>
+            <label style={{ textAlign: "center" }}>
+              <a href="www.google.es"> Gestión de nóminas</a> </label>
+          </CardBody>
+        </Card>
+      </GridItem>
+
+      {/* <GridItem xs={12} sm={12} md={12}>
         <Card plain>
           <CardHeader plain color="primary">
             <h4 className={classes.cardTitleWhite}>
@@ -106,7 +125,7 @@ export default function TableList() {
             />
           </CardBody>
         </Card>
-      </GridItem>
+      </GridItem> */}
     </GridContainer>
   );
 }
