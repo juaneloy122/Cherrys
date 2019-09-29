@@ -49,7 +49,7 @@ export default function Icons() {
 
       <Card>
         <CardHeader plain color="primary">
-          <h4 className={classes.cardTitleWhite}>Datos del usuario></h4>
+          <h4 className={classes.cardTitleWhite}>Datos del usuario</h4>
         </CardHeader>
         <GridItem >
           <CardBody>
