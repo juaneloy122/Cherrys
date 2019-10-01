@@ -23,29 +23,55 @@ const useStyles = makeStyles(styles);
 export default function Icons() {
   const classes = useStyles();
   return (
+
     <GridContainer>
-      <Card>
-        <CardHeader plain color="primary">
-          <h4 className={classes.cardTitleWhite}>Gestión de usuarios</h4>
-        </CardHeader>
-        <CardBody>
-          <GridItem xs={12}>
-            <Table
-              tableHeaderColor="primary"
-              tableHead={["Usuario", ""]}
-              tableData={[
-                ["José González", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["Arturo Campos", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["Rodrigo Cortés", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["Juan Gómez Jurado", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["Cristina Alonso", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["María Josefina de los Campos", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["DelfínTubes", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>]
-              ]}
-            />
-          </GridItem>
-        </CardBody>
-      </Card>
+      <GridItem xs={12} sm={6} md={6} >
+        <Card>
+          <CardHeader plain color="primary">
+            <h4 className={classes.cardTitleWhite}>Gestión de usuarios</h4>
+          </CardHeader>
+          <CardBody>
+            <GridItem xs={12}>
+              <Table
+                tableHeaderColor="primary"
+                tableHead={["Usuario", ""]}
+                tableData={[
+                  ["José González", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                  ["Arturo Campos", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                  ["Rodrigo Cortés", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                  ["Juan Gómez Jurado", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                  ["Cristina Alonso", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                  ["María Josefina de los Campos", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                  ["DelfínTubes", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>]
+                ]}
+              />
+            </GridItem>
+          </CardBody>
+        </Card>
+      </GridItem>
+
+      <GridItem xs={12} sm={6} md={6} >
+        <Card>
+          <CardHeader plain color="primary">
+            <h4 className={classes.cardTitleWhite}>Grupos a los que pertenece</h4>
+          </CardHeader>
+          <CardBody>
+            <GridItem xs={12}>
+              <Table
+                tableHeaderColor="primary"
+                tableData={[
+                  [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Adminstración", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
+                  [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Guardias de seguridad", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
+                  [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Operarios", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
+                  [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Maestros", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
+                  [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Carretilleros", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>]
+                ]}
+              />
+            </GridItem>
+          </CardBody>
+        </Card>
+
+      </GridItem>
 
       <Card>
         <CardHeader plain color="primary">
@@ -104,27 +130,16 @@ export default function Icons() {
           </CardBody>
         </GridItem>
       </Card>
-
-      <Card>
-        <CardHeader plain color="primary">
-          <h4 className={classes.cardTitleWhite}>Grupos a los que pertenece</h4>
-        </CardHeader>
-        <CardBody>
-          <GridItem xs={12}>
-            <Table
-              tableHeaderColor="primary"
-              tableData={[
-                [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Adminstración", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
-                [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Guardias de seguridad", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
-                [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Operarios", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
-                [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Maestros", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
-                [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Carretilleros", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>]
-              ]}
-            />
-          </GridItem>
-        </CardBody>
-      </Card>
-
+      <GridItem xs={12} sm={12} md={12}>
+        <div style={{ textAlign: 'right' }}>
+          <br />
+          <br />
+          <br />
+          <label style={{ fontSize: '30px', color: 'green' }}>Enviar Anuncio  </label>
+          <i className="material-icons" style={{ fontSize: '50px', color: 'green', verticalAlign: 'top' }}>send</i>
+        </div>
+      </GridItem>
     </GridContainer>
+
   );
 }
