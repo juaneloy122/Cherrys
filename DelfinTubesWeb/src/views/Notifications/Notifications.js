@@ -66,9 +66,9 @@ export default function Icons() {
                 tableHeaderColor="primary"
                 tableHead={["Anuncio", ""]}
                 tableData={[
-                  ["15/09/2019 15:10 - Reconocimiento médico", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                  ["17/09/2019 16:08 - Nueva normativa de entrada", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                  ["21/09/2019 17:00 - Compra de cascos nuevos", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                  ["15/09/2019 15:10 - Reconocimiento médico", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>, <i className="material-icons" style={{ cursor: "pointer", color: "red" }}>delete_forever</i>],
+                  ["17/09/2019 16:08 - Nueva normativa de entrada", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>, <i className="material-icons" style={{ cursor: "pointer", color: "red" }}>delete_forever</i>],
+                  ["21/09/2019 17:00 - Compra de cascos nuevos", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>, <i className="material-icons" style={{ cursor: "pointer", color: "red" }}>delete_forever</i>],
                 ]}
               />
             </GridItem>
@@ -79,66 +79,67 @@ export default function Icons() {
       <GridItem xs={12} sm={6} md={6} >
         <Card>
           <CardHeader plain color="primary">
-            <h4 className={classes.cardTitleWhite}>Datos del anuncio</h4>
+            <h4 className={classes.cardTitleWhite}>Grupos a los que pertenece</h4>
           </CardHeader>
-          <GridItem >
-            <CardBody>
-              <GridItem xs={12}>
-                <CustomInput
-                  labelText="Asunto"
-                  id="company-disabled"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                  inputProps={{
-                    disabled: false
-                  }}
-                />
-              </GridItem>
-              <GridItem xs={12}>
-                <CustomInput
-                  labelText="Descripción"
-                  id="0"
-                  formControlProps={{
-                    fullWidth: true
-                  }}
-                  inputProps={{
-                    disabled: false
-                  }}
-                />
-              </GridItem>
-              <GridItem xs={6} md={6} sm={6} style={{ marginTop: "25px" }}>
-                <i className={"material-icons"} style={{ fontSize: "40px" }}>cloud_upload</i>
-                <label style={{ color: 'black' }}>&nbsp;Adjuntar documento</label>
-              </GridItem>
-              <GridItem xs={6} md={6} sm={6} style={{ marginTop: "25px" }}>
-                <i className={"material-icons"} style={{ fontSize: "40px" }}>delete_outline</i>
-                <label style={{ color: 'black' }}>&nbsp;Eliminar anuncio documento</label>
-              </GridItem>
-            </CardBody>
-          </GridItem>
+          <CardBody>
+            <GridItem xs={12}>
+              <Table
+                tableHeaderColor="primary"
+                tableData={[
+                  [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Adminstración", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
+                  [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Guardias de seguridad", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
+                  [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Operarios", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
+                  [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Maestros", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
+                  [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Carretilleros", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>]
+                ]}
+              />
+            </GridItem>
+          </CardBody>
         </Card>
       </GridItem>
 
       <Card>
         <CardHeader plain color="primary">
-          <h4 className={classes.cardTitleWhite}>Grupos a los que pertenece</h4>
+          <h4 className={classes.cardTitleWhite}>Datos del anuncio</h4>
         </CardHeader>
-        <CardBody>
-          <GridItem xs={12}>
-            <Table
-              tableHeaderColor="primary"
-              tableData={[
-                [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Adminstración", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
-                [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Guardias de seguridad", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
-                [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Operarios", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
-                [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Maestros", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>],
-                [<i className="material-icons" style={{ fontSize: '30px' }}>crop_square</i>, "Carretilleros", <i className="material-icons" style={{ cursor: "pointer" }}>remove_red_eye</i>]
-              ]}
-            />
-          </GridItem>
-        </CardBody>
+        <GridItem >
+          <CardBody>
+            <GridItem xs={12}>
+              <CustomInput
+                labelText="Asunto"
+                id="company-disabled"
+                formControlProps={{
+                  fullWidth: true
+                }}
+                inputProps={{
+                  disabled: false
+                }}
+              />
+            </GridItem>
+            <GridItem xs={12}>
+              <CustomInput
+                labelText="Descripción"
+                id="0"
+                formControlProps={{
+                  fullWidth: true
+                }}
+                inputProps={{
+                  disabled: false
+                }}
+              />
+            </GridItem>
+            <GridItem xs={6} md={6} sm={6} style={{ marginTop: "25px" }}>
+              <i className={"material-icons"} style={{ fontSize: "40px" }}>cloud_upload</i>
+              <label style={{ color: 'black' }}>&nbsp;Adjuntar documento</label>
+            </GridItem>
+            <GridItem xs={6} md={6} sm={6} style={{ marginTop: "25px" }}>
+              <i className={"material-icons"} style={{ fontSize: "40px" }}>delete_outline</i>
+              <label style={{ color: 'black' }}>&nbsp;Eliminar anuncio</label>
+            </GridItem>
+          </CardBody>
+        </GridItem>
       </Card>
+
 
       <GridItem xs={12} sm={12} md={12}>
         <div style={{ textAlign: 'right' }}>
