@@ -58,29 +58,29 @@ const useStyles = makeStyles(styles);
 export default function TypographyPage() {
   const classes = useStyles();
   return (
-    <GridContainer >
+    <GridContainer>
+      <GridItem xs={12} sm={12} md={12} >
+        <Card>
+          <div style={{ marginLeft: '42%' }}>
+            <ImageComponent
+              image={logo}
+              roundedColor="white"
+              texAlign="Center"
+              imageWidth="200"
+              imageHeight="200"
+              roundedSize="8">
+            </ImageComponent>
+          </div>
 
-      <GridItem xs={12} md={12} sm={12}>
-        <div style={{ marginLeft: '42%' }}>
-          <ImageComponent
-            image={logo}
-            roundedColor="white"
-            texAlign="Center"
-            imageWidth="200"
-            imageHeight="200"
-            roundedSize="8">
-          </ImageComponent>
-        </div>
-      </GridItem>
+          <div style={{ textAlign: 'center' }}>
+            <br />
+            <br />
+            <br />
+            <label style={{ fontSize: '30px', color: 'blue' }}>Enviar Nóminas  </label>
+            <i className="material-icons" style={{ fontSize: '50px', color: 'blue', verticalAlign: 'top' }}>send</i>
+          </div>
 
-      <GridItem xs={12} sm={12} md={12}>
-        <div style={{ textAlign: 'center' }}>
-          <br />
-          <br />
-          <br />
-          <label style={{ fontSize: '30px', color: 'blue' }}>Enviar Nóminas  </label>
-          <i className="material-icons" style={{ fontSize: '50px', color: 'blue', verticalAlign: 'top' }}>send</i>
-        </div>
+        </Card>
       </GridItem>
     </GridContainer>
   );
