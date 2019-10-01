@@ -4,6 +4,7 @@ import logo from "assets/img/FotoPerfil.png";
 import ImageComponent from "react-rounded-image";
 import PropTypes from "prop-types";
 import GridContainer from "components/Grid/GridContainer.js";
+import imagenDelfinTubes from "assets/img/delfintubes.jpg";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
@@ -58,16 +59,29 @@ export default function Header(props) {
     //     </Toolbar>
     //   </AppBar>
     // );
-    <div className={classes.margenDerecho}>
-        <ImageComponent
-          image={logo}
-          roundedColor="white"
-          texAlign="Center"
-          imageWidth="80"
-          imageHeight="80"
-          roundedSize="8">
-        </ImageComponent>
-    </div>
+    <AppBar style={{ background: '#FFF' }}>
+        <GridContainer>
+          <GridItem xs={10}>
+            <img src={imagenDelfinTubes} style={{ width: '300px', height: '100px', padding: '0px' }}></img>
+          </GridItem>
+          <GridItem xs={1} style={{marginTop: '40px'}} >
+            <label  style={{ color: '#08283d',fontWeight: 'bold', fontSize: '20px', verticalAlign: 'center', marginRigh: '10px', marginTop: '20px!Important'}}>Sandra Lago</label>
+          </GridItem>
+          <GridItem xs={1} style={{marginTop: '8px'}}>
+              <ImageComponent
+                image={logo}
+                roundedColor="white"
+                textAlign="center"
+                imageWidth="80"
+                imageHeight="80"
+                roundedSize="8"
+              >
+               
+              </ImageComponent>
+             
+          </GridItem>
+        </GridContainer>
+    </AppBar>
   )
 }
 

@@ -13,7 +13,7 @@ import {
 
 const headerStyle = () => ({
   appBar: {
-    backgroundColor: "transparent",
+    backgroundColor: "#FFF",
     boxShadow: "none",
     borderBottom: "0",
     marginBottom: "0",
@@ -44,45 +44,53 @@ const headerStyle = () => ({
     color: "#00acc1",
     padding:"0!Important",
     paddingTop:"50px!Important",
-    paddingLeft:"15px!Important",
+    paddingLeft:"0px!Important",
     "&:hover,&:focus": {
-      background: "transparent"
+      background: "#FFF"
     }
   },
 
   margenDerecho:{
     marginLeft: "90%",
+    marginBottom:"10px",
     marginTop: "1%"
   },
 
   appResponsive: {
     top: "8px"
   },
+
+  margenSuperior: {
+    paddingTop: "20px!Important"
+  },
+  
   primary: {
-    backgroundColor: primaryColor[0],
+    backgroundColor:  "#FFF",
     color: whiteColor,
     ...defaultBoxShadow
   },
   info: {
-    backgroundColor: infoColor[0],
+    backgroundColor:  "#FFF",
     color: whiteColor,
     ...defaultBoxShadow
   },
   success: {
-    backgroundColor: successColor[0],
+    backgroundColor:  "#FFF",
     color: whiteColor,
     ...defaultBoxShadow
   },
   warning: {
-    backgroundColor: warningColor[0],
+    backgroundColor:  "#FFF",
     color: whiteColor,
     ...defaultBoxShadow
   },
   danger: {
-    backgroundColor: dangerColor[0],
+    backgroundColor: "#FFF",
     color: whiteColor,
     ...defaultBoxShadow
-  }
+  },
+ 
+
 });
 
 export default headerStyle;

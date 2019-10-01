@@ -60,6 +60,7 @@ const transition = {
 const container = {
   paddingRight: "15px",
   paddingLeft: "15px",
+  paddingTop:"150px",
   marginRight: "auto",
   marginLeft: "auto"
 };
