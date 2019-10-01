@@ -58,7 +58,7 @@ export default function UserProfile() {
             <CardHeader>
               <GridContainer>
                 <GridItem xs={5} sm={5} md={5}>
-                  <h3>Carlos Fernández</h3>
+                  <h3>Sandra Lago</h3>
                 </GridItem>
                 <GridItem xs={7} sm={7} md={7}>
                   <div style={{ textAlign: 'right' }}>
@@ -90,7 +90,7 @@ export default function UserProfile() {
             <CardHeader>
               <GridContainer>
                 <GridItem xs={5} sm={5} md={5}>
-                  <h3>Carlos Fernández</h3>
+                  <h3>Sandra Lago</h3>
                 </GridItem>
                 <GridItem xs={7} sm={7} md={7}>
                   <div style={{ textAlign: 'right' }}>
@@ -136,7 +136,7 @@ export default function UserProfile() {
             <CardHeader>
               <GridContainer>
                 <GridItem xs={5} sm={5} md={5}>
-                  <h3>Carlos Fernández</h3>
+                  <h3>Sandra Lago</h3>
                 </GridItem>
                 <GridItem xs={7} sm={7} md={7}>
                   <div style={{ textAlign: 'right' }}>

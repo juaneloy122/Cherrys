@@ -28,7 +28,7 @@ import CardHeader from "components/Card/CardHeader.js";
 import CardIcon from "components/Card/CardIcon.js";
 import CardBody from "components/Card/CardBody.js";
 import CardFooter from "components/Card/CardFooter.js";
-
+import CustomInput from "components/CustomInput/CustomInput.js";
 import { bugs, website, server } from "variables/general.js";
 
 import {
@@ -46,11 +46,75 @@ export default function Dashboard() {
   const classes = useStyles();
   return (
     <div>
-      <GridContainer style={{marginTop: "150px"}}>
-          <GridItem>
-            <label>Hola</label>
-          </GridItem>
-        </GridContainer>
+      <GridContainer style={{ marginTop: "150px" }}>
+        <GridItem xs={12} sm={6} md={6} >
+          <Card>
+            <CardHeader plain color="primary">
+              <h4 className={classes.cardTitleWhite}>Gestión de incidencias</h4>
+            </CardHeader>
+            <CardBody>
+              <GridItem xs={12}>
+                <Table
+                  tableHeaderColor="primary"
+                  tableHead={["Incidencias", ""]}
+                  tableData={[
+                    ["15/09/2019 15:10 - Solicitud de vacaciones", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                    ["17/09/2019 16:08 - Casco caducado", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                    ["21/09/2019 17:00 - Justificante médico", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                  ]}
+                />
+              </GridItem>
+            </CardBody>
+          </Card>
+        </GridItem>
+
+        <GridItem xs={12} sm={6} md={6} >
+          <Card>
+            <CardHeader plain color="primary">
+              <h4 className={classes.cardTitleWhite}>Datos de la incidencia</h4>
+            </CardHeader>
+            <GridItem >
+              <CardBody>
+                <GridItem xs={12}>
+                  <label style={{ color: '#a13bb6', fontSize: '30px' }}>Solicitud de Vacaciones</label>
+                </GridItem>
+                <GridItem xs={12}>
+                  <p>Solicito el día jueves 11 de Mayo para poder ir a la operación de mi hija María. Me ausentaré todo el día.</p>
+                </GridItem>
+                <GridItem>
+                  <CustomInput
+                    labelText="Respuesta"
+                    id="company-disabled"
+                    formControlProps={{
+                      fullWidth: true
+                    }}
+                    inputProps={{
+                      disabled: false
+                    }}
+                  />
+                </GridItem>
+              </CardBody>
+            </GridItem>
+          </Card>
+        </GridItem>
+
+        <GridItem xs={12} sm={12} md={12}>
+          <div style={{ textAlign: 'right' }}>
+            <br />
+            <br /><br/>
+            <br/>
+            <br/><br/>
+            <br/>
+            <br/><br/>
+            <br/>
+            <br/><br/>
+            <br />
+            <label style={{ fontSize: '30px', color: 'green' }}>Resolver Incidencia  </label>
+            <i className="material-icons" style={{ fontSize: '50px', color: 'green', verticalAlign: 'top' }}>send</i>
+          </div>
+        </GridItem>
+
+      </GridContainer>
     </div>
   );
 }
