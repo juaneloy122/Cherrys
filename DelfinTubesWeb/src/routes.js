@@ -19,8 +19,8 @@
 import Dashboard from "@material-ui/icons/Dashboard";
 import Person from "@material-ui/icons/BugReport";
 import LibraryBooks from "@material-ui/icons/LibraryBooks";
-import BubbleChart from "@material-ui/icons/BubbleChart";
-import LocationOn from "@material-ui/icons/LocationOn";
+import BubbleChart from "@material-ui/icons/PermIdentity";
+import LocationOn from "@material-ui/icons/BugReport";
 import Notifications from "@material-ui/icons/Notifications";
 import Unarchive from "@material-ui/icons/Unarchive";
 import Language from "@material-ui/icons/Language";
@@ -79,7 +79,7 @@ const dashboardRoutes = [
   },
   {
     path: "/maps",
-    name: "Maps",
+    name: "Gestión de incidencias",
     rtlName: "خرائط",
     icon: LocationOn,
     component: Maps,
@@ -92,14 +92,6 @@ const dashboardRoutes = [
     icon: Notifications,
     component: NotificationsPage,
     layout: "/admin"
-  },
-  {
-    path: "/rtl-page",
-    name: "RTL Support",
-    rtlName: "پشتیبانی از راست به چپ",
-    icon: Language,
-    component: RTLPage,
-    layout: "/rtl"
   }
 ];
 

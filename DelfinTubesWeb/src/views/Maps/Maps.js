@@ -1,93 +1,56 @@
 import React from "react";
+// react plugin for creating charts
+import ChartistGraph from "react-chartist";
+// @material-ui/core
+import { makeStyles } from "@material-ui/core/styles";
+import Icon from "@material-ui/core/Icon";
+// @material-ui/icons
+import Store from "@material-ui/icons/Store";
+import Warning from "@material-ui/icons/Warning";
+import DateRange from "@material-ui/icons/DateRange";
+import LocalOffer from "@material-ui/icons/LocalOffer";
+import Update from "@material-ui/icons/Update";
+import ArrowUpward from "@material-ui/icons/ArrowUpward";
+import AccessTime from "@material-ui/icons/AccessTime";
+import Accessibility from "@material-ui/icons/Accessibility";
+import BugReport from "@material-ui/icons/BugReport";
+import Code from "@material-ui/icons/Code";
+import Cloud from "@material-ui/icons/Cloud";
+// core components
+import GridItem from "components/Grid/GridItem.js";
+import GridContainer from "components/Grid/GridContainer.js";
+import Table from "components/Table/Table.js";
+import Tasks from "components/Tasks/Tasks.js";
+import CustomTabs from "components/CustomTabs/CustomTabs.js";
+import Danger from "components/Typography/Danger.js";
+import Card from "components/Card/Card.js";
+import CardHeader from "components/Card/CardHeader.js";
+import CardIcon from "components/Card/CardIcon.js";
+import CardBody from "components/Card/CardBody.js";
+import CardFooter from "components/Card/CardFooter.js";
+
+import { bugs, website, server } from "variables/general.js";
+
 import {
-  withScriptjs,
-  withGoogleMap,
-  GoogleMap,
-  Marker
-} from "react-google-maps";
+  dailySalesChart,
+  emailsSubscriptionChart,
+  completedTasksChart
+} from "variables/charts.js";
 
-const CustomSkinMap = withScriptjs(
-  withGoogleMap(() => (
-    <GoogleMap
-      defaultZoom={13}
-      defaultCenter={{ lat: 40.748817, lng: -73.985428 }}
-      defaultOptions={{
-        scrollwheel: false,
-        zoomControl: true,
-        styles: [
-          {
-            featureType: "water",
-            stylers: [
-              { saturation: 43 },
-              { lightness: -11 },
-              { hue: "#0088ff" }
-            ]
-          },
-          {
-            featureType: "road",
-            elementType: "geometry.fill",
-            stylers: [
-              { hue: "#ff0000" },
-              { saturation: -100 },
-              { lightness: 99 }
-            ]
-          },
-          {
-            featureType: "road",
-            elementType: "geometry.stroke",
-            stylers: [{ color: "#808080" }, { lightness: 54 }]
-          },
-          {
-            featureType: "landscape.man_made",
-            elementType: "geometry.fill",
-            stylers: [{ color: "#ece2d9" }]
-          },
-          {
-            featureType: "poi.park",
-            elementType: "geometry.fill",
-            stylers: [{ color: "#ccdca1" }]
-          },
-          {
-            featureType: "road",
-            elementType: "labels.text.fill",
-            stylers: [{ color: "#767676" }]
-          },
-          {
-            featureType: "road",
-            elementType: "labels.text.stroke",
-            stylers: [{ color: "#ffffff" }]
-          },
-          { featureType: "poi", stylers: [{ visibility: "off" }] },
-          {
-            featureType: "landscape.natural",
-            elementType: "geometry.fill",
-            stylers: [{ visibility: "on" }, { color: "#b8cb93" }]
-          },
-          { featureType: "poi.park", stylers: [{ visibility: "on" }] },
-          {
-            featureType: "poi.sports_complex",
-            stylers: [{ visibility: "on" }]
-          },
-          { featureType: "poi.medical", stylers: [{ visibility: "on" }] },
-          {
-            featureType: "poi.business",
-            stylers: [{ visibility: "simplified" }]
-          }
-        ]
-      }}
-    >
-      <Marker position={{ lat: 40.748817, lng: -73.985428 }} />
-    </GoogleMap>
-  ))
-);
+import styles from "assets/jss/material-dashboard-react/views/dashboardStyle.js";
+import { Grid } from "@material-ui/core";
 
-export default function Maps() {
+const useStyles = makeStyles(styles);
+
+export default function Dashboard() {
+  const classes = useStyles();
   return (
-    <CustomSkinMap
-      googleMapURL="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"
-      loadingElement={<div style={{ height: `100%` }} />}
-      containerElement={<div style={{ height: `100vh` }} />}
-      mapElement={<div style={{ height: `100%` }} />}
-    />
+    <div>
+      <GridContainer style={{marginTop: "150px"}}>
+          <GridItem>
+            <label>Hola</label>
+          </GridItem>
+        </GridContainer>
+    </div>
   );
 }
