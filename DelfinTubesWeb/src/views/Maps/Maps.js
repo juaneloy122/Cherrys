@@ -50,7 +50,7 @@ export default function Dashboard() {
         <GridItem xs={12} sm={6} md={6} >
           <Card>
             <CardHeader plain color="primary">
-              <h4 className={classes.cardTitleWhite}>Gestión de incidencias</h4>
+              <h4 className={classes.cardTitleWhite}>Gestión de incidencias  (3)</h4>
             </CardHeader>
             <CardBody>
               <GridItem xs={12}>
