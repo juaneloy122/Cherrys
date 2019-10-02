@@ -14,6 +14,7 @@ import React from "react";
  import CardIcon from "components/Card/CardIcon.js";
  import CardBody from "components/Card/CardBody.js";
  import CardFooter from "components/Card/CardFooter.js";
+ import ImageComponent from "react-rounded-image";
 
 const styles = {
   typo: {

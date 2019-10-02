@@ -54,11 +54,11 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
-    path: "/icons",
-    name: "Gestión de usuarios",
-    rtlName: "الرموز",
-    icon: BubbleChart,
-    component: Icons,
+    path: "/table",
+    name: "Panel de control",
+    rtlName: "قائمة الجدول",
+    icon: "content_paste",
+    component: TableList,
     layout: "/admin"
   },
   {
@@ -69,15 +69,8 @@ const dashboardRoutes = [
     component: NotificationsPage,
     layout: "/admin"
   },
+  
   {
-    path: "/table",
-    name: "Panel de control X",
-    rtlName: "قائمة الجدول",
-    icon: "content_paste",
-    component: TableList,
-    layout: "/admin"
-  },
-   {
     path: "/maps",
     name: "--> Gestión de incidencias",
     rtlName: "خرائط",
@@ -100,8 +93,7 @@ const dashboardRoutes = [
     icon: BubbleChart,
     component: Icons,
     layout: "/admin"
-  } 
-  
+  }
 ];
 
 export default dashboardRoutes;

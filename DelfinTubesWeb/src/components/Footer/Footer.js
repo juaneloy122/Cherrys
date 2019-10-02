@@ -36,18 +36,6 @@ export default function Footer(props) {
           </List>
           }
         </div>
-        <p className={classes.right}>
-          <span>
-            &copy; {1900 + new Date().getYear()}{" "}
-            Design by
-            <a
-              href="https://www.coralesdesign.com"
-              target="_blank"
-              className={classes.a}
-              style={{ padding: "0px 0px 5px 0px" }}> CoralesDesign
-            </a> 
-          </span>
-        </p>
       </div>
     </footer>
   );

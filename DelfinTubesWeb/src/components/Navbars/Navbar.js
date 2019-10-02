@@ -7,6 +7,7 @@ import imagenDelfinTubes from "assets/img/delfintubes.jpg";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
+import ImageComponent from "react-rounded-image";
 import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Hidden from "@material-ui/core/Hidden";
