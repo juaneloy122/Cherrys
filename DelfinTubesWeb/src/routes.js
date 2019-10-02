@@ -63,7 +63,7 @@ const dashboardRoutes = [
   },
   {
     path: "/notifications",
-    name: "Gestión del tablón",
+    name: "--> Gestión del tablón",
     rtlName: "إخطارات",
     icon: Notifications,
     component: NotificationsPage,
@@ -71,7 +71,7 @@ const dashboardRoutes = [
   },
   {
     path: "/maps",
-    name: "Gestión de incidencias",
+    name: "--> Gestión de incidencias",
     rtlName: "خرائط",
     icon: LocationOn,
     component: Maps,
@@ -79,7 +79,7 @@ const dashboardRoutes = [
   },
   {
     path: "/typography",
-    name: "Gestión de nóminas",
+    name: "--> Gestión de nóminas",
     rtlName: "طباعة",
     icon: LibraryBooks,
     component: Typography,
@@ -87,7 +87,7 @@ const dashboardRoutes = [
   },
   {
     path: "/icons",
-    name: "Gestión de usuarios",
+    name: "--> Gestión de usuarios",
     rtlName: "الرموز",
     icon: BubbleChart,
     component: Icons,
