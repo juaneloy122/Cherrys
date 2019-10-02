@@ -24,9 +24,6 @@ const styles = {
       color: "#FFFFFF"
     }
   },
-  paddingLeft:{
-    paddingLeft:"245px"
-  },
   cardTitleWhite: {
     color: "#FFFFFF",
     marginTop: "0px",
@@ -49,8 +46,7 @@ const useStyles = makeStyles(styles);
 export default function TableList() {
   const classes = useStyles();
   return (
-    <GridContainer>
-      <GridItem xs={12}>
+    <GridContainer xs={12}>
         <Card>
           <CardHeader color="primary">
             <h4 className={classes.cardTitleWhite}>Incidencias sin resolver</h4>
@@ -59,8 +55,8 @@ export default function TableList() {
             </p> */}
           </CardHeader>
           <CardBody>
-            <GridContainer xs={12}>
-              <GridContainer>
+            <GridContainer >
+              <GridContainer xs={8}>
                 <Table
                   tableHeaderColor="primary"
                   tableHead={["Fecha", "Nombre", "Apellidos", "Tipo de solicitud", ""]}
@@ -71,7 +67,7 @@ export default function TableList() {
                   ]} />
               </GridContainer>
 
-              <GridContainer className={classes.paddingLeft} >
+              <GridContainer style={{paddingLeft:"130px", paddingTop:"30px"}}>
                 <GridItem style={{ margin: "auto"}}>
                   <CardBody style={{ margin: "auto" }}>
                     <label style={{ textAlign: "center" }}>
@@ -87,71 +83,9 @@ export default function TableList() {
                   </CardBody>
                 </GridItem>
               </GridContainer>
-
-
             </GridContainer>
-            {/* <GridItem xs={4} style={{ margin: "auto" }}>
-              <Card>
-                <CardBody style={{ margin: "auto" }}>
-                  <label style={{ textAlign: "center" }}>
-                    <a href="">Alta/modificación usuario</a> </label>
-                </CardBody>
-                <CardBody style={{ margin: "auto" }}>
-                  <label style={{ textAlign: "center" }}>
-                    <a href="www.google.es">Envío de anuncio </a></label>
-                </CardBody>
-                <CardBody style={{ margin: "auto" }}>
-                  <label style={{ textAlign: "center" }}>
-                    <a href="www.google.es">Gestión de nóminas</a> </label>
-                </CardBody>
-              </Card>
-            </GridItem> */}
-
-
           </CardBody>
         </Card>
-      </GridItem>
-
-
-
-      {/* <GridItem xs={12} sm={12} md={12}>
-        <Card plain>
-          <CardHeader plain color="primary">
-            <h4 className={classes.cardTitleWhite}>
-              Table on Plain Background
-            </h4>
-            <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
-            </p>
-          </CardHeader>
-          <CardBody>
-            <Table
-              tableHeaderColor="primary"
-              tableHead={["ID", "Name", "Country", "City", "Salary"]}
-              tableData={[
-                ["1", "Dakota Rice", "$36,738", "Niger", "Oud-Turnhout"],
-                ["2", "Minerva Hooper", "$23,789", "Curaçao", "Sinaai-Waas"],
-                ["3", "Sage Rodriguez", "$56,142", "Netherlands", "Baileux"],
-                [
-                  "4",
-                  "Philip Chaney",
-                  "$38,735",
-                  "Korea, South",
-                  "Overland Park"
-                ],
-                [
-                  "5",
-                  "Doris Greene",
-                  "$63,542",
-                  "Malawi",
-                  "Feldkirchen in Kärnten"
-                ],
-                ["6", "Mason Porter", "$78,615", "Chile", "Gloucester"]
-              ]}
-            />
-          </CardBody>
-        </Card>
-      </GridItem> */}
     </GridContainer>
   );
 }
