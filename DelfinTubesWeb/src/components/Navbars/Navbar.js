@@ -61,11 +61,11 @@ export default function Header(props) {
     // );
     <AppBar style={{ background: '#FFF' }}>
         <GridContainer>
-          <GridItem xs={10}>
+          <GridItem xs={9}>
             <img src={imagenDelfinTubes} style={{ width: '300px', height: '100px', padding: '0px' }}></img>
           </GridItem>
-          <GridItem xs={1} style={{marginTop: '40px'}} >
-            <label  style={{ color: '#08283d',fontWeight: 'bold', fontSize: '20px', verticalAlign: 'center', marginRigh: '10px', marginTop: '20px!Important'}}>Sandra Lago</label>
+          <GridItem xs={2} style={{marginTop: '40px'}} >
+            <label  style={{ color: '#08283d',fontWeight: 'bold', paddingLeft: '115px',fontSize: '20px', verticalAlign: 'center', marginRigh: '10px', marginTop: '20px!Important'}}>Sandra Lago</label>
           </GridItem>
           <GridItem xs={1} style={{marginTop: '8px'}}>
               <ImageComponent
