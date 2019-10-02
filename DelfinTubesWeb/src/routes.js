@@ -39,7 +39,7 @@ import RTLPage from "views/RTLPage/RTLPage.js";
 const dashboardRoutes = [
   {
     path: "/dashboard",
-    name: "Tablón de anuncios",
+    name: "Tablón",
     rtlName: "لوحة القيادة",
     icon: Dashboard,
     component: DashboardPage,
@@ -62,6 +62,22 @@ const dashboardRoutes = [
     layout: "/admin"
   },
   {
+    path: "/notifications",
+    name: "Gestión del tablón",
+    rtlName: "إخطارات",
+    icon: Notifications,
+    component: NotificationsPage,
+    layout: "/admin"
+  },
+  {
+    path: "/maps",
+    name: "Gestión de incidencias",
+    rtlName: "خرائط",
+    icon: LocationOn,
+    component: Maps,
+    layout: "/admin"
+  },
+  {
     path: "/typography",
     name: "Gestión de nóminas",
     rtlName: "طباعة",
@@ -76,23 +92,8 @@ const dashboardRoutes = [
     icon: BubbleChart,
     component: Icons,
     layout: "/admin"
-  },
-  {
-    path: "/maps",
-    name: "Gestión de incidencias",
-    rtlName: "خرائط",
-    icon: LocationOn,
-    component: Maps,
-    layout: "/admin"
-  },
-  {
-    path: "/notifications",
-    name: "Gestión de anuncios",
-    rtlName: "إخطارات",
-    icon: Notifications,
-    component: NotificationsPage,
-    layout: "/admin"
-  }
+  } 
+  
 ];
 
 export default dashboardRoutes;
