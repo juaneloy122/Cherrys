@@ -1,20 +1,19 @@
 import React from "react";
-// @material-ui/core components
-import { makeStyles } from "@material-ui/core/styles";
-import logo from "assets/img/uploadF.png";
-// core components
-import GridItem from "components/Grid/GridItem.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import ImageComponent from "react-rounded-image";
-import Table from "components/Table/Table.js";
-import Tasks from "components/Tasks/Tasks.js";
-import CustomTabs from "components/CustomTabs/CustomTabs.js";
-import Danger from "components/Typography/Danger.js";
-import Card from "components/Card/Card.js";
-import CardHeader from "components/Card/CardHeader.js";
-import CardIcon from "components/Card/CardIcon.js";
-import CardBody from "components/Card/CardBody.js";
-import CardFooter from "components/Card/CardFooter.js";
+ // @material-ui/core components
+ import { makeStyles } from "@material-ui/core/styles";
+ import logo from "assets/img/uploadF.png";
+ // core components
+ import GridItem from "components/Grid/GridItem.js";
+ import GridContainer from "components/Grid/GridContainer.js";
+ import Table from "components/Table/Table.js";
+ import Tasks from "components/Tasks/Tasks.js";
+ import CustomTabs from "components/CustomTabs/CustomTabs.js";
+ import Danger from "components/Typography/Danger.js";
+ import Card from "components/Card/Card.js";
+ import CardHeader from "components/Card/CardHeader.js";
+ import CardIcon from "components/Card/CardIcon.js";
+ import CardBody from "components/Card/CardBody.js";
+ import CardFooter from "components/Card/CardFooter.js";
 
 const styles = {
   typo: {

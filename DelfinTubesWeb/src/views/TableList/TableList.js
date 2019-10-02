@@ -24,6 +24,9 @@ const styles = {
       color: "#FFFFFF"
     }
   },
+  paddingLeft:{
+    paddingLeft:"245px"
+  },
   cardTitleWhite: {
     color: "#FFFFFF",
     marginTop: "0px",
@@ -38,7 +41,7 @@ const styles = {
       fontWeight: "400",
       lineHeight: "1"
     }
-  }
+  },
 };
 
 const useStyles = makeStyles(styles);
@@ -47,48 +50,69 @@ export default function TableList() {
   const classes = useStyles();
   return (
     <GridContainer>
-      <GridItem xs={4}>
+      <GridItem xs={12}>
         <Card>
           <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Usuarios </h4>
+            <h4 className={classes.cardTitleWhite}>Incidencias sin resolver</h4>
             {/* <p className={classes.cardCategoryWhite}>
               Here is a subtitle for this table
             </p> */}
           </CardHeader>
           <CardBody>
-            <Table
-              tableHeaderColor="primary"
-              tableHead={["Usuario", ""]}
-              tableData={[
-                ["José González", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["Arturo Campos", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["Rodrigo Cortés", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["Juan Gómez Jurado", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["Cristina Alonso", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["María Josefina de los Campos", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
-                ["DelfínTubes", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>]
-              ]}
-            />
+            <GridContainer xs={12}>
+              <GridContainer>
+                <Table
+                  tableHeaderColor="primary"
+                  tableHead={["Fecha", "Nombre", "Apellidos", "Tipo de solicitud", ""]}
+                  tableData={[
+                    ["20/09/2018", "Arturo", "González Campos", "Solicitud de vacaciones", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                    ["21/01/2019", "Rodrigo", "Cortés", "Caso caducado", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                    ["21/01/2019", "Juan", "Gómez Jurado", "Justificante médico", <i className="material-icons" style={{ cursor: "pointer" }}>create</i>],
+                  ]} />
+              </GridContainer>
+
+              <GridContainer className={classes.paddingLeft} >
+                <GridItem style={{ margin: "auto"}}>
+                  <CardBody style={{ margin: "auto" }}>
+                    <label style={{ textAlign: "center" }}>
+                      <a href="#">Alta/modificación usuario</a> </label>
+                  </CardBody>
+                  <CardBody style={{ margin: "auto" }}>
+                    <label style={{ textAlign: "center" }}>
+                      <a href="#">Envío de anuncio </a></label>
+                  </CardBody>
+                  <CardBody style={{ margin: "auto" }}>
+                    <label style={{ textAlign: "center" }}>
+                      <a href="#">Gestión de nóminas</a> </label>
+                  </CardBody>
+                </GridItem>
+              </GridContainer>
+
+
+            </GridContainer>
+            {/* <GridItem xs={4} style={{ margin: "auto" }}>
+              <Card>
+                <CardBody style={{ margin: "auto" }}>
+                  <label style={{ textAlign: "center" }}>
+                    <a href="">Alta/modificación usuario</a> </label>
+                </CardBody>
+                <CardBody style={{ margin: "auto" }}>
+                  <label style={{ textAlign: "center" }}>
+                    <a href="www.google.es">Envío de anuncio </a></label>
+                </CardBody>
+                <CardBody style={{ margin: "auto" }}>
+                  <label style={{ textAlign: "center" }}>
+                    <a href="www.google.es">Gestión de nóminas</a> </label>
+                </CardBody>
+              </Card>
+            </GridItem> */}
+
+
           </CardBody>
         </Card>
       </GridItem>
 
-      <GridItem xs={4} style={{ margin: "auto" }}>
-        <Card>
-          <CardBody style={{ margin: "auto" }}>
-            <label style={{ textAlign: "center" }}>
-              <a href="www.google.es"> Alta/modificación usuario</a> </label>
-          </CardBody>
-          <CardBody style={{ margin: "auto" }}>
-            <label style={{ textAlign: "center" }}>
-              <a href="www.google.es"> Envío de anuncio </a></label>
-          </CardBody>
-          <CardBody style={{ margin: "auto" }}>
-            <label style={{ textAlign: "center" }}>
-              <a href="www.google.es"> Gestión de nóminas</a> </label>
-          </CardBody>
-        </Card>
-      </GridItem>
+
 
       {/* <GridItem xs={12} sm={12} md={12}>
         <Card plain>

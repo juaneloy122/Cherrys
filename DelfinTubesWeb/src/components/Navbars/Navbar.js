@@ -1,7 +1,6 @@
 import React from "react";
 import classNames from "classnames";
 import logo from "assets/img/FotoPerfil.png";
-import ImageComponent from "react-rounded-image";
 import PropTypes from "prop-types";
 import GridContainer from "components/Grid/GridContainer.js";
 import imagenDelfinTubes from "assets/img/delfintubes.jpg";

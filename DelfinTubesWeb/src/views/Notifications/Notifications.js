@@ -140,8 +140,7 @@ export default function Icons() {
         </GridItem>
       </Card>
 
-
-      <GridItem xs={12} sm={12} md={12}>
+      <GridItem xs={12}>
         <div style={{ textAlign: 'right' }}>
           <br />
           <br />

@@ -44,10 +44,9 @@ export default function Footer(props) {
               href="https://www.coralesdesign.com"
               target="_blank"
               className={classes.a}
-              style={{ padding: "0px 0px 5px 0px" }}> AZAI
-            </a>
+              style={{ padding: "0px 0px 5px 0px" }}> CoralesDesign
+            </a> 
           </span>
-
         </p>
       </div>
     </footer>

@@ -15,8 +15,10 @@ import TableRow from "@material-ui/core/TableRow";
 import CardHeader from "components/Card/CardHeader.js";
 import CardBody from "components/Card/CardBody.js";
 import CustomInput from "components/CustomInput/CustomInput.js";
+import Search from "@material-ui/icons/Search";
 
 import styles from "assets/jss/material-dashboard-react/views/iconsStyle.js";
+import Button from "components/CustomButtons/Button.js";
 
 const useStyles = makeStyles(styles);
 
@@ -78,56 +80,57 @@ export default function Icons() {
           <h4 className={classes.cardTitleWhite}>Datos del usuario</h4>
         </CardHeader>
         <GridItem >
-          <CardBody>
-            <GridItem xs={4}>
-              <CustomInput
-                labelText="Nombre"
-                id="company-disabled"
-                formControlProps={{
-                  fullWidth: true
-                }}
-                inputProps={{
-                  disabled: false
-                }}
-              />
-            </GridItem>
-            <GridItem xs={4}>
-              <CustomInput
-                labelText="Apellidos"
-                id="0"
-                formControlProps={{
-                  fullWidth: true
-                }}
-                inputProps={{
-                  disabled: false
-                }}
-              />
-            </GridItem>
-            <GridItem xs={4}>
-              <CustomInput
-                labelText="DNI"
-                id="1"
-                formControlProps={{
-                  fullWidth: true
-                }}
-                inputProps={{
-                  disabled: false
-                }}
-              />
-            </GridItem>
-            <GridItem xs={4}>
-              <CustomInput
-                labelText="Email"
-                id="2"
-                formControlProps={{
-                  fullWidth: true
-                }}
-                inputProps={{
-                  disabled: false
-                }}
-              />
-            </GridItem>
-          </CardBody>
+          <Card>
+            <CardHeader plain color="primary">
+              <h4 className={classes.cardTitleWhite}>Datos del usuario</h4>
+            </CardHeader>
+            <GridContainer>
+              <GridItem>
+                <CardBody>
+                  <GridItem>
+                    <CustomInput xs={4}
+                      labelText="Nombre"
+                      id="company-disabled"
+                      formControlProps={{
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                    />
+                    <CustomInput xs={4}
+                      labelText="Apellidos"
+                      id="0"
+                      formControlProps={{
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                    />
+                  </GridItem>
+                  <GridItem>
+                    <CustomInput
+                      labelText="DNI"
+                      id="1"
+                      formControlProps={{
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                    />
+                    <CustomInput
+                      labelText="Email"
+                      id="2"
+                      formControlProps={{
+                      }}
+                      inputProps={{
+                        disabled: false
+                      }}
+                    />
+                  </GridItem>
+                </CardBody>
+              </GridItem>
+            </GridContainer>
+          </Card>
         </GridItem>
       </Card>
       <GridItem xs={12} sm={12} md={12}>
