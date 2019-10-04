@@ -131,10 +131,10 @@
     <value>Add</value>
   </data>
   <data name="Titulo" xml:space="preserve">
-    <value>TItle:</value>
+    <value>TItle</value>
   </data>
   <data name="Descripcion" xml:space="preserve">
-    <value>Description:</value>
+    <value>Description</value>
   </data>
   <data name="Guardar" xml:space="preserve">
     <value>Save</value>
@@ -150,5 +150,8 @@
   </data>
   <data name="FichajeAutomatico" xml:space="preserve">
     <value>Automatic signing</value>
+  </data>
+  <data name="FechaExpiracion" xml:space="preserve">
+    <value>Fecha de expiración</value>
   </data>
 </root>

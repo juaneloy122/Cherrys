@@ -5,10 +5,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:local="clr-namespace:AppCherrys.Constantes.Localization"
              xmlns:controlessyncfusion="clr-namespace:ST_ControlesCliente.ControlesSyncFusion;assembly=ST_ControlesCliente"
+             xmlns:estilos="clr-namespace:AppCherrys"
              mc:Ignorable="d"
              x:Class="AppCherrys.Views.LoginView"
               NavigationPage.HasNavigationBar="false">
+  
     <ContentPage.Content>
+       
         <Grid Margin="16">
             <Grid.RowDefinitions>
                 <RowDefinition />
@@ -19,32 +22,26 @@
                 <Image Source="QKT.png"/>
             </StackLayout>
             <StackLayout Grid.Row="1">
-                <controlessyncfusion:SF_TextInputLayout 
-                    UnfocusedColor="Green"
-                    ContainerBackgroundColor="{Binding BackgroundColor}"
-                    FocusedColor="Red"
+                <controlessyncfusion:SF_TextInputLayout
                     ContainerType="Outlined"
-                    HelperText="Name on your card"
-                    Hint="Name"
-                    IsHintAlwaysFloated="True"
-                    OutlineCornerRadius="5"
-                    >
-                    <Entry x:Name="name" Text=""/>
+                    Hint="{x:Static local:Messages.Usuario}"
+                    OutlineCornerRadius="8">
+                    <Entry x:Name="UsernameEntry" Text="{Binding Username}" />
                 </controlessyncfusion:SF_TextInputLayout>
-
-
-                <Entry x:Name="UsernameEntry"
-                       Text="{Binding Username}"
-                       Placeholder="{x:Static local:Messages.Usuario}" />
-                <Entry x:Name="PasswordEntry"
-                       Text="{Binding Password}"
-                       Placeholder="{x:Static local:Messages.Password}"
-                       IsPassword="True"/>
+                <controlessyncfusion:SF_TextInputLayout
+                    ContainerType="Outlined"
+                    Hint="{x:Static local:Messages.Password}"
+                    OutlineCornerRadius="8"
+                    EnablePasswordVisibilityToggle="true">
+                    <Entry x:Name="PasswordEntry" Text="{Binding Password}"/>
+                </controlessyncfusion:SF_TextInputLayout>
+                
                 <Label Text="Credenciales incorrectas" 
                        IsVisible="{Binding AreCredentialsInvalid}" 
                        TextColor="Red"/>
+                
             </StackLayout>
-            <Button Grid.Row="2" Text="{x:Static local:Messages.Autenticate}" Command="{Binding AuthenticateCommand}" CornerRadius="20" BackgroundColor="#FFDE55" TextColor="#FF8500"/>
+            <Button Grid.Row="2" Text="{x:Static local:Messages.Autenticate}" Command="{Binding AuthenticateCommand}" CornerRadius="20" BackgroundColor="{DynamicResource ColorAmarilloKumquat}" TextColor="{DynamicResource ColorTitulos}"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

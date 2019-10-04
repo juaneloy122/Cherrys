@@ -115,7 +115,7 @@ namespace AppCherrys.Constantes.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Descripción:.
+        ///   Busca una cadena traducida similar a Descripción.
         /// </summary>
         internal static string Descripcion {
             get {
@@ -129,6 +129,15 @@ namespace AppCherrys.Constantes.Localization {
         internal static string Doodle {
             get {
                 return ResourceManager.GetString("Doodle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Fecha de expiración.
+        /// </summary>
+        internal static string FechaExpiracion {
+            get {
+                return ResourceManager.GetString("FechaExpiracion", resourceCulture);
             }
         }
         
@@ -205,7 +214,7 @@ namespace AppCherrys.Constantes.Localization {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Títutlo:.
+        ///   Busca una cadena traducida similar a Títutlo.
         /// </summary>
         internal static string Titulo {
             get {

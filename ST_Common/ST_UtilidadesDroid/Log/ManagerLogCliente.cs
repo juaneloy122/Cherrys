@@ -10,50 +10,29 @@ namespace ST_Utilidades.Log
 {
     public class ManagerLogCliente
     {
-        private FileManager m_fileManager = new FileManager();
-        private static string m_logsFolder;
-
-        private string m_logsDirectoryName = "logs";
+        private FileManager _FileManager = new FileManager();
+        private static string _DirectorioLogs;
+               
         /// <summary>
-        /// The directory in the local file system where the log files will be stored. Defaults to "logs".
+        /// El nombre del directorio por defecto donde se almacenarán los logs, por defecto "logs".
         /// </summary>
-        public string LogsDirectoryName
-        {
-            get { return m_logsDirectoryName; }
-            set { m_logsDirectoryName = value; }
-        }
-
-        private string m_logFileNameTemplate = "LOG_{0}.txt";
+        public string LogsDirectoryName { get; set; } = "logs";
+        
         /// <summary>
-        /// A template for the generated log files. Needs a placeholder {0} for the timestamp. Must have an extension. Defaults to "LOG_{0}.log".
+        /// El nombre que se usa por defecto para el archivo de log. (Log_20190911.txt).
         /// </summary>
-        public string LogFileNameTemplate
-        {
-            get { return m_logFileNameTemplate; }
-            set { m_logFileNameTemplate = value; }
-        }
+        public string LogFileNameTemplate { get; set; } = "Log_{0}.txt";
 
-        private string m_fileNameTimestampFormat = "yyyyMMdd";
+       
         /// <summary>
-        /// A datetime format string used to create a timestamp for the file names. Defaults to "yyyyMMdd". This conditions the granularity of the log files:<br/>
-        /// If set to "yyyy_MM", it will create a log file per month. 
+        /// Por defecto consideramos que almacena un fichero al día
         /// </summary>
-        public string FileNameTimestampFormat
-        {
-            get { return m_fileNameTimestampFormat; }
-            set { m_fileNameTimestampFormat = value; }
-        }
-
-        private string m_logZipFileNameTemplate = "LOGS_{0}.zip";
+        public string FileNameTimestampFormat { get; set; } = "yyyyMMdd";
+                     
         /// <summary>
-        /// A default template for the exported zipped log files, the user may change this name. Needs a placeholder {0} for the timestamp. 
-        /// Must have zip extension extension. Defaults to "LOGS_{0}.zip".
+        ///  El nombre que se usa por defecto para el archivo de log. (Log_20190911.zip).
         /// </summary>
-        public string LogZipFileNameTemplate
-        {
-            get { return m_logZipFileNameTemplate; }
-            set { m_logZipFileNameTemplate = value; }
-        }
+        public string LogZipFileNameTemplate { get; set; } = "LOGS_{0}.zip";
 
         /// <summary>
         /// Posts the logs zipped to an url with the specified query parameters.
@@ -72,7 +51,7 @@ namespace ST_Utilidades.Log
             {
                 // Create a temporary zip file
                 filePath = await CreateTempZipFile();
-                result = await NetHelper.PostFile(await m_fileManager.ReadBytes(filePath), Path.GetFileName(filePath), uploadUrl, uriParameters, userName, password);
+                result = await NetHelper.PostFile(await _FileManager.ReadBytes(filePath), Path.GetFileName(filePath), uploadUrl, uriParameters, userName, password);
 
             }
             catch (Exception ex)
@@ -83,47 +62,32 @@ namespace ST_Utilidades.Log
             {
                 // Delete the temporary zip
                 if (!string.IsNullOrEmpty(filePath))
-                    await m_fileManager.DeleteFileIfExist(filePath);
+                    await _FileManager.DeleteFileIfExist(filePath);
             }
 
             return result;
         }
-
+               
         /// <summary>
-        /// Gets the folder that stores the log files. Creates it if necessary.
-        /// </summary>
-        /// <returns></returns>
-        private async Task<string> GetLogsFolder()
-        {
-            if (m_logsFolder == null)
-            {
-                m_logsFolder = await m_fileManager.CreateFolderIfNotExist(LogsDirectoryName);
-            }
-
-            return m_logsFolder;
-        }
-
-        /// <summary>
-        /// Gets the current log folder that stores the log files. Creates it if necessary.
+        /// Devuelve todos los archivos dentro de un directorio de tipo .txt en este caso
         /// </summary>
         /// <returns></returns>
         private async Task<IEnumerable<string>> GetLogFiles()
         {
-            string logFileExtension = Path.GetExtension(LogFileNameTemplate);
-            var logsFolder = await GetLogsFolder();
+            string logFileExtension = Path.GetExtension(LogFileNameTemplate);            
 
-            return await m_fileManager.ListFiles(logsFolder, string.Format(@".*\{0}$", logFileExtension));
+            return await _FileManager.ListFiles(_DirectorioLogs, string.Format(@".*\{0}$", logFileExtension));
         }
 
         /// <summary>
-        /// Compresses the logs to a temporary zip file in the local folder
+        /// Comprime los archivos de log en un fichero Log_20190911.zip
         /// </summary>
         /// <returns></returns>
         private async Task<string> CreateTempZipFile()
         {
-            string zipFileName = Path.Combine(await GetLogsFolder(), GetZipFileName(DateTime.Now));
+            string zipFileName = Path.Combine(LogsDirectoryName, GetZipFileName(DateTime.Now));
 
-            await m_fileManager.ZipFiles(zipFileName, await GetLogFiles());
+            await _FileManager.ZipFiles(zipFileName, await GetLogFiles());
 
             return zipFileName;
         }

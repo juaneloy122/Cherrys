@@ -4,6 +4,7 @@ using Xamarin.Forms;
 using AppCherrys.Constantes.Localization;
 using System;
 using ST_Utilidades.Log;
+using AppCherrys.Enums;
 
 namespace AppCherrys
 {
@@ -26,8 +27,10 @@ namespace AppCherrys
 
         public static string TextoBoton = "Acceder";
 
+
         public App()
         {
+            InitializeComponent();
 
             Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTQ2MDgyQDMxMzcyZTMzMmUzMGlERUxKYkdqcWxpK0lSb0I2YXplNmFVbTdCb0V5ejVYb28zb1lCUDJJcnc9");
 

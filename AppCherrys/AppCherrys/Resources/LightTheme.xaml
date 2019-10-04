@@ -6,13 +6,11 @@
     <Color x:Key="PageBackgroundColor">#FFFFFF</Color> <!-- Blanco -->
     <Color x:Key="NavigationBarColor">#FFFFFF</Color> <!-- Blanco -->
     <Color x:Key="ColorTitulos">#FF8500</Color> <!-- Naranja -->
-    <Color x:Key="ColorTextoLetraNormal">Black</Color> <!-- Negro -->
-    <Color x:Key="ColorTextoLetraSecundario">Gray</Color>
+    <Color x:Key="ColorTextoLetraNormal">Black</Color>  <!-- Negro --> 
+    <Color x:Key="ColorTextoLetraSecundario">Gray</Color>  <!-- Gris -->
+    <Color x:Key="ColorEntrysUnfocus">Black</Color>
+    <Color x:Key="ColorEntrysFocus">#FF8500</Color>
+    <Color x:Key="ColorAmarilloKumquat">#FFDE55</Color>
+    <Color x:Key="ColorTarjertas">#FFFFFF</Color>
 
-    <!--<Color x:Key="SecondaryColor">#FFDE55</Color>
-    <Color x:Key="TituloTextColor">#FF8500</Color>
-    <Color x:Key="SecondaryTextColor">Gray</Color>
-    <Color x:Key="PrimaryTextColor">#FF8500</Color>
-    <Color x:Key="TransparentColor">Transparent</Color>-->
-    
 </ResourceDictionary>
