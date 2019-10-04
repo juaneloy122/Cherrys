@@ -14,6 +14,7 @@ using CommonLib.Models.Acta;
 using CommonLib.Models.Calendario;
 using CommonLib.Models.Tarea;
 using ST_Utilidades.Log;
+using Microsoft.Extensions.Hosting;
 
 namespace AppCherrys.MobileAppService
 {
@@ -29,7 +30,7 @@ namespace AppCherrys.MobileAppService
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
             services.AddSingleton<IItemRepository<Anuncio>, AnuncioRepository>();
             services.AddSingleton<IItemRepository<Acta>, ActaRepository>();
             services.AddSingleton<IItemRepository<Usuario>, UsuarioRepository>();
@@ -42,9 +43,32 @@ namespace AppCherrys.MobileAppService
             });
         }
 
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        //public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        //{
+        //    Log.InitLog ("logs\\MobileAppService.txt", "SERVICIO KUMQUAT");
+        //    if (env.IsDevelopment())
+        //    {
+        //        app.UseDeveloperExceptionPage();
+        //    }
+        //    else
+        //    {
+        //        app.UseHsts();
+        //    }
+
+        //    app.UseHttpsRedirection();
+        //    app.UseMvc();
+
+        //    app.UseSwagger();
+        //    app.UseSwaggerUI(c =>
+        //    {
+        //        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API de acceso a datos Kumquat");
+        //        c.RoutePrefix = string.Empty;
+        //    });
+        //}
+
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            Log.InitLog ("logs\\MobileAppService.txt", "SERVICIO KUMQUAT");
+            Log.InitLog("logs\\MobileAppService.txt", "SERVICIO KUMQUAT");
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -55,14 +79,23 @@ namespace AppCherrys.MobileAppService
             }
 
             app.UseHttpsRedirection();
-            app.UseMvc();
 
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.UseEndpoints(endpoints =>
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API de acceso a datos Kumquat");
-                c.RoutePrefix = string.Empty;
+                endpoints.MapControllers();
             });
+
+            //app.UseSwagger();
+            //app.UseSwaggerUI(c =>
+            //{
+            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "API de acceso a datos Kumquat");
+            //    c.RoutePrefix = string.Empty;
+            //});
         }
+    
     }
 }
