@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fonts="clr-namespace:KQ.Xamarin.Controls.Fuentes"
+             xmlns:local="clr-namespace:KQ.Xamarin.Constantes.Localization"
+             mc:Ignorable="d"
+             x:Class="KQ.Xamarin.Views.Tablon.AnuncioDetalleView">
+
+    <ContentPage.Resources>
+        <ResourceDictionary Source="/../../Resources/RecursosAppCherrys.xaml"/>
+    </ContentPage.Resources>
+
+    <NavigationPage.TitleView>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="35"/>
+                <ColumnDefinition Width="5"/>
+            </Grid.ColumnDefinitions>
+            <Label Text="{Binding Item.Titulo}" Style="{DynamicResource estiloTituloPagina}"/>
+            <StackLayout Orientation="Horizontal" Grid.Column="1" HorizontalOptions="End">
+                <fonts:FontAwesomeIcon Text="{Binding Item.Icono}" TextColor="{Binding Item.ColorIcono}" FontSize="30" HorizontalOptions="End"/>
+            </StackLayout>
+        </Grid>
+    </NavigationPage.TitleView>
+
+    <AbsoluteLayout>
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="{Binding Item.Descripcion}" d:Text="{x:Static local:Messages.Descripcion}"/>
+    </StackLayout>
+        <fonts:FontAwesomeIcon x:Name="btnEdit" x:FieldModifier="public" Text="{x:Static fonts:Icon.Edit}" TextColor="#FF8500" FontSize="50" AbsoluteLayout.LayoutBounds=".95,.95,70,70"
+            AbsoluteLayout.LayoutFlags="PositionProportional"/>
+    </AbsoluteLayout>
+</ContentPage>
