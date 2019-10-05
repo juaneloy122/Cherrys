@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:fonts="clr-namespace:KQ.Xamarin.Controls.Fuentes"
+             xmlns:syncTheme="clr-namespace:Syncfusion.XForms.Themes;assembly=Syncfusion.Core.XForms"
+             xmlns:controlessyncfusion="clr-namespace:ST.ControlesCliente.ControlesSyncFusion;assembly=ST.ControlesCliente"
+             mc:Ignorable="d"
+             x:Class="KQ.Xamarin.App">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Resources\DarkTheme.xaml" />
+                <ResourceDictionary Source="Resources\RecursosAppCherrys.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="BackgroundColor" Value="{DynamicResource PageBackgroundColor}"/>
+        </Style>
+
+        <Style TargetType="NavigationPage">
+            <Setter Property="BarBackgroundColor" Value="{DynamicResource NavigationBarColor}" />
+        </Style>
+
+        <Style TargetType="fonts:FontAwesomeIcon" ApplyToDerivedTypes="True">
+            <Setter Property="TextColor" Value="{DynamicResource ColorTitulos}"/>
+        </Style>
+
+        <Style TargetType="controlessyncfusion:SF_TextInputLayout">
+            <Setter Property="UnfocusedColor" Value="{DynamicResource ColorEntrysUnfocus}"/>
+            <Setter Property="FocusedColor" Value="{DynamicResource ColorEntrysFocus}"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="TextColor" Value="{DynamicResource ColorTextoLetraNormal}"/>
+            <Setter Property="FontFamily" Value="{StaticResource BasicFontFamily}"/>
+            <Setter Property="FontSize" Value="{StaticResource MediunFontSize}"/>
+        </Style>
+
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="{DynamicResource ColorTextoLetraNormal}"/>
+            <Setter Property="FontFamily" Value="{StaticResource BasicFontFamily}"/>
+            <Setter Property="FontSize" Value="{StaticResource MediunFontSize}"/>
+        </Style>
+
+        <Style TargetType="Editor">
+            <Setter Property="TextColor" Value="{DynamicResource ColorTextoLetraNormal}"/>
+            <Setter Property="FontFamily" Value="{StaticResource BasicFontFamily}"/>
+            <Setter Property="FontSize" Value="{StaticResource MediunFontSize}"/>
+        </Style>
+
+        <Style TargetType="controlessyncfusion:SF_CheckBox">
+            <Setter Property="TextColor" Value="{DynamicResource ColorEntrysUnfocusTarjetas}"/>
+            <Setter Property="FontFamily" Value="{DynamicResource BasicFontFamily}"/>
+            <Setter Property="FontSize" Value="{DynamicResource BigFontSize}"/>
+        </Style>
+            
+        
+    </Application.Resources>
+
+</Application>
