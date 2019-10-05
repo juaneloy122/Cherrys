@@ -30,6 +30,8 @@ namespace AppCherrys.UWP
         {
             this.InitializeComponent();
             this.Suspending += OnSuspending;
+
+            //Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MTQ2MDgyQDMxMzcyZTMzMmUzMGlERUxKYkdqcWxpK0lSb0I2YXplNmFVbTdCb0V5ejVYb28zb1lCUDJJcnc9");
         }
 
         /// <summary>
