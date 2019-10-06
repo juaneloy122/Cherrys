@@ -12,9 +12,9 @@ namespace KQ.Service.Models
 
         public UsuarioRepository()
         {
-            Add(new Usuario { Id = 1, DNI = "63052727K", Nombre = "Antoñito" });
-            Add(new Usuario { Id = 2, DNI = "60529446R", Nombre = "Virgilio" });
-            Add(new Usuario { Id = 3, DNI = "93074746W", Nombre = "Pepe" });
+            Add(new Usuario { Id = 1, DNI = "63052727K", Nombre = "Antoñito", Apellidos = "Fernandez", FechaAlta = DateTime.Parse("01/02/2004"),Email ="antonio@dt.com",Alias="Toñito",PWD ="1" });
+            Add(new Usuario { Id = 2, DNI = "60529446R", Nombre = "Virgilio", Apellidos = "García", FechaAlta = DateTime.Parse("11/03/2004"), Email = "virgilio@dt.com", Alias = "Vigi", PWD = "1" });      
+            Add(new Usuario { Id = 3, DNI = "93074746W", Nombre = "Pepe",     Apellidos = "López", FechaAlta = DateTime.Parse("05/04/2004"),Email ="pepe@dt.com",Alias="botica",PWD ="1" });
                       
         }
 
