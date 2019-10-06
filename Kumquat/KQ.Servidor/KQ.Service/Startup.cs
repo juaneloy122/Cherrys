@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.OpenApi.Models;
 using ST.Utilidades.Log;
 using Swashbuckle.AspNetCore.Swagger;
 
@@ -36,32 +37,10 @@ namespace KQ.Service
 
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "API de acceso a datos Kumquat", Version = "v1", Description = "Loggin de usuarios, servidor de anuncios, eventos, actas..." });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "API de acceso a datos Kumquat", Version = "v1", Description = "Loggin de usuarios, servidor de anuncios, eventos, actas..." });
             });
         }
-
-        //public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        //{
-        //    Log.InitLog ("logs\\MobileAppService.txt", "SERVICIO KUMQUAT");
-        //    if (env.IsDevelopment())
-        //    {
-        //        app.UseDeveloperExceptionPage();
-        //    }
-        //    else
-        //    {
-        //        app.UseHsts();
-        //    }
-
-        //    app.UseHttpsRedirection();
-        //    app.UseMvc();
-
-        //    app.UseSwagger();
-        //    app.UseSwaggerUI(c =>
-        //    {
-        //        c.SwaggerEndpoint("/swagger/v1/swagger.json", "API de acceso a datos Kumquat");
-        //        c.RoutePrefix = string.Empty;
-        //    });
-        //}
+                
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -86,12 +65,12 @@ namespace KQ.Service
                 endpoints.MapControllers();
             });
 
-            //app.UseSwagger();
-            //app.UseSwaggerUI(c =>
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "API de acceso a datos Kumquat");
-            //    c.RoutePrefix = string.Empty;
-            //});
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API de acceso a datos Kumquat");
+                c.RoutePrefix = string.Empty;
+            });
         }
 
     }
