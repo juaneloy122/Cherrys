@@ -12,9 +12,9 @@ namespace KQ.Service.Models
 
         public UsuarioRepository()
         {
-            Add(new Usuario { Id = 1, Puesto = "Tornero", Nombre = "Antoñito" });
-            Add(new Usuario { Id = 2, Puesto = "Albañil", Nombre = "Virgilio" });
-            Add(new Usuario { Id = 3, Puesto = "Auxiliar",Nombre = "Pepe" });
+            Add(new Usuario { Id = 1, DNI = "63052727K", Nombre = "Antoñito" });
+            Add(new Usuario { Id = 2, DNI = "60529446R", Nombre = "Virgilio" });
+            Add(new Usuario { Id = 3, DNI = "93074746W", Nombre = "Pepe" });
                       
         }
 

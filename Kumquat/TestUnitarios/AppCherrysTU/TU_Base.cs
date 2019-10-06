@@ -1,6 +1,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace AppCherrysTU
+namespace KumquatTU
 {
     /// <summary>
     /// Clase de la que heredan todos los test unitarios de Cherrys.

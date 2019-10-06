@@ -1,4 +1,4 @@
-using AppCherrysTU;
+using KumquatTU;
 using KQ.CommonLib.Models.Tablon;
 using KQ.Xamarin.ClientService;
 using KQ.Xamarin.MockDataStore;
