@@ -41,6 +41,19 @@ namespace KQ.Service.Controllers
             return item;
         }
 
+        [HttpGet("{email},{pwd}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public ActionResult<Usuario> GetUsuario(string email, string pwd)
+        {
+            Usuario item = ((UsuarioRepository)ItemRepository).Get(email,  pwd);
+
+            if (item == null)
+                return NotFound();
+
+            return item;
+        }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

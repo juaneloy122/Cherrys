@@ -8,7 +8,7 @@ namespace KQ.Service.Models
 {
     public class BaseRepository<T> : IItemRepository<T> where T : IItem
     {
-        private static ConcurrentDictionary<int, T> Items =
+        protected static ConcurrentDictionary<int, T> Items =
             new ConcurrentDictionary<int, T>();
 
         public BaseRepository()

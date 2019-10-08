@@ -49,6 +49,13 @@ namespace KQ.CommonLib.Models.Usuario
         [JsonProperty(PropertyName = "IdUsuarioAlta")]
         public int IdUsuarioAlta { get; set; }
 
+
+        /// <summary>
+        /// Con true, significa que la primera vez que se conecte tiene que meter una contraseña nueva
+        /// </summary>
+        [JsonProperty(PropertyName = "NecesitaActualizarPWD")]
+        public bool NecesitaActualizarPWD { get; set; }
+
         /// <summary>
         /// Comprueba que se metieron los campos requeridos. Throws ValidationException si falla la validación.
         /// </summary>

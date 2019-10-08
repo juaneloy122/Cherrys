@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Collections.Concurrent;
 using KQ.CommonLib.Models.Tablon;
 using KQ.CommonLib.Models.Usuario;
+using System.Linq;
 
 namespace KQ.Service.Models
 {
@@ -18,6 +19,9 @@ namespace KQ.Service.Models
                       
         }
 
-      
+        public Usuario Get(string email, string pwd)
+        {
+            return Items.Values.Where(x => x.Email.ToUpper () == email.ToUpper () && x.PWD == pwd).FirstOrDefault();
+        }
     }
 }

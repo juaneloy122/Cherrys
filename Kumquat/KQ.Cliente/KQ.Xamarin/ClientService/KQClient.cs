@@ -29,6 +29,8 @@ namespace KQ.Xamarin.ClientService
         public ClientServiceTarea ServiceTarea { get; private set; } = null;
         public ClientServiceUsuario ServiceUsuario { get; private set; } = null;
 
+        public ClientServiceIncidencia ServiceIncidencia { get; private set; } = null;
+
         #endregion
 
         #region Constructor
@@ -74,6 +76,10 @@ namespace KQ.Xamarin.ClientService
             //pal usuario
             var urlUsuario = new Uri(new Uri(baseUrl + (baseUrl.EndsWith("/") ? "" : "/")), "api/usuario").ToString();
             ServiceUsuario = new ClientServiceUsuario(this.HttpClient, urlUsuario);
+
+            //Pa las incidencias
+            var urlIncidencia = new Uri(new Uri(baseUrl + (baseUrl.EndsWith("/") ? "" : "/")), "api/incidencia").ToString();
+            ServiceIncidencia = new ClientServiceIncidencia(this.HttpClient, urlIncidencia);
         }
 
         #endregion

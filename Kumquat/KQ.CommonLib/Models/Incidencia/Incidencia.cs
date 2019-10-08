@@ -5,43 +5,36 @@ using System;
 
 namespace KQ.CommonLib.Models.Incidencia
 {
+    public enum EnumTipoIncidencia { Normal, AltaUsuario};
+
     /// <summary>
     /// Anuncios publicados en el tablón de inicio
     /// </summary>
     public class Incidencia : IItem
     {
-        /// <summary>
-        /// Initializes a new instance of the Anuncio class.
-        /// </summary>
+       
         public Incidencia() { }
 
-        /// <summary>
-        /// </summary>
+       
         [JsonProperty(PropertyName = "Id")]
         public int Id { get; set; }
 
-        /// <summary>
-        /// </summary>
+        
         [JsonProperty(PropertyName = "Titulo")]
         public string Titulo { get; set; }
 
-        /// <summary>
-        /// </summary>
+       
         [JsonProperty(PropertyName = "Descripcion")]
         public string Descripcion { get; set; }
 
-        /// <summary>
-        /// </summary>
+        
         [JsonProperty(PropertyName = "FechaPublicacion")]
         public DateTime FechaPublicacion { get; set; }
 
-        /// <summary>
-        /// </summary>
+        
         [JsonProperty(PropertyName = "FechaValidacion")]
         public DateTime FechaValidacion { get; set; }
-
-        /// <summary>
-        /// </summary>
+               
         [JsonProperty(PropertyName = "FechaResuelta")]
         public DateTime FechaResuelta { get; set; }
 
@@ -64,12 +57,20 @@ namespace KQ.CommonLib.Models.Incidencia
         public int IdUsuarioResolucion { get; set; }
 
         /// <summary>
+        /// Por si el administrador le envía un mensaje de vuelta
         /// </summary>
         [JsonProperty(PropertyName = "Respuesta")]
         public string Respuesta { get; set; }
 
+
         /// <summary>
-        /// Validate the object. Throws ValidationException if validation fails.
+        /// Indica el tipo de incidencia que puede ser, por ejemplo alta de usuario 
+        /// </summary>
+        [JsonProperty(PropertyName = "TipoIncidencia")]
+        public EnumTipoIncidencia TipoIncidencia { get; set; } = EnumTipoIncidencia.Normal;
+        
+        /// <summary>
+        ///Valida que el objeto tenga los datos necesarios
         /// </summary>
         public virtual void Validar()
         {
