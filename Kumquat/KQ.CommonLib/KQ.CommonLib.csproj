@@ -10,6 +10,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\ST_CommonLib\ST_Utilidades\ST.Utilidades.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Update="NETStandard.Library" Version="2.0.3" />
   </ItemGroup>
 

@@ -12,39 +12,31 @@ namespace KQ.CommonLib.Models.Usuario
     {
 
         public Usuario() { }
-
-        /// <summary>
-        /// Initializes a new instance of the Anuncio class.
-        /// </summary>
-        public Usuario(int id, string email,string alias, string pwd)
-        {
-            Id = id;
-            Email = email;
-            Alias = alias;
-            PWD = pwd;
-        }
-
+            
         [JsonProperty(PropertyName = "Id")]
         public int Id { get; set; }
+
+        [JsonProperty(PropertyName = "DNI")]
+        public string DNI { get; set; }
 
         [JsonProperty(PropertyName = "Nombre")]
         public string Nombre { get; set; }
 
-        [JsonProperty(PropertyName = "Puesto")]
-        public string Puesto { get; set; }
+        [JsonProperty(PropertyName = "Apellidos")]
+        public string Apellidos { get; set; }
 
         [JsonProperty(PropertyName = "FechaAlta")]
         public DateTime FechaAlta { get; set; }
 
         [JsonProperty(PropertyName = "FechaBaja")]
         public DateTime FechaBaja { get; set; }
-
-        [JsonProperty(PropertyName = "FechaNacimiento")]
-        public DateTime FechaNacimiento { get; set; }
-
+       
         [JsonProperty(PropertyName = "Email")]
         public string Email { get; set; }
 
+        /// <summary>
+        /// Normalmente el nombre, pero puede tener un mote en la empresa
+        /// </summary>
         [JsonProperty(PropertyName = "Alias")]
         public string Alias { get; set; }
 
@@ -52,21 +44,47 @@ namespace KQ.CommonLib.Models.Usuario
         public string PWD { get; set; }
 
         /// <summary>
-        /// Validate the object. Throws ValidationException if validation fails.
+        /// Indica el identificador del usuario que lo dió de alta
+        /// </summary>
+        [JsonProperty(PropertyName = "IdUsuarioAlta")]
+        public int IdUsuarioAlta { get; set; }
+
+
+        /// <summary>
+        /// Con true, significa que la primera vez que se conecte tiene que meter una contraseña nueva
+        /// </summary>
+        [JsonProperty(PropertyName = "NecesitaActualizarPWD")]
+        public bool NecesitaActualizarPWD { get; set; }
+
+        /// <summary>
+        /// Comprueba que se metieron los campos requeridos. Throws ValidationException si falla la validación.
         /// </summary>
         public virtual void Validar()
         {
-            if (Nombre == null)
+            if (string.IsNullOrEmpty (Nombre))
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "Nombre");
             }
-            if (PWD == null)
+
+            if (string.IsNullOrEmpty(DNI))
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "DNI");
+            }
+            if (string.IsNullOrEmpty(PWD))
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "PWD");
+            }
+            if (string.IsNullOrEmpty(Email))
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "Email");
             }
             if (Id < 0)
             {
                 throw new ValidationException(ValidationRules.CannotBeNull, "Id");
+            }
+            if (IdUsuarioAlta < 0)
+            {
+                throw new ValidationException(ValidationRules.CannotBeNull, "IdUsuarioAlta");
             }
         }
     }
