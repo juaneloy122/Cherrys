@@ -1,7 +1,7 @@
 ﻿using KQ.CommonLib.Interfaces;
-using Microsoft.Rest;
 using Newtonsoft.Json;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace KQ.CommonLib.Models.Incidencia
 {
@@ -12,18 +12,19 @@ namespace KQ.CommonLib.Models.Incidencia
     /// </summary>
     public class Incidencia : IItem
     {
-       
+        
         public Incidencia() { }
 
        
         [JsonProperty(PropertyName = "Id")]
         public int Id { get; set; }
 
-        
+        [Required]
+        [StringLength(50, MinimumLength = 4)]
         [JsonProperty(PropertyName = "Titulo")]
         public string Titulo { get; set; }
 
-       
+        
         [JsonProperty(PropertyName = "Descripcion")]
         public string Descripcion { get; set; }
 
@@ -34,13 +35,15 @@ namespace KQ.CommonLib.Models.Incidencia
         
         [JsonProperty(PropertyName = "FechaValidacion")]
         public DateTime FechaValidacion { get; set; }
-               
+
+       
         [JsonProperty(PropertyName = "FechaResuelta")]
         public DateTime FechaResuelta { get; set; }
 
         /// <summary>
         /// usuario que envío la incidencia
         /// </summary>
+        [Required]
         [JsonProperty(PropertyName = "IdUsuario")]
         public int IdUsuario { get; set; }
 
@@ -56,13 +59,13 @@ namespace KQ.CommonLib.Models.Incidencia
         [JsonProperty(PropertyName = "IdUsuarioResolucion")]
         public int IdUsuarioResolucion { get; set; }
 
-        /// <summary>
-        /// Por si el administrador le envía un mensaje de vuelta
-        /// </summary>
+       /// <summary>
+       /// Puede tener mensaje de respuesta
+       /// </summary>
         [JsonProperty(PropertyName = "Respuesta")]
-        public string Respuesta { get; set; }
-
-
+        public string Respuesta { get; set; }
+
+
         /// <summary>
         /// Indica el tipo de incidencia que puede ser, por ejemplo alta de usuario 
         /// </summary>
@@ -76,15 +79,15 @@ namespace KQ.CommonLib.Models.Incidencia
         {
             if (string.IsNullOrEmpty (Titulo))
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "Titulo");
+                throw new ValidationException("Es necesario incluir el campo Titulo");
             }
             if (string.IsNullOrEmpty(Descripcion))
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "Descripcion");
+                throw new ValidationException("Es necesario incluir el campo Descripcion");
             }
             if (IdUsuario <0)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "IdUsuario");
+                throw new ValidationException("Es necesario incluir el campo IdUsuario");
             }
         }
     }

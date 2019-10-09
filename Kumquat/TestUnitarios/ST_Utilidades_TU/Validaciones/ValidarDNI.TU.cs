@@ -1,5 +1,5 @@
 ﻿using KumquatTU;
-using Microsoft.Rest;
+using System.ComponentModel.DataAnnotations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ST.Utilidades.Validaciones;
 using System;
@@ -50,12 +50,12 @@ namespace ST.Utilidades.TU.Validaciones
         [TestMethod]
         public void Should_DarExcepcion()
         {
-            string resultado = "09431821G";
-            Assert.ThrowsException<ValidationException>(() => ValidacionDNI.GetDNIFormatoValido("009431821-G"));
-            Assert.ThrowsException<ValidationException>(() => ValidacionDNI.GetDNIFormatoValido("009431821 G"));
+            
+            Assert.ThrowsException<ValidationException>(() => ValidacionDNI.GetDNIFormatoValido("109431821-G"));
+            Assert.ThrowsException<ValidationException>(() => ValidacionDNI.GetDNIFormatoValido("109431821 G"));
             Assert.ThrowsException<ValidationException>(() => ValidacionDNI.GetDNIFormatoValido("431821-G"));
             Assert.ThrowsException<ValidationException>(() => ValidacionDNI.GetDNIFormatoValido("9431821-H"));
-            Assert.ThrowsException<ValidationException>(() => ValidacionDNI.GetDNIFormatoValido("94.31821-G"));
+            Assert.ThrowsException<ValidationException>(() => ValidacionDNI.GetDNIFormatoValido("94,31821-G"));
         }
     }
 

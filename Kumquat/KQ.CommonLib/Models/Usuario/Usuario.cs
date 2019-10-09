@@ -1,7 +1,7 @@
 ﻿using KQ.CommonLib.Interfaces;
-using Microsoft.Rest;
 using Newtonsoft.Json;
 using System;
+using System.ComponentModel.DataAnnotations;
 
 namespace KQ.CommonLib.Models.Usuario
 {
@@ -12,16 +12,26 @@ namespace KQ.CommonLib.Models.Usuario
     {
 
         public Usuario() { }
-            
+
+        [Required]
         [JsonProperty(PropertyName = "Id")]
         public int Id { get; set; }
 
+        /// <summary>
+        /// DNI con formato 00000000L.
+        /// Se puede usar la utilidad ValidacionDNI.GetDNIFormatoValido  de ST.Utilidades para facilitar esto
+        /// </summary>
+        [Required]
+        [StringLength (9)]
         [JsonProperty(PropertyName = "DNI")]
         public string DNI { get; set; }
 
+        [Required]
+        [StringLength(50, MinimumLength = 4)]
         [JsonProperty(PropertyName = "Nombre")]
         public string Nombre { get; set; }
 
+        [StringLength(100, MinimumLength = 4)]
         [JsonProperty(PropertyName = "Apellidos")]
         public string Apellidos { get; set; }
 
@@ -30,16 +40,20 @@ namespace KQ.CommonLib.Models.Usuario
 
         [JsonProperty(PropertyName = "FechaBaja")]
         public DateTime FechaBaja { get; set; }
-       
+
+        [Required]
+        [EmailAddress]
         [JsonProperty(PropertyName = "Email")]
         public string Email { get; set; }
 
         /// <summary>
         /// Normalmente el nombre, pero puede tener un mote en la empresa
         /// </summary>
+        [StringLength(50, MinimumLength = 4)]
         [JsonProperty(PropertyName = "Alias")]
         public string Alias { get; set; }
 
+        [Required]
         [JsonProperty(PropertyName = "PWD")]
         public string PWD { get; set; }
 
@@ -63,28 +77,28 @@ namespace KQ.CommonLib.Models.Usuario
         {
             if (string.IsNullOrEmpty (Nombre))
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "Nombre");
+                throw new ValidationException("Es necesario incluir el campo Nombre");
             }
 
             if (string.IsNullOrEmpty(DNI))
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "DNI");
+                throw new ValidationException("Es necesario incluir el campo DNI");
             }
             if (string.IsNullOrEmpty(PWD))
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "PWD");
+                throw new ValidationException("Es necesario incluir el campo PWD");
             }
             if (string.IsNullOrEmpty(Email))
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "Email");
+                throw new ValidationException("Es necesario incluir el campo Email");
             }
             if (Id < 0)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "Id");
+                throw new ValidationException("Es necesario incluir el campo Id");
             }
             if (IdUsuarioAlta < 0)
             {
-                throw new ValidationException(ValidationRules.CannotBeNull, "IdUsuarioAlta");
+                throw new ValidationException("Es necesario incluir el campo IdUsuarioAlta");
             }
         }
     }

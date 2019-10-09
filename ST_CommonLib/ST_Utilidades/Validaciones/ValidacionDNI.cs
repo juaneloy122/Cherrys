@@ -1,7 +1,4 @@
-﻿using Microsoft.Rest;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace ST.Utilidades.Validaciones
 {
@@ -48,7 +45,7 @@ namespace ST.Utilidades.Validaciones
             int numero = 0;
             cargaVariablesDni(dni, ref numero, ref letra);
 
-            return numero.ToString("0#######") + letra.ToUpper ();
+            return numero.ToString("0#######") + letra.ToUpper();
         }
 
         private static bool cargaVariablesDni(string dni, ref int nDni, ref string letra)
@@ -79,7 +76,7 @@ namespace ST.Utilidades.Validaciones
                     if (!int.TryParse(dni.Substring(0, 9), out nDni))
                         if (!int.TryParse(dni.Substring(0, 8), out nDni))
                             return false;
-                                        
+
                     return true;
 
                 case 11:
@@ -87,7 +84,7 @@ namespace ST.Utilidades.Validaciones
                     if (!int.TryParse(dni.Substring(0, 10), out nDni))
                         if (!int.TryParse(dni.Substring(0, 9), out nDni))
                             return false;
-                    
+
                     return true;
 
                 default:
